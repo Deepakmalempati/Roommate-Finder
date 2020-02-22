@@ -10,47 +10,84 @@
         android:id="@+id/textView2"
         android:layout_width="258dp"
         android:layout_height="40dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="77dp"
+        android:layout_marginBottom="591dp"
         android:text="Welcome to Roommate Finder"
         android:textColor="#000000"
         android:textSize="18sp"
-        tools:layout_editor_absoluteX="76dp"
-        tools:layout_editor_absoluteY="100dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/emailET"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="224dp"
+        android:layout_marginEnd="102dp"
+        android:layout_marginBottom="462dp"
         android:ems="10"
         android:hint="enter email address"
         android:inputType="textEmailAddress"
-        tools:layout_editor_absoluteX="96dp"
-        tools:layout_editor_absoluteY="224dp" />
+        android:textColor="#000000"
+        android:textColorHint="#EF251F"
+        android:textColorLink="#EF251F"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/pass"
+        android:id="@+id/passwordET"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="283dp"
+        android:layout_marginEnd="102dp"
+        android:layout_marginBottom="403dp"
         android:ems="10"
         android:hint="enter password"
         android:inputType="textPassword"
-        tools:layout_editor_absoluteX="96dp"
-        tools:layout_editor_absoluteY="283dp" />
+        android:textColor="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/loginBTN"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="162dp"
+        android:layout_marginTop="438dp"
+        android:layout_marginEnd="161dp"
+        android:layout_marginBottom="245dp"
+        android:background="#EF251F"
         android:text="LOGIN"
-        tools:layout_editor_absoluteX="162dp"
-        tools:layout_editor_absoluteY="438dp" />
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="113dp"
+        android:layout_marginTop="597dp"
+        android:layout_marginEnd="114dp"
+        android:layout_marginBottom="115dp"
         android:text="New to our app? Sign up here"
         android:textColor="#000000"
-        tools:layout_editor_absoluteX="113dp"
-        tools:layout_editor_absoluteY="597dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
