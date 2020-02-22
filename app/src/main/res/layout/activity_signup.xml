@@ -8,13 +8,19 @@
 
     <EditText
         android:id="@+id/repasswordET"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="104dp"
+        android:layout_marginTop="436dp"
+        android:layout_marginEnd="94dp"
+        android:layout_marginBottom="250dp"
         android:ems="10"
         android:hint="Re enter password"
         android:inputType="textPassword"
-        tools:layout_editor_absoluteX="104dp"
-        tools:layout_editor_absoluteY="436dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView"
@@ -34,7 +40,7 @@
 
     <EditText
         android:id="@+id/nameET"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="104dp"
         android:layout_marginTop="152dp"
@@ -50,7 +56,7 @@
 
     <EditText
         android:id="@+id/emailET"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="104dp"
         android:layout_marginTop="223dp"
@@ -66,37 +72,61 @@
 
     <EditText
         android:id="@+id/phnoET"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="104dp"
+        android:layout_marginTop="295dp"
+        android:layout_marginEnd="94dp"
+        android:layout_marginBottom="391dp"
         android:ems="10"
         android:hint="enter phone number"
         android:inputType="phone"
-        tools:layout_editor_absoluteX="104dp"
-        tools:layout_editor_absoluteY="295dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/passwordET"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="104dp"
+        android:layout_marginTop="366dp"
+        android:layout_marginEnd="94dp"
+        android:layout_marginBottom="320dp"
         android:ems="10"
         android:hint="create a password"
         android:inputType="textPassword"
-        tools:layout_editor_absoluteX="104dp"
-        tools:layout_editor_absoluteY="366dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/signupBTN"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
-        tools:layout_editor_absoluteX="160dp"
-        tools:layout_editor_absoluteY="570dp" />
+        android:layout_marginStart="161dp"
+        android:layout_marginTop="598dp"
+        android:layout_marginEnd="162dp"
+        android:layout_marginBottom="85dp"
+        android:text="sign up"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <CheckBox
         android:id="@+id/termsCB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="521dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="178dp"
         android:text="By signing up you agree to all term and conditions"
-        tools:layout_editor_absoluteX="31dp"
-        tools:layout_editor_absoluteY="521dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
