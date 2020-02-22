@@ -17,21 +17,40 @@
         tools:layout_editor_absoluteY="100dp" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/emailET"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:hint="enter email address"
         android:inputType="textEmailAddress"
         tools:layout_editor_absoluteX="96dp"
         tools:layout_editor_absoluteY="224dp" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/pass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:hint="enter password"
         android:inputType="textPassword"
         tools:layout_editor_absoluteX="96dp"
         tools:layout_editor_absoluteY="283dp" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LOGIN"
+        tools:layout_editor_absoluteX="162dp"
+        tools:layout_editor_absoluteY="438dp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New to our app? Sign up here"
+        android:textColor="#000000"
+        tools:layout_editor_absoluteX="113dp"
+        tools:layout_editor_absoluteY="597dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
