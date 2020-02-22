@@ -20,7 +20,11 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:textColor="#000000"
+        android:textColorHint="#EF251F"
+        android:textColorLink="#EF251F"
+        />
 
     <TextView
         android:id="@+id/textView"
@@ -32,7 +36,7 @@
         android:layout_marginBottom="635dp"
         android:text="Create your account"
         android:textColor="#000000"
-        android:textSize="18sp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -52,7 +56,10 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:textColor="#000000"
+        android:textColorHint="#EF251F"
+        android:textColorLink="#EF251F"/>
 
     <EditText
         android:id="@+id/emailET"
@@ -68,7 +75,10 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:textColor="#000000"
+        android:textColorHint="#EF251F"
+        android:textColorLink="#EF251F"/>
 
     <EditText
         android:id="@+id/phnoET"
@@ -84,7 +94,10 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:textColor="#000000"
+        android:textColorHint="#EF251F"
+        android:textColorLink="#EF251F"/>
 
     <EditText
         android:id="@+id/passwordET"
@@ -100,7 +113,10 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:textColor="#000000"
+        android:textColorHint="#EF251F"
+        android:textColorLink="#EF251F"/>
 
     <Button
         android:id="@+id/signupBTN"
@@ -110,7 +126,10 @@
         android:layout_marginTop="598dp"
         android:layout_marginEnd="162dp"
         android:layout_marginBottom="85dp"
+        android:background="#EF251F"
         android:text="sign up"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
