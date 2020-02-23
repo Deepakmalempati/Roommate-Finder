@@ -14,3 +14,10 @@ We have a total of 9 activities:
 7.	New listing activity: 
 8.	Filters activity: 
 9.	Your listings activity: 
+
+Team members: 
+1.	Sai Jyostna Mathi
+2.	Omkar Abhiteja Badda
+3.	Deepak Malempati
+4.	Jeevan Reddy Mure
+
