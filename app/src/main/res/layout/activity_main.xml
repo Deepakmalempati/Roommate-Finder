@@ -23,21 +23,23 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <EditText
         android:id="@+id/emailET"
         android:layout_width="300dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:layout_marginStart="96dp"
         android:layout_marginTop="224dp"
         android:layout_marginEnd="102dp"
         android:layout_marginBottom="462dp"
+        android:paddingLeft="10dp"
         android:ems="10"
         android:hint="enter email address"
         android:inputType="textEmailAddress"
         android:textColor="#000000"
-        android:textColorHint="#EF251F"
+        android:textColorHint="#000000"
         android:textColorLink="#EF251F"
-
+android:background="@drawable/editbox_style_layout"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -47,7 +49,8 @@
     <EditText
         android:id="@+id/passwordET"
         android:layout_width="300dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
+        android:paddingLeft="10dp"
         android:layout_marginStart="96dp"
         android:layout_marginTop="283dp"
         android:layout_marginEnd="102dp"
@@ -56,7 +59,8 @@
         android:hint="enter password"
         android:inputType="textPassword"
         android:textColor="#000000"
-        android:textColorHint="#EF251F"
+        android:textColorHint="#000000"
+        android:background="@drawable/editbox_style_layout"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
