@@ -55,10 +55,14 @@
         app:layout_constraintVertical_bias="0.059" />
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/genderTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:text="Gender"
+        android:textColor="#EF251F"
+        android:textColorHint="#EF251F"
+        android:textColorLink="#F44336"
+        android:textColorLink="#EF251F"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.25"
