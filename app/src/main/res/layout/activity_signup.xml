@@ -137,6 +137,7 @@
         android:layout_marginEnd="162dp"
         android:layout_marginBottom="85dp"
         android:background="#EF251F"
+        android:onClick="signupclick"
         android:text="sign up"
         android:textColor="#FFFFFF"
         android:textStyle="bold"
