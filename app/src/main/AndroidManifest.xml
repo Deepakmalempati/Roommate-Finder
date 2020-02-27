@@ -9,11 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-<<<<<<< HEAD
-        <activity android:name=".ProfileActivity"></activity>
-=======
+
         <activity android:name=".YourLisitngs"></activity>
->>>>>>> 4af37a2d2b3dbb1de5ae0ba435153a0b8b924b50
+
         <activity android:name=".SignupActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

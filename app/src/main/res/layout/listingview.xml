@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <TextView
         android:id="@+id/lisitingtitleTV"
@@ -23,7 +23,7 @@
         android:id="@+id/costTV"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="price"
+        android:text="TextView"
         android:textColor="#000000"
         android:textSize="18sp" />
 
@@ -34,5 +34,6 @@
         android:text="Delete listing"
         android:layout_marginLeft="280dp"
         android:background="#EF251F"
-        android:textColor="#FFFFFF"/>
+        android:textColor="#FFFFFF"
+        />
 </LinearLayout>
