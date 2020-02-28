@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomepageActivity">
+
+    <EditText
+        android:id="@+id/searchET"
+        android:layout_width="372dp"
+        android:layout_height="47dp"
+        android:ems="10"
+        android:hint="Search for places"
+        android:inputType="textPersonName"
+        android:textColor="#000000"
+        android:textColorHint="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.087" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="411dp"
+        android:layout_height="575dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchET"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/gridLayout"
+        android:layout_width="409dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <Button
+            android:id="@+id/createlistingBTN"
+            android:layout_width="110dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="296dp"
+            android:background="#EF251F"
+            android:text="New Listing"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            app:layout_column="1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:layout_row="0" />
+
+        <Button
+            android:id="@+id/profileBTN"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:background="#EF251F"
+            android:text="Profile"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            app:layout_column="2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.35"
+            app:layout_constraintStart_toEndOf="@+id/createlistingBTN"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.4"
+            app:layout_row="0" />
+
+        <Button
+            android:id="@+id/historyBTN"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:background="#EF251F"
+            android:text="History"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            app:layout_column="3"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.68"
+            app:layout_constraintStart_toEndOf="@+id/createlistingBTN"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:layout_row="0" />
+
+        <Button
+            android:id="@+id/logoutBTN"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:background="#EF251F"
+            android:text="Logout"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            app:layout_column="4"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/createlistingBTN"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:layout_row="0" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
