@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void Onclick(View view){
-        Intent intent = new Intent(this,ProfileActivity.class);
+        Intent intent = new Intent(this,SignupActivity.class);
         startActivity(intent);
     }
 }
