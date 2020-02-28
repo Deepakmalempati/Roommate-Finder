@@ -8,29 +8,28 @@
 
     <TextView
         android:id="@+id/yourBTN"
-        android:layout_width="128dp"
+        android:layout_width="wrap_content"
         android:layout_height="34dp"
-        android:background="@drawable/editbox_style_layout"
         android:text="Your Profile"
         android:textColor="#000000"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.448"
+        app:layout_constraintHorizontal_bias="0.43"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.108" />
+        app:layout_constraintVertical_bias="0.121" />
 
     <TextView
         android:id="@+id/nameTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/editbox_style_layout"
         android:text="Name :"
         android:textColor="#EF251F"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.31"
+        app:layout_constraintHorizontal_bias="0.318"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.23" />
@@ -39,12 +38,12 @@
         android:id="@+id/nameenterTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/editbox_style_layout"
         android:text="Jyothsna"
         android:textColor="#000000"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.667"
+        app:layout_constraintHorizontal_bias="0.598"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.23" />
@@ -53,68 +52,68 @@
         android:id="@+id/genderTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/editbox_style_layout"
         android:text="Gender :"
         android:textColor="#EF251F"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.317"
+        app:layout_constraintHorizontal_bias="0.298"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.311" />
+        app:layout_constraintVertical_bias="0.298" />
 
     <TextView
         android:id="@+id/genderenterTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/editbox_style_layout"
         android:text="Female"
         android:textColor="#000000"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.645"
+        app:layout_constraintHorizontal_bias="0.575"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.299" />
+        app:layout_constraintVertical_bias="0.298" />
 
     <TextView
         android:id="@+id/DateTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/editbox_style_layout"
         android:text=" Date of birth :"
         android:textColor="#EF251F"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.354"
+        app:layout_constraintHorizontal_bias="0.19"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.372" />
+        app:layout_constraintVertical_bias="0.37" />
 
     <TextView
         android:id="@+id/dateenterTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/editbox_style_layout"
         android:text="May 26 1997"
         android:textColor="#000000"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.714"
+        app:layout_constraintHorizontal_bias="0.656"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.372" />
+        app:layout_constraintVertical_bias="0.37" />
 
     <TextView
         android:id="@+id/cityTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/editbox_style_layout"
         android:text="City :"
         android:textColor="#EF251F"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.3"
+        app:layout_constraintHorizontal_bias="0.349"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.435" />
@@ -123,12 +122,12 @@
         android:id="@+id/cityenterTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/editbox_style_layout"
         android:text="Maryville"
         android:textColor="#000000"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.67"
+        app:layout_constraintHorizontal_bias="0.597"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.435" />
@@ -137,33 +136,34 @@
         android:id="@+id/phoneTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/editbox_style_layout"
         android:text="Phone :"
         android:textColor="#EF251F"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.313"
+        app:layout_constraintHorizontal_bias="0.312"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.499" />
 
     <TextView
         android:id="@+id/phoneenterTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/editbox_style_layout"
         android:text="+33134135161"
         android:textColor="#000000"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.746"
+        app:layout_constraintHorizontal_bias="0.695"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.499" />
 
     <TextView
         android:id="@+id/updateTV"
         android:layout_width="190dp"
         android:layout_height="33dp"
-        android:background="@drawable/editbox_style_layout"
         android:text="Update your profile picture"
         android:textColor="#EF251F"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -173,5 +173,50 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.834" />
 
-    
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/gridLayout"
+        android:layout_width="409dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <Button
+            android:id="@+id/createlistingBTN"
+            android:layout_width="210dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="208dp"
+            android:background="#EF251F"
+            android:text="Home"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            app:layout_column="1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.466"
+            app:layout_row="0" />
+
+        <Button
+            android:id="@+id/profileBTN"
+            android:layout_width="210dp"
+            android:layout_height="50dp"
+            android:background="#EF251F"
+            android:text="Profile"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            app:layout_column="3"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/createlistingBTN"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.4"
+            app:layout_row="0" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

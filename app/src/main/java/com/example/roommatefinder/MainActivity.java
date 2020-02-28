@@ -15,7 +15,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void Onclick(View view){
+<<<<<<< HEAD
       //  Intent intent = new Intent(this,HomepageActivity.class);
        // startActivity(intent);
+=======
+        Intent intent = new Intent(this,HomepageActivity.class);
+        startActivity(intent);
+>>>>>>> a0b35ad78b716494791cb06bd5a0a0caa18e4f36
     }
 }
