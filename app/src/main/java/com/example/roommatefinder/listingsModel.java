@@ -34,6 +34,8 @@ public class listingsModel {
     private void loadModel(){
 
         choiceList.add(new ChoiceInfo("Looking for roommate", "Maryville",290));
+        choiceList.add(new ChoiceInfo("Friendly roommate", "Kansas city",290));
+
 
 
     }
