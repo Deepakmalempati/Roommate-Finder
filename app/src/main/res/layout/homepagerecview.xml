@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/homeRV"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
@@ -40,7 +41,7 @@
             app:layout_row="1" />
 
         <TextView
-            android:id="@+id/textView7"
+            android:id="@+id/costTV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="$250/month"
