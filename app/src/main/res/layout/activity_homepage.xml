@@ -11,7 +11,7 @@
         android:layout_width="372dp"
         android:layout_height="47dp"
         android:ems="10"
-        android:hint="Search  places"
+        android:hint="Search for places"
         android:inputType="textPersonName"
         android:textColor="#000000"
         android:textColorHint="#000000"
