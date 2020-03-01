@@ -16,7 +16,7 @@ public class SignupActivity extends AppCompatActivity {
 
     public void signupclick(View view){
 
-            Intent intent = new Intent(this, NewPostingActivity.class);
+            Intent intent = new Intent(this, RoommateInfoActivity.class);
             startActivity(intent);
     }
 
