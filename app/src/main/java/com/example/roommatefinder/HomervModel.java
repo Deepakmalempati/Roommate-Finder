@@ -34,6 +34,8 @@ public class HomervModel {
     private void loadModel(){
 
         choiceList.add(new HomervModel.ChoiceInfo("Looking for roommate", "Maryville",290));
+        choiceList.add(new HomervModel.ChoiceInfo("Room Available", "Kansas city",290));
+        choiceList.add(new HomervModel.ChoiceInfo("Male Roommate required", "Saint Joseph",290));
 
 
     }

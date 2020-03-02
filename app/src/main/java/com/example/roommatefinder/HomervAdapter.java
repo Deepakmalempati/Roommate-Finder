@@ -1,7 +1,9 @@
 package com.example.roommatefinder;
 
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -12,6 +14,7 @@ import com.example.roommatefinder.R;
 import com.example.roommatefinder.listingsModel;
 
 public class HomervAdapter extends RecyclerView.Adapter<HomervAdapter.ChoiceViewHolder> {
+
 
     public static class ChoiceViewHolder extends RecyclerView.ViewHolder {
 
@@ -39,7 +42,10 @@ public class HomervAdapter extends RecyclerView.Adapter<HomervAdapter.ChoiceView
 //        TextView costTV =holder.LLviewreference.findViewById(R.id.costTV);
 //        costTV.setText(choicemodel.choiceList.get(position).cost);
 
-        
+//       ImageView img = holder.LLviewreference.findViewById(R.id.imageView);
+//       img.setImageIcon();
+
+
 
 
     }

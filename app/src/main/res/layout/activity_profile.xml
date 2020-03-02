@@ -175,7 +175,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/gridLayout"
-        android:layout_width="409dp"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

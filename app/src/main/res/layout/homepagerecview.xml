@@ -18,7 +18,7 @@
             app:layout_column="0"
             app:layout_row="0"
             app:layout_rowSpan="3"
-            tools:srcCompat="@tools:sample/avatars" />
+            android:background="@drawable/bedroom2_2" />
 
         <TextView
             android:id="@+id/titleTV"
