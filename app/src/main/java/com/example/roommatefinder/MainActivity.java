@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,8 +20,15 @@ public class MainActivity extends AppCompatActivity {
       //  Intent intent = new Intent(this,HomepageActivity.class);
        // startActivity(intent);
 
-        Intent intent = new Intent(this,HomepageActivity.class);
+        Intent intent = new Intent(this,SignupActivity.class);
         startActivity(intent);
 
     }
+
+    public void loginclick(View view){
+        Intent intent = new Intent(this,HomepageActivity.class);
+        startActivity(intent);
+    }
+
+
 }

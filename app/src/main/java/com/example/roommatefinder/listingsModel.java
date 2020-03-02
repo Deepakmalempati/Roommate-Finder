@@ -34,13 +34,13 @@ public class listingsModel {
     private void loadModel(){
 
         choiceList.add(new ChoiceInfo("Looking for roommate", "Maryville",290));
-<<<<<<< HEAD
+
         choiceList.add(new ChoiceInfo("Friendly roommate", "Kansas city",290));
 
-=======
+
         choiceList.add(new ChoiceInfo("Female roommate", "Maryville",290));
         choiceList.add(new ChoiceInfo("Male roommate", "Maryville",290));
->>>>>>> a0b35ad78b716494791cb06bd5a0a0caa18e4f36
+
 
 
     }
