@@ -39,6 +39,7 @@ public class HomervAdapter extends RecyclerView.Adapter<HomervAdapter.ChoiceView
 //        TextView costTV =holder.LLviewreference.findViewById(R.id.costTV);
 //        costTV.setText(choicemodel.choiceList.get(position).cost);
 
+        
 
 
     }

@@ -31,8 +31,7 @@ public class HomepageActivity extends AppCompatActivity {
                     HomervModel model = HomervModel.getSingleton();
 
 
-                    model.choiceList.remove(position);
-                    choiceadapter.notifyItemRemoved(position);
+
                     return true;
                 }
             }
