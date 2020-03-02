@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void Onclick(View view){
-        Intent intent = new Intent(this,HomepageActivity.class);
+        Intent intent = new Intent(this,RoommateInfoActivity.class);
         startActivity(intent);
     }
 }
