@@ -74,6 +74,7 @@
         android:layout_marginEnd="161dp"
         android:layout_marginBottom="245dp"
         android:background="#EF251F"
+        android:onClick="loginclick"
         android:text="LOGIN"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
