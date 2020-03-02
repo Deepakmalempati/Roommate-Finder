@@ -15,10 +15,10 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.111"
+        app:layout_constraintHorizontal_bias="0.024"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.086" />
+        app:layout_constraintVertical_bias="0.1" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/listingsRV"
@@ -26,13 +26,14 @@
         android:layout_height="522dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.66" />
+        app:layout_constraintVertical_bias="0.583" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/gridLayout"
-        android:layout_width="409dp"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -47,6 +48,7 @@
             android:layout_height="50dp"
             android:layout_marginEnd="208dp"
             android:background="#EF251F"
+            android:onClick="HomeBTNclick"
             android:text="Home"
             android:textColor="#FFFFFF"
             android:textSize="18sp"
@@ -54,7 +56,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.466"
+            app:layout_constraintVertical_bias="0.0"
             app:layout_row="0" />
 
         <Button
@@ -62,6 +64,7 @@
             android:layout_width="210dp"
             android:layout_height="50dp"
             android:background="#EF251F"
+            android:onClick="profileclick"
             android:text="Profile"
             android:textColor="#FFFFFF"
             android:textSize="18sp"
@@ -69,7 +72,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/createlistingBTN"
+            app:layout_constraintStart_toEndOf="@+id/HomepageBTN"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.4"

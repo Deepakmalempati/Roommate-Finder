@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 public class SignupActivity extends AppCompatActivity {
 
@@ -18,6 +19,9 @@ public class SignupActivity extends AppCompatActivity {
 
             Intent intent = new Intent(this, RoommateInfoActivity.class);
             startActivity(intent);
+        Toast toast=Toast.makeText(getApplicationContext(),"Signup Successful. please login!", Toast.LENGTH_LONG);
+        toast.show();
+
     }
 
 }

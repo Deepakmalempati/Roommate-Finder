@@ -14,4 +14,13 @@ public class ProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_profile);
     }
 
+    public void profileclick(View view){
+        Intent intent = new Intent(this,ProfileActivity.class);
+        startActivity(intent);
+    }
+    public void homeBTNclick(View view){
+        Intent intent = new Intent(this,HomepageActivity.class);
+        startActivity(intent);
+    }
+
 }

@@ -5,6 +5,7 @@ import androidx.core.view.GestureDetectorCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.GestureDetector;
@@ -61,5 +62,23 @@ public class HomepageActivity extends AppCompatActivity {
                                                         return detector.onTouchEvent(e);
                                                     }
                                                 });
+    }
+
+    public void newlistingclick(View view){
+        Intent intent = new Intent(this,NewPostingActivity.class);
+        startActivity(intent);
+    }
+
+    public void profileclick(View view){
+        Intent intent = new Intent(this,ProfileActivity.class);
+        startActivity(intent);
+    }
+    public void historyclick(View view){
+        Intent intent = new Intent(this,YourLisitngs.class);
+        startActivity(intent);
+    }
+    public void logoutclick(View view){
+        Intent intent = new Intent(this,MainActivity.class);
+        startActivity(intent);
     }
 }
