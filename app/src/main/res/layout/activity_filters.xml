@@ -20,21 +20,21 @@
         android:layout_width="168dp"
         android:layout_height="45dp"
         android:layout_gravity="center"
-        android:text="Rent cost" />
+        android:text="Price: low to high" />
 
     <CheckBox
         android:id="@+id/checkBox2"
         android:layout_width="168dp"
         android:layout_height="45dp"
         android:layout_gravity="center"
-        android:text="Location" />
+        android:text="nearest location" />
 
     <CheckBox
         android:id="@+id/checkBox3"
         android:layout_width="168dp"
         android:layout_height="45dp"
         android:layout_gravity="center"
-        android:text="rommate :male" />
+        android:text="Male" />
 
     <CheckBox
         android:id="@+id/checkBox4"
@@ -42,22 +42,23 @@
         android:layout_height="45dp"
         android:layout_gravity="center"
         android:baselineAligned="false"
-        android:text="roommate : female" />
+        android:text="Female" />
 
     <CheckBox
         android:id="@+id/checkBox5"
         android:layout_width="168dp"
         android:layout_height="45dp"
         android:layout_gravity="center"
-        android:text="prooerty type" />
+        android:text="Entire space" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="191dp"
-        android:layout_height="61dp"
+        android:layout_height="51dp"
         android:layout_gravity="center"
         android:background="#EF251F"
-        android:text="Button"
+        android:onClick="applyfiltersclick"
+        android:text="Apply filters"
         android:textColor="#FFFFFF"
         android:textStyle="bold" />
 </LinearLayout>

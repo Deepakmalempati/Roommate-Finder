@@ -20,8 +20,10 @@ public class HomepageActivity extends AppCompatActivity {
     // We need a gesture listener
 
     private class RecyclerViewOnGestureListener extends GestureDetector.SimpleOnGestureListener {
+
         @Override
         public boolean onSingleTapConfirmed(MotionEvent e) {
+
             View view = choiceRV.findChildViewUnder(e.getX(), e.getY());
             if (view != null) {
                 RecyclerView.ViewHolder holder = choiceRV.getChildViewHolder(view);
@@ -29,6 +31,7 @@ public class HomepageActivity extends AppCompatActivity {
                     int position = holder.getAdapterPosition();
                     Log.d("click", "clicked on item "+ position);
                     HomervModel model = HomervModel.getSingleton();
+
 
 
 
@@ -80,4 +83,11 @@ public class HomepageActivity extends AppCompatActivity {
         Intent intent = new Intent(this,MainActivity.class);
         startActivity(intent);
     }
+
+    public void filtersclick(View view){
+        Intent intent = new Intent(this,Filters.class);
+        startActivity(intent);
+    }
+
+
 }

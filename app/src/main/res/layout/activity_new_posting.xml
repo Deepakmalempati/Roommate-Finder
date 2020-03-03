@@ -138,7 +138,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/gridLayout"
-        android:layout_width="409dp"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -153,6 +153,7 @@
             android:layout_height="50dp"
             android:layout_marginEnd="208dp"
             android:background="#EF251F"
+            android:onClick="postBTNclick"
             android:text="Home"
             android:textColor="#FFFFFF"
             android:textSize="18sp"
@@ -168,6 +169,7 @@
             android:layout_width="210dp"
             android:layout_height="50dp"
             android:background="#EF251F"
+            android:onClick="profileclick"
             android:text="Profile"
             android:textColor="#FFFFFF"
             android:textSize="18sp"

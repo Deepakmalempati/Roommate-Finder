@@ -8,7 +8,7 @@
 
     <EditText
         android:id="@+id/searchET"
-        android:layout_width="372dp"
+        android:layout_width="302dp"
         android:layout_height="47dp"
         android:ems="10"
         android:hint="Search for places"
@@ -17,15 +17,16 @@
         android:textColorHint="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.41"
+        app:layout_constraintHorizontal_bias="0.128"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.065" />
+        app:layout_constraintVertical_bias="0.071" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/homeRV"
         android:layout_width="396dp"
         android:layout_height="525dp"
+        android:onClick="recyclerclick"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -120,4 +121,20 @@
             app:layout_constraintVertical_bias="0.0"
             app:layout_row="0" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/filters"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:background="#EF251F"
+        android:onClick="filtersclick"
+        android:text="filters"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.978"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.071" />
 </androidx.constraintlayout.widget.ConstraintLayout>
