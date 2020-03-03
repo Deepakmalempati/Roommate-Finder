@@ -15,6 +15,7 @@
         <activity android:name=".YourLisitngs" />
         <activity android:name=".SignupActivity" />
         <activity android:name=".NewPostingActivity" />
+        <activity android:name=".detailedinfo" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

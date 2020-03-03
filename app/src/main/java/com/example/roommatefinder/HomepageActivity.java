@@ -5,6 +5,7 @@ import androidx.core.view.GestureDetectorCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -88,6 +89,10 @@ public class HomepageActivity extends AppCompatActivity {
         Intent intent = new Intent(this,Filters.class);
         startActivity(intent);
     }
+
+
+
+
 
 
 }

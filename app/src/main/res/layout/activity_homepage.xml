@@ -26,7 +26,6 @@
         android:id="@+id/homeRV"
         android:layout_width="396dp"
         android:layout_height="525dp"
-        android:onClick="recyclerclick"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -65,8 +64,8 @@
             app:layout_row="0" />
 
         <Button
-            android:id="@+id/profileBTN"
-            android:layout_width="100dp"
+            android:id="@+id/contactBTN"
+            android:layout_width="110dp"
             android:layout_height="50dp"
             android:background="#EF251F"
             android:onClick="profileclick"
