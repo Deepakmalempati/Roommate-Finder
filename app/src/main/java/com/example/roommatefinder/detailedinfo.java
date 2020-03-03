@@ -1,31 +1,26 @@
 package com.example.roommatefinder;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.TextView;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 public class detailedinfo extends AppCompatActivity {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.detailedinfo);
+        setContentView(R.layout.activity_detailedinfo);
     }
 
-
-    public void homeBTNclick(View view){
-        Intent intent = new Intent(this,HomepageActivity.class);
+    public void profilenameclick(View v){
+        Intent intent = new Intent(this,RoommateInfoActivity.class);
         startActivity(intent);
     }
 
-    public void ContactBTNclick(View view){
-
+    public void Homeclick(View v){
+        Intent intent = new Intent(this,HomepageActivity.class);
+        startActivity(intent);
     }
-
-
-
-
-
 }

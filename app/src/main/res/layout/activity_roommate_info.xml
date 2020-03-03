@@ -24,12 +24,12 @@
         android:id="@+id/enterHtypeTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="enter your name"
+        android:text="Jyothsna"
         android:textColor="#000000"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.671"
+        app:layout_constraintHorizontal_bias="0.56"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.343" />
@@ -53,6 +53,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="enter your occupation"
+        android:text="Student"
         android:textColor="#000000"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -81,6 +82,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="enter your address"
+        android:text="India"
         android:textColor="#000000"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -108,6 +110,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="enter your email address"
+        android:text="jyo@gmail.com"
         android:textColor="#000000"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -116,23 +119,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.499" />
-
-    <Button
-        android:id="@+id/postBTN"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#F43636"
-        android:text="Back"
-        android:textSize="18sp"
-        android:textColor="#FFFFFF"
-        android:textColorHint="#000000"
-        android:textColorLink="#EF251F"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.43"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.775" />
 
     <TextView
         android:id="@+id/imageTV"
@@ -150,7 +136,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/gridLayout"
-        android:layout_width="409dp"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
