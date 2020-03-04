@@ -18,7 +18,7 @@ public class HomepageActivity extends AppCompatActivity {
     private HomervAdapter choiceadapter = null;
     private RecyclerView choiceRV= null;
     private GestureDetectorCompat detector = null;
-    // We need a gesture listener
+    // We need a gesture listenr
 
     private class RecyclerViewOnGestureListener extends GestureDetector.SimpleOnGestureListener {
 
