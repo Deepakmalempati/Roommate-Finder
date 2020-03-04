@@ -8,7 +8,7 @@
         android:id="@+id/textView3"
         android:layout_width="220dp"
         android:layout_height="66dp"
-        android:layout_marginLeft="20dp"
+        android:layout_marginLeft="30dp"
         android:gravity="center"
 
         android:text="Filters"
