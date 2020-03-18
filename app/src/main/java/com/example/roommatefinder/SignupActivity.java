@@ -59,10 +59,14 @@ public class SignupActivity extends AppCompatActivity {
 
         else {
             Intent intent = new Intent(this, MainActivity.class);
+
+            intent.putExtra("profiledata",nameET.getText().toString());
             startActivity(intent);
+
             Toast toast = Toast.makeText(getApplicationContext(), "Signup Successful. please login!", Toast.LENGTH_LONG);
             toast.show();
         }
+
     }
 
 }

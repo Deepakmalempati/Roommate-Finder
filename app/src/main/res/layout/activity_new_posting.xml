@@ -10,15 +10,15 @@
         android:id="@+id/htypeTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="House Type:"
+        android:text="Title:"
         android:textColor="#000000"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.185"
+        app:layout_constraintHorizontal_bias="0.314"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.289" />
+        app:layout_constraintVertical_bias="0.285" />
 
     <TextView
         android:id="@+id/amenitiesTV"
@@ -185,7 +185,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/housetypeET"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -199,7 +199,7 @@
         app:layout_constraintVertical_bias="0.282" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/amenitiesET"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -213,12 +213,12 @@
         app:layout_constraintVertical_bias="0.364" />
 
     <EditText
-        android:id="@+id/editText4"
+        android:id="@+id/priceET"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="price"
-        android:inputType="textPersonName"
+        android:inputType="number"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.919"
@@ -227,7 +227,7 @@
         app:layout_constraintVertical_bias="0.527" />
 
     <EditText
-        android:id="@+id/editText5"
+        android:id="@+id/roominfoET"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -241,12 +241,12 @@
         app:layout_constraintVertical_bias="0.612" />
 
     <EditText
-        android:id="@+id/editText6"
+        android:id="@+id/phnoET"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Phone number"
-        android:inputType="textPersonName"
+        android:inputType="number"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.919"
@@ -255,7 +255,7 @@
         app:layout_constraintVertical_bias="0.688" />
 
     <RadioButton
-        android:id="@+id/radioButton"
+        android:id="@+id/gendermaleRB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Male"
@@ -267,7 +267,7 @@
         app:layout_constraintVertical_bias="0.447" />
 
     <RadioButton
-        android:id="@+id/radioButton2"
+        android:id="@+id/genderfemaleRB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Female"
