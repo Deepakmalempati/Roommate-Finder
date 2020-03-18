@@ -95,9 +95,10 @@
         app:layout_constraintVertical_bias="0.145" />
 
     <TextView
-        android:id="@+id/imageTV"
+        android:id="@+id/uploadimageTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="uploadimage"
         android:text="Upload Images"
         android:textColor="#EF251F"
         android:textSize="20sp"
