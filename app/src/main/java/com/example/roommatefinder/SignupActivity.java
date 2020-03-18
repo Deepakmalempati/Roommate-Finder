@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.Toast;
 
 public class SignupActivity extends AppCompatActivity {
@@ -17,14 +18,51 @@ public class SignupActivity extends AppCompatActivity {
 
     public void signupclick(View view){
 
-        
+        EditText nameET = findViewById(R.id.nameET);
+        EditText emailET = findViewById(R.id.emailET);
+        EditText phnoET = findViewById(R.id.phnoET);
+        EditText passwordET = findViewById(R.id.passwordET);
+        EditText repasswordET = findViewById(R.id.repasswordET);
+
+        if(nameET.getText().toString().isEmpty()){
+            nameET.setError("Name is requried");
+        }
+
+        else if(emailET.getText().toString().isEmpty()){
+            emailET.setError("Email is required");
+        }
+        else if(phnoET.getText().toString().isEmpty()){
+            phnoET.setError("Phone number is required");
+        }
+        else if(passwordET.getText().toString().isEmpty()){
+            passwordET.setError("enter a password");
+        }
+        else if(repasswordET.getText().toString().isEmpty()){
+            repasswordET.setError("confirm password");
+        }
+
+        else if(!(passwordET.getText().toString().equals(repasswordET.getText().toString()))){
+            passwordET.setError("Password does not match");
+            repasswordET.setError("Password does not match");
+        }
+        else if(!(emailET.getText().toString().contains("@"))){
+            emailET.setError("Enter a valid email");
+        }
+        else if(phnoET.getText().toString().length()<10){
+            phnoET.setError("Enter a valid phone number");
+        }
+        else if(passwordET.getText().toString().length()<8){
+            passwordET.setError("Password must be 8 characters");
+        }
 
 
+
+        else {
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
-        Toast toast=Toast.makeText(getApplicationContext(),"Signup Successful. please login!", Toast.LENGTH_LONG);
-        toast.show();
-
+            Toast toast = Toast.makeText(getApplicationContext(), "Signup Successful. please login!", Toast.LENGTH_LONG);
+            toast.show();
+        }
     }
 
 }

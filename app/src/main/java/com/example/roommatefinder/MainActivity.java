@@ -33,8 +33,8 @@ public class MainActivity extends AppCompatActivity {
         EditText passwordET = findViewById(R.id.passwordET);
 
         if(emailET.getText().toString().equals("") || passwordET.getText().toString().equals("")){
-            Toast toast=Toast.makeText(getApplicationContext(),"please enter email and password", Toast.LENGTH_LONG);
-            toast.show();
+            emailET.setError("enter email");
+            passwordET.setError("Enter password");
         }
         else if(emailET.getText().toString().equals("deepak@gmail.com") && passwordET.getText().toString().equals("deepak")){
             Intent intent = new Intent(this,HomepageActivity.class);
