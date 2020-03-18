@@ -18,6 +18,9 @@ public class NewPostingActivity extends AppCompatActivity {
 
 
     public void postBTNclick(View v){
+
+
+
         Button postBTN = findViewById(R.id.postBTN);
         Intent ini= new Intent(this,HomepageActivity.class);
         startActivity(ini);

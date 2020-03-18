@@ -1,17 +1,18 @@
 package com.example.roommatefinder;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.os.Handler;
+import android.util.Log;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
+import android.view.View;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GestureDetectorCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Context;
-import android.content.Intent;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.GestureDetector;
-import android.view.MotionEvent;
-import android.view.View;
 
 public class HomepageActivity extends AppCompatActivity {
 
@@ -49,6 +50,7 @@ public class HomepageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homepage);
 
+
         choiceadapter= new HomervAdapter();
         choiceRV = findViewById(R.id.homeRV);
         choiceRV.setAdapter(choiceadapter);
@@ -65,7 +67,10 @@ public class HomepageActivity extends AppCompatActivity {
                                                         return detector.onTouchEvent(e);
                                                     }
                                                 });
+
+
     }
+
 
     public void newlistingclick(View view){
         Intent intent = new Intent(this,NewPostingActivity.class);
