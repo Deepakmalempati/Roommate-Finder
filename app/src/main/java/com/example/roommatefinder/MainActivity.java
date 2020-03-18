@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,8 +28,23 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void loginclick(View view){
-        Intent intent = new Intent(this,HomepageActivity.class);
-        startActivity(intent);
+
+        EditText emailET = findViewById(R.id.emailET);
+        EditText passwordET = findViewById(R.id.passwordET);
+
+        if(emailET.getText().toString().equals("") || passwordET.getText().toString().equals("")){
+            Toast toast=Toast.makeText(getApplicationContext(),"please enter email and password", Toast.LENGTH_LONG);
+            toast.show();
+        }
+        else if(emailET.getText().toString().equals("deepak@gmail.com") && passwordET.getText().toString().equals("deepak")){
+            Intent intent = new Intent(this,HomepageActivity.class);
+            startActivity(intent);
+        }
+        else {
+            Toast toast=Toast.makeText(getApplicationContext(),"invalid email and password", Toast.LENGTH_LONG);
+            toast.show();
+        }
+
     }
 
 

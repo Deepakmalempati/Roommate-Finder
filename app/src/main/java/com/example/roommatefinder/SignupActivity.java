@@ -17,6 +17,9 @@ public class SignupActivity extends AppCompatActivity {
 
     public void signupclick(View view){
 
+        
+
+
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
         Toast toast=Toast.makeText(getApplicationContext(),"Signup Successful. please login!", Toast.LENGTH_LONG);
