@@ -13,7 +13,7 @@ public class detailedinfo extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detailedinfo);
     }
-
+  // intents for the activity
     public void profilenameclick(View v){
         Intent intent = new Intent(this,RoommateInfoActivity.class);
         startActivity(intent);

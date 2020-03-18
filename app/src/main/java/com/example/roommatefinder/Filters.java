@@ -19,8 +19,8 @@ public class Filters extends AppCompatActivity {
 
         Intent intent = new Intent(this, HomepageActivity.class);
         startActivity(intent);
-        Toast toast=Toast.makeText(getApplicationContext(),"Filters Applied Successfully!", Toast.LENGTH_LONG);
-        toast.show();
+        Toast bread=Toast.makeText(getApplicationContext(),"Filters Applied Successfully!", Toast.LENGTH_LONG);
+        bread.show();
 
     }
 }
