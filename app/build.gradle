@@ -29,8 +29,13 @@ dependencies {
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
     implementation 'androidx.gridlayout:gridlayout:1.0.0'
     implementation 'org.jetbrains:annotations-java5:15.0'
+    implementation 'androidx.legacy:legacy-support-core-utils:1.0.0'
+    implementation 'com.android.support:appcompat-v7:29.0.3'
 
 
 
 
+}
+dependencies {
+    implementation "androidx.viewpager2:viewpager2:1.0.0"
 }

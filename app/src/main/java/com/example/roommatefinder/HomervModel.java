@@ -1,44 +1,76 @@
 package com.example.roommatefinder;
 
-import java.util.ArrayList;
+//import java.util.ArrayList;
+//
+//public class HomervModel {
+//    public static class ChoiceInfo{
+//        public String title;
+//        public String location;
+//        public int cost;
+//
+//
+//        public ChoiceInfo(String title, String location,int cost ){
+//            this.title=title;
+//            this.location = location;
+//            this.cost = cost;
+//        }
+//    }
+//
+//    public ArrayList<HomervModel.ChoiceInfo> choiceList;
+//    private static HomervModel theModel=null;
+//
+//    private HomervModel(){
+//        choiceList=new ArrayList<HomervModel.ChoiceInfo>();
+//        loadModel();
+//    }
+//
+//
+//    public static HomervModel getSingleton(){
+//        if(theModel==null)
+//            theModel=new HomervModel();
+//        return theModel;
+//    }
+//
+//    private void loadModel(){
+//
+//        choiceList.add(new HomervModel.ChoiceInfo("Looking for roommate", "Maryville",290));
+//        choiceList.add(new HomervModel.ChoiceInfo("Room Available", "Kansas city",290));
+//        choiceList.add(new HomervModel.ChoiceInfo("Male Roommate required", "Saint Joseph",290));
+//
+//
+//    }
+//
+//
+//}
 
-public class HomervModel {
-    public static class ChoiceInfo{
-        public String title;
-        public String location;
-        public int cost;
-
-
-        public ChoiceInfo(String title, String location,int cost ){
-            this.title=title;
-            this.location = location;
-            this.cost = cost;
-        }
+import java.io.Serializable;
+public class HomervModel implements Serializable {
+    private String name;
+    private String email;
+    private int images;
+    public HomervModel(String name, String email,int images) {
+        this.name = name;
+        this.email = email;
+        this.images = images;
+    }
+    public String getName() {
+        return name;
     }
 
-    public ArrayList<HomervModel.ChoiceInfo> choiceList;
-    private static HomervModel theModel=null;
-
-    private HomervModel(){
-        choiceList=new ArrayList<HomervModel.ChoiceInfo>();
-        loadModel();
+    public void setName(String name) {
+        this.name = name;
+    }
+    public String getEmail() {
+        return email;
+    }
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-
-    public static HomervModel getSingleton(){
-        if(theModel==null)
-            theModel=new HomervModel();
-        return theModel;
+    public int getImages() {
+        return images;
     }
-
-    private void loadModel(){
-
-        choiceList.add(new HomervModel.ChoiceInfo("Looking for roommate", "Maryville",290));
-        choiceList.add(new HomervModel.ChoiceInfo("Room Available", "Kansas city",290));
-        choiceList.add(new HomervModel.ChoiceInfo("Male Roommate required", "Saint Joseph",290));
-
-
+    public void setImages(int images) {
+        this.images = images;
     }
-
-
 }

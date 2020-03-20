@@ -12,13 +12,16 @@
         android:theme="@style/AppTheme">
         <activity android:name=".detailedinfo"></activity>
         <activity android:name=".Filters" />
-        <activity android:name=".HomepageActivity" />
+        <activity android:name=".HomepageActivity"
+            android:theme="@style/AppTheme"/>
         <activity android:name=".ProfileActivity" />
         <activity android:name=".YourLisitngs" />
         <activity android:name=".SignupActivity" />
         <activity android:name=".NewPostingActivity" />
         <activity android:name=".RoommateInfoActivity" />
-        <activity android:name=".MainActivity">
+
+        <activity android:name=".MainActivity"
+            android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
