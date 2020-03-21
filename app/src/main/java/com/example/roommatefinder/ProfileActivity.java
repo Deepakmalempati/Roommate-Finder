@@ -72,6 +72,10 @@ public class ProfileActivity extends AppCompatActivity {
         nameenterTV.requestFocus();
     }
 
+    public void SaveBTNclick(View view){
+        nameenterTV.setText(nameenterTV.getText().toString());
+    }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data){
         super.onActivityResult(requestCode, resultCode, data);
