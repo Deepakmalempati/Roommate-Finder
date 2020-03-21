@@ -3,12 +3,9 @@ package com.example.roommatefinder;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.util.Log;
-import android.view.GestureDetector;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -20,17 +17,22 @@ import android.widget.SearchView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GestureDetectorCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
+import com.google.android.gms.common.api.Status;
+import com.google.android.libraries.places.api.Places;
+import com.google.android.libraries.places.api.model.Place;
+import com.google.android.libraries.places.api.net.PlacesClient;
+import com.google.android.libraries.places.widget.AutocompleteSupportFragment;
+import com.google.android.libraries.places.widget.listener.PlaceSelectionListener;
+
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 
@@ -41,11 +43,14 @@ public class HomepageActivity extends FragmentActivity {
     private ViewPager2 viewPager;
     private FragmentStateAdapter pagerAdapter;
 
-//    private HomervAdapter choiceadapter = null;
-//    private RecyclerView choiceRV= null;
+    //for google place autocomplete
+    String TAG = "placeautocomplete";
+    TextView txtView;
+
 
     String names[] = {"Looking for Roommate","Room for sharing","College Dorms","Friendly Roommate"};
     String emails[] = {"Maryville","Kansas city","Omaha","Kansas City"};
+    String cost[] = {"$250","$500","$300","$150"};
     int images[] = {R.drawable.bedroom2_2,R.drawable.bedroom2_2,R.drawable.bedroom2_2,R.drawable.bedroom2_2,R.drawable.bedroom2_2};
     List<HomervModel> itemsModelList = new ArrayList<>();
     ListView listView;
@@ -84,8 +89,45 @@ public class HomepageActivity extends FragmentActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homepage);
-        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+       // Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
        // setSupportActionBar(myToolbar);
+
+        // for gogole ac
+
+        // Initialize Places.
+        Places.initialize(getApplicationContext(), "AIzaSyCTOZyPFWFf-Zo0aJUGZ9Zdxge-Ki4QktY");
+        // Create a new Places client instance.
+        PlacesClient placesClient = Places.createClient(this);
+
+        // Initialize the AutocompleteSupportFragment.
+        AutocompleteSupportFragment autocompleteFragment = (AutocompleteSupportFragment)
+                getSupportFragmentManager().findFragmentById(R.id.autocomplete_fragment);
+
+        // Specify the types of place data to return.
+        autocompleteFragment.setPlaceFields(Arrays.asList(Place.Field.ID, Place.Field.NAME));
+
+        final String[] array = new String[10];
+        array[0]="Hyderabad";
+        array[1]= "Gachibowli";
+
+        // Set up a PlaceSelectionListener to handle the response.
+        autocompleteFragment.setOnPlaceSelectedListener(new PlaceSelectionListener() {
+            @Override
+            public void onPlaceSelected(Place place) {
+                // TODO: Get info about the selected place.
+                //txtView.setText(place.getName());
+                Intent intent = new Intent(HomepageActivity.this,SearchResults.class);
+                startActivity(intent);
+
+                Log.i(TAG, "Place: " + place.getName() + ", " + place.getId());
+            }
+
+            @Override
+            public void onError(Status status) {
+                // TODO: Handle the error.
+                Log.i(TAG, "An error occurred: " + status);
+            }
+        });
 
         //listview search code
         listView = findViewById(R.id.listview);
@@ -93,7 +135,7 @@ public class HomepageActivity extends FragmentActivity {
 
         for (int i = 0; i < names.length; i++) {
 
-            HomervModel itemsModel = new HomervModel(names[i], emails[i], images[i]);
+            HomervModel itemsModel = new HomervModel(names[i], emails[i], cost[i], images[i]);
 
             itemsModelList.add(itemsModel);
 
@@ -277,6 +319,7 @@ public class HomepageActivity extends FragmentActivity {
 
             titleTV.setText(itemsModelListFiltered.get(position).getName());
             locationTV.setText(itemsModelListFiltered.get(position).getEmail());
+            costTV.setText(itemsModelListFiltered.get(position).getcost());
             imageView.setImageResource(images[position]);
 
             view.setOnClickListener(new View.OnClickListener() {

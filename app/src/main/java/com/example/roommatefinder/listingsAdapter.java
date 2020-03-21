@@ -31,7 +31,7 @@ public class listingsAdapter extends RecyclerView.Adapter<listingsAdapter.Choice
         TextView choicetv = holder.LLviewreference.findViewById(R.id.lisitingtitleTV);
         choicetv.setText(choicemodel.choiceList.get(position).title);
 
-        TextView durationTV =holder.LLviewreference.findViewById(R.id.locationTV);
+        TextView durationTV =holder.LLviewreference.findViewById(R.id.titleTV);
         durationTV.setText(choicemodel.choiceList.get(position).location);
 //        TextView costTV =holder.LLviewreference.findViewById(R.id.costTV);
 //        costTV.setText(choicemodel.choiceList.get(position).cost);

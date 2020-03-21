@@ -6,7 +6,7 @@ android {
     defaultConfig {
         applicationId "com.example.roommatefinder"
         minSdkVersion 21
-        targetSdkVersion 29
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -31,11 +31,20 @@ dependencies {
     implementation 'org.jetbrains:annotations-java5:15.0'
     implementation 'androidx.legacy:legacy-support-core-utils:1.0.0'
     implementation 'com.android.support:appcompat-v7:29.0.3'
-
-
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'com.google.android.libraries.places:places:1.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    implementation 'com.google.android.gms:play-services-places:16.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
 
 
 }
 dependencies {
     implementation "androidx.viewpager2:viewpager2:1.0.0"
+    implementation 'androidx.cardview:cardview:1.0.0'
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:+'
+    implementation 'androidx.constraintlayout:constraintlayout:+'
 }

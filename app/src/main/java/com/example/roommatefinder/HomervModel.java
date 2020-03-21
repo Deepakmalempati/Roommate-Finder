@@ -47,11 +47,20 @@ import java.io.Serializable;
 public class HomervModel implements Serializable {
     private String name;
     private String email;
+    private String cost;
     private int images;
-    public HomervModel(String name, String email,int images) {
+    public HomervModel(String name, String email,String cost, int images) {
         this.name = name;
         this.email = email;
+        this.cost = cost;
         this.images = images;
+    }
+    public String getcost() {
+        return cost;
+    }
+
+    public void setcost(String cost) {
+        this.cost = cost;
     }
     public String getName() {
         return name;
