@@ -7,12 +7,19 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.text.InputType;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 public class ProfileActivity extends AppCompatActivity {
+    EditText nameenterTV;
+    EditText genderenterTV;
+    EditText dateenterTV;
+    EditText cityenterTV;
+    EditText phoneenterTV;
 
     ImageView imageView;
     Button button;
@@ -24,6 +31,12 @@ public class ProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
         imageView = (ImageView)findViewById(R.id.imageView);
+        nameenterTV = (EditText) findViewById(R.id.nameenterTV);
+        genderenterTV = (EditText) findViewById(R.id.genderenterTV);
+        dateenterTV = (EditText) findViewById(R.id.dateenterTV);
+        cityenterTV = (EditText) findViewById(R.id.cityenterTV);
+        phoneenterTV = (EditText) findViewById(R.id.phoneenterTV);
+
     }
 
     public void profileclick(View view){
@@ -40,6 +53,24 @@ public class ProfileActivity extends AppCompatActivity {
         startActivityForResult(gallery, PICK_IMAGE);
     }
 
+    public void edit(View view){
+
+        genderenterTV.setFocusableInTouchMode(true);
+        genderenterTV.setCursorVisible(true);
+        genderenterTV.requestFocus();
+        dateenterTV.setFocusableInTouchMode(true);
+        dateenterTV.setCursorVisible(true);
+        dateenterTV.requestFocus();
+        cityenterTV.setFocusableInTouchMode(true);
+        cityenterTV.setCursorVisible(true);
+        cityenterTV.requestFocus();
+        phoneenterTV.setFocusableInTouchMode(true);
+        phoneenterTV.setCursorVisible(true);
+        phoneenterTV.requestFocus();
+        nameenterTV.setFocusableInTouchMode(true);
+        nameenterTV.setCursorVisible(true);
+        nameenterTV.requestFocus();
+    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data){
@@ -50,5 +81,4 @@ public class ProfileActivity extends AppCompatActivity {
             imageView.setBackground(getDrawable(R.color.white));
         }
     }
-
 }
