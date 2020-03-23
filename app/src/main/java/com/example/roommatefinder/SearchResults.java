@@ -27,7 +27,7 @@ public class SearchResults extends AppCompatActivity {
     String names[] = {"Looking for Roommate","Room for sharing","College Dorms","Friendly Roommate"};
     String emails[] = {"Maryville","Kansas city","Omaha","Kansas City"};
     String cost[] = {"$250","$500","$300","$150"};
-    int images[] = {R.drawable.bedroom2_2,R.drawable.bedroom2_2,R.drawable.bedroom2_2,R.drawable.bedroom2_2,R.drawable.bedroom2_2};
+    int images[] = {R.drawable.bedroom2_2,R.drawable.bedroom2_2,R.drawable.bedroom2_2,R.drawable.bedroom2_2,};
     List<DetailedSearchModel> itemsModelList = new ArrayList<>();
     ListView listView;
 
@@ -43,9 +43,9 @@ public class SearchResults extends AppCompatActivity {
 
 
         for(int i = 0;i<names.length;i++){
-            names[names.length-1]=NewPostingActivity.gettitle();
-            emails[emails.length-1]=NewPostingActivity.getplace();
-            cost[cost.length-1]=NewPostingActivity.getprice();
+//            names[names.length-1]=NewPostingActivity.gettitle();
+//            emails[emails.length-1]=NewPostingActivity.getplace();
+//            cost[cost.length-1]=NewPostingActivity.getprice();
             DetailedSearchModel itemsModel = new DetailedSearchModel(names[i],emails[i],cost[i],images[i]);
 
             itemsModelList.add(itemsModel);
