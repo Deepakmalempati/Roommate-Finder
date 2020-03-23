@@ -83,9 +83,7 @@ public class HomepageActivity extends FragmentActivity {
         // Specify the types of place data to return.
         autocompleteFragment.setPlaceFields(Arrays.asList(Place.Field.ID, Place.Field.NAME));
 
-        final String[] array = new String[10];
-        array[0]="Hyderabad";
-        array[1]= "Gachibowli";
+
 
         // Set up a PlaceSelectionListener to handle the response.
         autocompleteFragment.setOnPlaceSelectedListener(new PlaceSelectionListener() {
@@ -118,9 +116,9 @@ public class HomepageActivity extends FragmentActivity {
 
         }
 
-        customAdapter = new CustomAdapter(itemsModelList, this);
+       customAdapter = new CustomAdapter(itemsModelList, this);
 
-        listView.setAdapter(customAdapter);
+      listView.setAdapter(customAdapter);
 
         // Instantiate a ViewPager2 and a PagerAdapter.
         viewPager = findViewById(R.id.pager);
@@ -185,57 +183,7 @@ public void newlistingclick(View view){
 
 
 
-    // code for list view and search
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-
-        getMenuInflater().inflate(R.menu.search_menu,menu);
-
-        MenuItem menuItem = menu.findItem(R.id.searchView);
-
-        SearchView searchView = (SearchView) menuItem.getActionView();
-
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-                return false;
-            }
-
-            @Override
-            public boolean onQueryTextChange(String newText) {
-
-                Log.e("Main"," data search"+newText);
-
-                customAdapter.getFilter().filter(newText);
-
-
-
-                return true;
-            }
-        });
-
-
-        return true;
-
-    }
-
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-
-        int id = item.getItemId();
-
-
-        if(id == R.id.searchView){
-
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
-
-
-    public class CustomAdapter extends BaseAdapter implements Filterable {
+    public class CustomAdapter extends BaseAdapter {
 
         private List<HomervModel> itemsModelsl;
         private List<HomervModel> itemsModelListFiltered;
@@ -264,7 +212,7 @@ public void newlistingclick(View view){
 
         @Override
         public View getView(final int position, View convertView, ViewGroup parent) {
-            View view = getLayoutInflater().inflate(R.layout.homepagerecview,null);
+            View view = getLayoutInflater().inflate(R.layout.homepagerecview, null);
 
 
             TextView titleTV = view.findViewById(R.id.titleTV);
@@ -280,8 +228,8 @@ public void newlistingclick(View view){
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Log.e("main activity","item clicked");
-                    startActivity(new Intent(HomepageActivity.this,detailedinfo.class).putExtra("items",itemsModelListFiltered.get(position)));
+                    Log.e("main activity", "item clicked");
+                    startActivity(new Intent(HomepageActivity.this, detailedinfo.class).putExtra("items", itemsModelListFiltered.get(position)));
 
                 }
             });
@@ -290,45 +238,5 @@ public void newlistingclick(View view){
         }
 
 
-
-        @Override
-        public Filter getFilter() {
-            Filter filter = new Filter() {
-                @Override
-                protected FilterResults performFiltering(CharSequence constraint) {
-
-                    FilterResults filterResults = new FilterResults();
-                    if(constraint == null || constraint.length() == 0){
-                        filterResults.count = itemsModelsl.size();
-                        filterResults.values = itemsModelsl;
-
-                    }else{
-                        List<HomervModel> resultsModel = new ArrayList<>();
-                        String searchStr = constraint.toString().toLowerCase();
-
-                        for(HomervModel itemsModel:itemsModelsl){
-                            if(itemsModel.getName().contains(searchStr) || itemsModel.getEmail().contains(searchStr)){
-                                resultsModel.add(itemsModel);
-                                filterResults.count = resultsModel.size();
-                                filterResults.values = resultsModel;
-                            }
-                        }
-
-
-                    }
-
-                    return filterResults;
-                }
-                @Override
-                protected void publishResults(CharSequence constraint, FilterResults results) {
-
-                    itemsModelListFiltered = (List<HomervModel>) results.values;
-                    notifyDataSetChanged();
-
-                }
-            };
-            return filter;
-        }
     }
-
 }
