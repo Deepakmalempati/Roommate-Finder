@@ -13,28 +13,32 @@
 
         android:text="Filters"
         android:textColor="#EF251F"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        />
 
     <CheckBox
         android:id="@+id/checkBox"
         android:layout_width="168dp"
         android:layout_height="45dp"
         android:layout_gravity="center"
-        android:text="Price: low to high" />
+        android:text="Price: low to high"
+        android:onClick="select"/>
 
     <CheckBox
         android:id="@+id/checkBox2"
         android:layout_width="168dp"
         android:layout_height="45dp"
         android:layout_gravity="center"
-        android:text="nearest location" />
+        android:text="nearest location"
+        android:onClick="select"/>
 
     <CheckBox
         android:id="@+id/checkBox3"
         android:layout_width="168dp"
         android:layout_height="45dp"
         android:layout_gravity="center"
-        android:text="Male" />
+        android:text="Male"
+        android:onClick="select"/>
 
     <CheckBox
         android:id="@+id/checkBox4"
@@ -42,14 +46,16 @@
         android:layout_height="45dp"
         android:layout_gravity="center"
         android:baselineAligned="false"
-        android:text="Female" />
+        android:text="Female"
+        android:onClick="select"/>
 
     <CheckBox
         android:id="@+id/checkBox5"
         android:layout_width="168dp"
         android:layout_height="45dp"
         android:layout_gravity="center"
-        android:text="Entire space" />
+        android:text="Entire space"
+        android:onClick="select"/>
 
     <Button
         android:id="@+id/button"
