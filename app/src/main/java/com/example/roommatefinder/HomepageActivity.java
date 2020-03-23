@@ -71,8 +71,8 @@ public class HomepageActivity extends FragmentActivity {
         // for gogole ac
 
         // Initialize Places.
-        String consumerKey = BuildConfig.CONSUMER_KEY;
-        Places.initialize(getApplicationContext(), consumerKey);
+        String secretValue = getString(R.string.google_places_api_key);
+        Places.initialize(getApplicationContext(), secretValue);
         // Create a new Places client instance.
         PlacesClient placesClient = Places.createClient(this);
 

@@ -49,16 +49,3 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:+'
 }
 
-def apikeyPropertiesFile = rootProject.file("api.properties")
-def apikeyProperties = new Properties()
-apikeyProperties.load(new FileInputStream(apikeyPropertiesFile))
-
-android {
-
-    defaultConfig {
-
-        // should correspond to key/value pairs inside the file
-        buildConfigField("String", "CONSUMER_KEY", apikeyProperties['CONSUMER_KEY'])
-
-    }
-}
