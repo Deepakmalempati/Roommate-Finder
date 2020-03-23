@@ -59,29 +59,6 @@ public class HomepageActivity extends FragmentActivity {
     private GestureDetectorCompat detector = null;
     // We need a gesture listenr
 
-//    private class RecyclerViewOnGestureListener extends GestureDetector.SimpleOnGestureListener {
-//
-//        @Override
-//        public boolean onSingleTapConfirmed(MotionEvent e) {
-//
-//            View view = choiceRV.findChildViewUnder(e.getX(), e.getY());
-//            if (view != null) {
-//                RecyclerView.ViewHolder holder = choiceRV.getChildViewHolder(view);
-//                if (holder instanceof HomervAdapter.ChoiceViewHolder) {
-//                    int position = holder.getAdapterPosition();
-//                    Log.d("click", "clicked on item "+ position);
-//                    HomervModel model = HomervModel.getSingleton();
-//
-//
-//
-//
-//                    return true;
-//                }
-//            }
-//
-//            return false;
-//        }
-//    }
 
 
 
@@ -89,13 +66,13 @@ public class HomepageActivity extends FragmentActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homepage);
-       // Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
-       // setSupportActionBar(myToolbar);
+
 
         // for gogole ac
 
         // Initialize Places.
-        Places.initialize(getApplicationContext(), "AIzaSyCTOZyPFWFf-Zo0aJUGZ9Zdxge-Ki4QktY");
+        String consumerKey = BuildConfig.CONSUMER_KEY;
+        Places.initialize(getApplicationContext(), consumerKey);
         // Create a new Places client instance.
         PlacesClient placesClient = Places.createClient(this);
 
@@ -150,32 +127,10 @@ public class HomepageActivity extends FragmentActivity {
         pagerAdapter = new ScreenSlidePagerAdapter(this);
         viewPager.setAdapter(pagerAdapter);
 
-//        choiceadapter= new HomervAdapter();
-//        choiceRV = findViewById(R.id.homeRV);
-//        choiceRV.setAdapter(choiceadapter);
-//        RecyclerView.LayoutManager mymanager = new LinearLayoutManager(this);
-//        choiceRV.setLayoutManager(mymanager);
-//        // Make a Listener for taps
-//        detector = new GestureDetectorCompat(this,
-//                new HomepageActivity.RecyclerViewOnGestureListener());
-//// add the listener to the recycler
-//        choiceRV.addOnItemTouchListener(new
-//                                                RecyclerView.SimpleOnItemTouchListener(){
-//                                                    @Override
-//                                                    public boolean onInterceptTouchEvent(RecyclerView rv, MotionEvent e) {
-//                                                        return detector.onTouchEvent(e);
-//                                                    }
-//                                                });
-//
-//
-//    }
+
     }
 
-
-
-
-
-    public void newlistingclick(View view){
+public void newlistingclick(View view){
         Intent intent = new Intent(this,NewPostingActivity.class);
         startActivity(intent);
     }

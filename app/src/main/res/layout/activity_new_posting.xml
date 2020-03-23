@@ -110,10 +110,10 @@
         app:layout_constraintVertical_bias="0.775" />
 
     <TextView
-        android:id="@+id/otherInfoTV"
+        android:id="@+id/cityTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Room Info:"
+        android:text="City:"
         android:textColor="#000000"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -228,11 +228,11 @@
         app:layout_constraintVertical_bias="0.527" />
 
     <EditText
-        android:id="@+id/roominfoET"
+        android:id="@+id/cityET"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Other room info"
+        android:hint="enter place name"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

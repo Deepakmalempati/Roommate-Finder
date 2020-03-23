@@ -17,6 +17,19 @@ public class NewPostingActivity extends AppCompatActivity {
     private static final int Image_Capture_Code = 1;
     private ImageView imgCapture;
 
+    private static String title;
+    private static String place;
+    private static String price;
+    public static String gettitle() {
+        return title;
+    }
+    public static String getplace() {
+        return place;
+    }
+    public static String getprice() {
+        return price;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +57,12 @@ public class NewPostingActivity extends AppCompatActivity {
             phnoET.setError("Phone number incorrect");
         }
         else {
+            EditText titleET = findViewById(R.id.housetypeET);
+            title = titleET.getText().toString();
+            EditText placeET = findViewById(R.id.cityET);
+            place = placeET.getText().toString();
+
+            price = priceET.getText().toString();
             Intent ini = new Intent(this, HomepageActivity.class);
             startActivity(ini);
             Toast toast = Toast.makeText(getApplicationContext(), "Posted Successfully", Toast.LENGTH_LONG);
@@ -65,6 +84,7 @@ public class NewPostingActivity extends AppCompatActivity {
    }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == Image_Capture_Code) {
             if (resultCode == RESULT_OK) {
                 Bitmap bp = (Bitmap) data.getExtras().get("data");

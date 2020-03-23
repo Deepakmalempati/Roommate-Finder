@@ -171,6 +171,7 @@
             android:layout_width="210dp"
             android:layout_height="50dp"
             android:background="#EF251F"
+            android:onClick="contactHost"
             android:text="Contact Host"
             android:textColor="#FFFFFF"
             android:textSize="18sp"

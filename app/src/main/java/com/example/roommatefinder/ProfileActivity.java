@@ -53,28 +53,28 @@ public class ProfileActivity extends AppCompatActivity {
         startActivityForResult(gallery, PICK_IMAGE);
     }
 
-    public void edit(View view){
-
-        genderenterTV.setFocusableInTouchMode(true);
-        genderenterTV.setCursorVisible(true);
-        genderenterTV.requestFocus();
-        dateenterTV.setFocusableInTouchMode(true);
-        dateenterTV.setCursorVisible(true);
-        dateenterTV.requestFocus();
-        cityenterTV.setFocusableInTouchMode(true);
-        cityenterTV.setCursorVisible(true);
-        cityenterTV.requestFocus();
-        phoneenterTV.setFocusableInTouchMode(true);
-        phoneenterTV.setCursorVisible(true);
-        phoneenterTV.requestFocus();
-        nameenterTV.setFocusableInTouchMode(true);
-        nameenterTV.setCursorVisible(true);
-        nameenterTV.requestFocus();
-    }
-
-    public void SaveBTNclick(View view){
-        nameenterTV.setText(nameenterTV.getText().toString());
-    }
+//    public void edit(View view){
+//
+//        genderenterTV.setFocusableInTouchMode(true);
+//        genderenterTV.setCursorVisible(true);
+//        genderenterTV.requestFocus();
+//        dateenterTV.setFocusableInTouchMode(true);
+//        dateenterTV.setCursorVisible(true);
+//        dateenterTV.requestFocus();
+//        cityenterTV.setFocusableInTouchMode(true);
+//        cityenterTV.setCursorVisible(true);
+//        cityenterTV.requestFocus();
+//        phoneenterTV.setFocusableInTouchMode(true);
+//        phoneenterTV.setCursorVisible(true);
+//        phoneenterTV.requestFocus();
+//        nameenterTV.setFocusableInTouchMode(true);
+//        nameenterTV.setCursorVisible(true);
+//        nameenterTV.requestFocus();
+//    }
+//
+//    public void SaveBTNclick(View view){
+//        nameenterTV.setText(nameenterTV.getText().toString());
+//    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data){

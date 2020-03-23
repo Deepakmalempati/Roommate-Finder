@@ -12,3 +12,5 @@
 /captures
 .externalNativeBuild
 .cxx
+/.api.properties
+/.RoommateFinder\app\src\main\res\values\secrets.xml
