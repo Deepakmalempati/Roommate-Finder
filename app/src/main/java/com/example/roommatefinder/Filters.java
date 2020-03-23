@@ -53,7 +53,7 @@ public class Filters extends AppCompatActivity {
 
     public void applyfiltersclick(View view){
 
-        Intent intent = new Intent(this, HomepageActivity.class);
+        Intent intent = new Intent(this, SearchResults.class);
         startActivity(intent);
         Toast bread=Toast.makeText(getApplicationContext(),"Filters Applied Successfully!", Toast.LENGTH_LONG);
         bread.show();

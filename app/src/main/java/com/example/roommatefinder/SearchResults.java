@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.ImageView;
@@ -177,7 +178,7 @@ public class SearchResults extends AppCompatActivity {
                         String searchStr = constraint.toString().toLowerCase();
 
                         for(DetailedSearchModel itemsModel:itemsModelsl){
-                            if(itemsModel.getName().contains(searchStr) || itemsModel.getEmail().contains(searchStr)){
+                            if(itemsModel.getName().contains(searchStr)){
                                 resultsModel.add(itemsModel);
                                 filterResults.count = resultsModel.size();
                                 filterResults.values = resultsModel;
@@ -201,4 +202,11 @@ public class SearchResults extends AppCompatActivity {
         }
     }
 
+
+
+    public void flitersclick(View view){
+        Button filtersBTN = findViewById(R.id.filters);
+        Intent intent = new Intent(this, Filters.class);
+        startActivity(intent);
+    }
 }
