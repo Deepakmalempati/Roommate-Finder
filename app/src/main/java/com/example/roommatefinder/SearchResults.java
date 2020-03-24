@@ -26,7 +26,7 @@ import java.util.List;
 public class SearchResults extends AppCompatActivity {
 
     String names[] = {"Looking for Roommate","Room for sharing","College Dorms","Friendly Roommate"};
-    String emails[] = {"Maryville","Kansas city","Omaha","Kansas City"};
+    String emails[] = {"Maryville","New york","Omaha","Kansas City"};
     String cost[] = {"$250","$500","$300","$150"};
     int images[] = {R.drawable.bedroom2_2,R.drawable.bedroom2_2,R.drawable.bedroom2_2,R.drawable.bedroom2_2,};
     List<DetailedSearchModel> itemsModelList = new ArrayList<>();
@@ -125,6 +125,7 @@ public class SearchResults extends AppCompatActivity {
 
         @Override
         public Object getItem(int position) {
+
             return itemsModelListFiltered.get(position);
         }
 
@@ -143,10 +144,26 @@ public class SearchResults extends AppCompatActivity {
             TextView costTV = view.findViewById(R.id.costTV);
             ImageView imageView = view.findViewById(R.id.imageView);
 
-            titleTV.setText(itemsModelListFiltered.get(position).getName());
-            locationTV.setText(itemsModelListFiltered.get(position).getEmail());
-            costTV.setText(itemsModelListFiltered.get(position).getcost());
-            imageView.setImageResource(images[position]);
+
+                if(itemsModelListFiltered.get(position).getEmail().equalsIgnoreCase(HomepageActivity.placename)){
+                    titleTV.setText(itemsModelListFiltered.get(position).getName());
+                    locationTV.setText(itemsModelListFiltered.get(position).getEmail());
+                    costTV.setText(itemsModelListFiltered.get(position).getcost());
+                    imageView.setImageResource(images[position]);
+
+            }
+                else {
+
+
+
+
+                   titleTV.setText("Looking for Female Roommate");
+                    locationTV.setText(HomepageActivity.placename);
+                    costTV.setText("$300");
+                    imageView.setImageResource(R.drawable.bedroom2_2);
+
+                }
+
 
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
