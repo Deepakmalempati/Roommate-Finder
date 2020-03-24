@@ -19,6 +19,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -152,12 +153,18 @@ public class SearchResults extends AppCompatActivity {
                     imageView.setImageResource(images[position]);
 
             }
+                else if(!(itemsModelListFiltered.get(position).getEmail().equalsIgnoreCase(HomepageActivity.placename))){
+                    Toast toast = Toast.makeText(getApplicationContext(), "No listings avaiable in this location", Toast.LENGTH_LONG);
+
+                    toast.show();
+                    titleTV.setText("");
+                    locationTV.setText("");
+                    costTV.setText("");
+                    imageView.setImageResource(R.color.white);
+                }
+
                 else {
-
-
-
-
-                   titleTV.setText("Looking for Female Roommate");
+                    titleTV.setText("Looking for Female Roommate");
                     locationTV.setText(HomepageActivity.placename);
                     costTV.setText("$300");
                     imageView.setImageResource(R.drawable.bedroom2_2);
