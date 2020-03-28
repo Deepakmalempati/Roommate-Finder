@@ -1,8 +1,11 @@
 package com.example.roommatefinder;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.app.Activity;
+import android.app.Fragment;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -14,28 +17,52 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class ProfileActivity extends AppCompatActivity {
-    EditText nameenterTV;
-    EditText genderenterTV;
-    EditText dateenterTV;
-    EditText cityenterTV;
-    EditText phoneenterTV;
+public class ProfileActivity extends AppCompatActivity implements EditProfileFragment.Callback{
 
-    ImageView imageView;
-    Button button;
-    private static final int PICK_IMAGE = 100;
-    Uri imageUri;
+
+
+    private ProfileFragment profilefragment;
+    private EditProfileFragment editprofilefragment;
+
+    @Override
+    public void swapfragment(){
+
+        profilefragment = new ProfileFragment();
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.containerFL, profilefragment, "profileFR");
+        transaction.addToBackStack(null);
+        transaction.commit();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
-        imageView = (ImageView)findViewById(R.id.imageView);
-        nameenterTV = (EditText) findViewById(R.id.nameenterTV);
-        genderenterTV = (EditText) findViewById(R.id.genderenterTV);
-        dateenterTV = (EditText) findViewById(R.id.dateenterTV);
-        cityenterTV = (EditText) findViewById(R.id.cityenterTV);
-        phoneenterTV = (EditText) findViewById(R.id.phoneenterTV);
+
+        if (savedInstanceState != null) {
+            FragmentManager fm = getSupportFragmentManager();
+            profilefragment = (ProfileFragment) fm.findFragmentByTag("profileFR");
+            editprofilefragment = (EditProfileFragment) fm.findFragmentByTag("editprofileFR");
+            return;
+        }
+
+        profilefragment = new ProfileFragment();
+        editprofilefragment = new EditProfileFragment();
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.add(R.id.containerFL, profilefragment, "profileFR");
+        transaction.commit();
+
+        Button editBTN = findViewById(R.id.editBTN);
+        editBTN.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                profilefragment = new ProfileFragment();
+                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                transaction.replace(R.id.containerFL, editprofilefragment, "editprofileFR");
+                transaction.addToBackStack(null);
+                transaction.commit();
+            }
+        });
 
     }
 
@@ -48,41 +75,6 @@ public class ProfileActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void profilepic(View view){
-        Intent gallery = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI);
-        startActivityForResult(gallery, PICK_IMAGE);
-    }
 
-//    public void edit(View view){
-//
-//        genderenterTV.setFocusableInTouchMode(true);
-//        genderenterTV.setCursorVisible(true);
-//        genderenterTV.requestFocus();
-//        dateenterTV.setFocusableInTouchMode(true);
-//        dateenterTV.setCursorVisible(true);
-//        dateenterTV.requestFocus();
-//        cityenterTV.setFocusableInTouchMode(true);
-//        cityenterTV.setCursorVisible(true);
-//        cityenterTV.requestFocus();
-//        phoneenterTV.setFocusableInTouchMode(true);
-//        phoneenterTV.setCursorVisible(true);
-//        phoneenterTV.requestFocus();
-//        nameenterTV.setFocusableInTouchMode(true);
-//        nameenterTV.setCursorVisible(true);
-//        nameenterTV.requestFocus();
-//    }
-//
-//    public void SaveBTNclick(View view){
-//        nameenterTV.setText(nameenterTV.getText().toString());
-//    }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data){
-        super.onActivityResult(requestCode, resultCode, data);
-        if (resultCode == RESULT_OK && requestCode == PICK_IMAGE){
-            imageUri = data.getData();
-            imageView.setImageURI(imageUri);
-            imageView.setBackground(getDrawable(R.color.white));
-        }
-    }
 }
