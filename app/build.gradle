@@ -49,3 +49,11 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:+'
 }
 
+dependencies {
+    implementation 'androidx.legacy:legacy-support-v4:+'
+    implementation 'androidx.lifecycle:lifecycle-extensions:+'
+}
+
+dependencies {
+    implementation 'androidx.legacy:legacy-support-v4:+'
+}

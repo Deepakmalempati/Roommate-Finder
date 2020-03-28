@@ -42,6 +42,7 @@ public class HomepageActivity extends FragmentActivity {
     private static final int NUM_PAGES = 5;
     private ViewPager2 viewPager;
     private FragmentStateAdapter pagerAdapter;
+    public static String placename;
 
     //for google place autocomplete
     String TAG = "placeautocomplete";
@@ -91,6 +92,8 @@ public class HomepageActivity extends FragmentActivity {
             public void onPlaceSelected(Place place) {
                 // TODO: Get info about the selected place.
                 //txtView.setText(place.getName());
+                placename = place.getName();
+
                 Intent intent = new Intent(HomepageActivity.this,SearchResults.class);
                 startActivity(intent);
 

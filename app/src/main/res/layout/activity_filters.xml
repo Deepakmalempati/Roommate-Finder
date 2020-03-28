@@ -24,13 +24,6 @@
         android:text="Price: low to high"
         android:onClick="select"/>
 
-    <CheckBox
-        android:id="@+id/checkBox2"
-        android:layout_width="168dp"
-        android:layout_height="45dp"
-        android:layout_gravity="center"
-        android:text="nearest location"
-        android:onClick="select"/>
 
     <CheckBox
         android:id="@+id/checkBox3"

@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".ProfileActivity">
 
+
     <TextView
         android:id="@+id/yourBTN"
         android:layout_width="wrap_content"
@@ -15,192 +16,20 @@
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.548"
+        app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.121" />
+        app:layout_constraintVertical_bias="0.077" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_weight="1"
-        android:background="@drawable/bedroom2_2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.535"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.224" />
+    <FrameLayout
+        android:id="@+id/containerFL"
+        android:layout_width="match_parent"
+        android:layout_height="550dp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="130dp">
 
-    <TextView
-        android:id="@+id/nameTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Name :"
-        android:textColor="#EF251F"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.354"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.435" />
 
-    <EditText
-        android:id="@+id/nameenterTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@android:color/transparent"
-        android:ems="4"
-        android:inputType="text"
-        android:text="Jyothsna"
-        android:textColor="#000000"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.622"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.435" />
-
-    <TextView
-        android:id="@+id/genderTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Gender :"
-        android:textColor="#EF251F"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.336"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499" />
-
-    <EditText
-        android:id="@+id/genderenterTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@android:color/transparent"
-        android:ems="4"
-        android:inputType="text"
-        android:text="Female"
-        android:textColor="#000000"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.622"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499" />
-
-    <TextView
-        android:id="@+id/DateTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=" Date of birth :"
-        android:textColor="#EF251F"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.234"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.567" />
-
-    <EditText
-        android:id="@+id/dateenterTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@android:color/transparent"
-        android:ems="4"
-        android:inputType="text"
-        android:text="May 26 1997"
-        android:textColor="#000000"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.622"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.567" />
-
-    <TextView
-        android:id="@+id/cityTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="City :"
-        android:textColor="#EF251F"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.384"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.63" />
-
-    <EditText
-        android:id="@+id/cityenterTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@android:color/transparent"
-        android:ems="4"
-        android:inputType="text"
-        android:text="Maryville"
-        android:textColor="#000000"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.622"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.63" />
-
-    <TextView
-        android:id="@+id/phoneTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Phone :"
-        android:textColor="#EF251F"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.349"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.684" />
-
-    <EditText
-        android:id="@+id/phoneenterTV"
-        android:layout_width="124dp"
-        android:layout_height="23dp"
-        android:background="@android:color/transparent"
-        android:ems="4"
-        android:inputType="number"
-        android:text="+33134135161"
-        android:textColor="#000000"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.707"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.685" />
-
-    <TextView
-        android:id="@+id/updateTV"
-        android:layout_width="190dp"
-        android:layout_height="33dp"
-        android:onClick="profilepic"
-        android:text="Update your profile picture"
-        android:textColor="#EF251F"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.529"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.783" />
+    </FrameLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/gridLayout"
@@ -251,28 +80,15 @@
 
     <Button
         android:id="@+id/editBTN"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/edit_icon"
         android:onClick="edit"
-        android:text="Edit"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintHorizontal_bias="0.669"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.124" />
-
-    <Button
-        android:id="@+id/saveBTN"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="SaveBTNclick"
-        android:text="Save"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.486"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.891" />
+        app:layout_constraintVertical_bias="0.082" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
