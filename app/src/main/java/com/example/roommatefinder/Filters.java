@@ -28,10 +28,7 @@ public class Filters extends AppCompatActivity {
                 if(checked)
                 selection.add("lowtohigh");
                 break;
-            case R.id.checkBox2:
-                if (checked)
-                    selection.add("nearset");
-                break;
+
             case R.id.checkBox3:
                 if (checked)
                     selection.add("Male");
