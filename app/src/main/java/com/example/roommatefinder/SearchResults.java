@@ -49,8 +49,9 @@ public class SearchResults extends AppCompatActivity {
 //            emails[emails.length-1]=NewPostingActivity.getplace();
 //            cost[cost.length-1]=NewPostingActivity.getprice();
             DetailedSearchModel itemsModel = new DetailedSearchModel(names[i],emails[i],cost[i],images[i]);
-
-            itemsModelList.add(itemsModel);
+          //  DetailedSearchModel dsm = new DetailedSearchModel(NewPostingActivity.gettitle(),NewPostingActivity.getplace(),NewPostingActivity.getprice(),R.drawable.bedroom2_2);
+          itemsModelList.add(itemsModel);
+          //  itemsModelList.add(dsm);
 
         }
 

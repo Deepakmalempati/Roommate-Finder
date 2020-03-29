@@ -6,10 +6,10 @@ public class listingsModel {
     public static class ChoiceInfo{
         public String title;
         public String location;
-        public int cost;
+        public String cost;
 
 
-        public ChoiceInfo(String title, String location,int cost ){
+        public ChoiceInfo(String title, String location,String cost ){
             this.title=title;
             this.location = location;
             this.cost = cost;
@@ -33,13 +33,14 @@ public class listingsModel {
 
     private void loadModel(){
 
-        choiceList.add(new ChoiceInfo("Looking for roommate", "Maryville",290));
+        choiceList.add(new ChoiceInfo("Looking for roommate", "Maryville","$290"));
 
-        choiceList.add(new ChoiceInfo("Friendly roommate", "Kansas city",290));
+        choiceList.add(new ChoiceInfo("Friendly roommate", "Kansas city","$290"));
 
 
-        choiceList.add(new ChoiceInfo("Female roommate", "Maryville",290));
-        choiceList.add(new ChoiceInfo("Male roommate", "Maryville",290));
+        choiceList.add(new ChoiceInfo("Female roommate", "Maryville","$290"));
+        choiceList.add(new ChoiceInfo("Male roommate", "Maryville","$290"));
+        choiceList.add(new ChoiceInfo(NewPostingActivity.gettitle(),NewPostingActivity.getplace(),NewPostingActivity.getprice()));
 
 
 
