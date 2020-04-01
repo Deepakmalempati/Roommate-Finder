@@ -32,6 +32,8 @@ public class SearchResults extends AppCompatActivity {
     int images[] = {R.drawable.bedroom2_2,R.drawable.bedroom2_2,R.drawable.bedroom2_2,R.drawable.bedroom2_2,};
     List<DetailedSearchModel> itemsModelList = new ArrayList<>();
     ListView listView;
+    ArrayList<? extends String> filter = this.getIntent().getExtras().getParcelableArrayList("BUNDLE");
+
 
     CustomAdapter customAdapter;
 
