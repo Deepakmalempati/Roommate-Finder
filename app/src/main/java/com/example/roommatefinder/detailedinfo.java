@@ -23,6 +23,8 @@ public class detailedinfo extends AppCompatActivity {
         String price = intent.getStringExtra("data1");
         TextView priceTV = findViewById(R.id.priceTV);
         priceTV.setText("Cost per month: "+price);
+      //  TextView amenitiesTV = findViewById(R.id.amenitiesTV);
+      //  amenitiesTV.setText(intent.getStringExtra("amenitiesdata"));
 
 
 

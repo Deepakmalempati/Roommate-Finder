@@ -23,6 +23,7 @@ public class listingsAdapter extends RecyclerView.Adapter<listingsAdapter.Choice
     public listingsAdapter(){
         super();
         choicemodel = listingsModel.getSingleton();
+        choicemodel.reset();
     }
 
     @Override

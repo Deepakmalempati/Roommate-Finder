@@ -48,7 +48,7 @@ public class listingsModel {
        // choiceList.add(new ChoiceInfo(NewPostingActivity.gettitle(),NewPostingActivity.getplace(),NewPostingActivity.getprice()));
 
         for(int i=0;i<listdatatitle.size();i++) {
-            choiceList.add(new listingsModel.ChoiceInfo(listdatatitle.get(i),listdataplace.get(i),listdataprice.get(i)));
+            choiceList.add(new ChoiceInfo(listdatatitle.get(i),listdataplace.get(i),listdataprice.get(i)));
         }
 
     }

@@ -32,6 +32,7 @@ public class YourLisitngs extends AppCompatActivity {
 
 
                     model.choiceList.remove(position);
+
                     choiceadapter.notifyItemRemoved(position);
                     return true;
                 }

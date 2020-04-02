@@ -33,8 +33,11 @@ public class SearchResults extends AppCompatActivity {
                     Log.d("click", "clicked on item "+ position);
                     SearchResultsModel model = SearchResultsModel.getSingleton();
 
-
-                            startActivity(new Intent(SearchResults.this, detailedinfo.class));
+                            Intent intent = new Intent(SearchResults.this, detailedinfo.class);
+                            intent.putExtra("data",model.choiceList.get(position).title);
+                    intent.putExtra("data1",model.choiceList.get(position).cost);
+                  //  intent.putExtra("amenitiesdata",NewPostingActivity.listdataamenities.get(position));
+                            startActivity(intent);
 
 
 //                    model.choiceList.remove(position);
@@ -53,10 +56,8 @@ public class SearchResults extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_results);
-        Intent ini =getIntent();
-        String title = ini.getStringExtra("title");
-        String place = ini.getStringExtra("place");
-        String price = ini.getStringExtra("price");
+
+
 
 
         choiceadapter= new SearchResultsAdapter();

@@ -17,12 +17,21 @@ public class SearchResultsModel {
         public String title;
         public String location;
         public String cost;
+        public String Housetype;
+        public String gender;
+        public String otherinfo;
+        public String amenities;
 
 
-        public ChoiceInfo(String title, String location,String cost ){
+
+        public ChoiceInfo(String title, String location,String cost, String Housetype, String gender, String otherinfo, String amenities ){
             this.title=title;
             this.location = location;
             this.cost = cost;
+            this.Housetype= Housetype;
+            this.gender = gender;
+            this.otherinfo = otherinfo;
+            this.amenities = amenities;
         }
     }
 

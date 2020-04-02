@@ -43,7 +43,10 @@ public class NewPostingActivity extends AppCompatActivity {
     public static ArrayList<String> listdatatitle =new  ArrayList<>();
     public static ArrayList<String> listdataplace =new  ArrayList<>();
     public static ArrayList<String> listdataprice =new  ArrayList<>();
-
+    public static ArrayList<String> listdataamenities =new  ArrayList<>();
+    public static ArrayList<String> listdatahousetype =new  ArrayList<>();
+    public static ArrayList<String> listdatagender =new  ArrayList<>();
+    public static ArrayList<String> listdataotherinfo =new  ArrayList<>();
 
     public void postBTNclick(View v){
 
@@ -72,14 +75,16 @@ public class NewPostingActivity extends AppCompatActivity {
 
             price = priceET.getText().toString();
             Intent ini = new Intent(this, HomepageActivity.class);
-            ini.putExtra("title",title);
-            ini.putExtra("place",place);
-            ini.putExtra("price",price);
-            SearchResultsModel model = SearchResultsModel.getSingleton();
+
 
             listdatatitle.add(title);
             listdataplace.add(place);
             listdataprice.add(price);
+            listdataamenities.add(amenitiesET.getText().toString());
+
+
+
+           
             startActivity(ini);
             Toast toast = Toast.makeText(getApplicationContext(), "Posted Successfully", Toast.LENGTH_LONG);
             toast.show();
