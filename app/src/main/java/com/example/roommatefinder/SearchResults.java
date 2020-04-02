@@ -56,6 +56,13 @@ public class SearchResults extends AppCompatActivity {
                  int a1 = Integer.parseInt(a);
                  String b = cost[i+1];
                  int b1 = Integer.parseInt(b);
+                 if(a1>b1)
+                 {
+                     int temp = a1;
+                     a1 = b1;
+                     b1 = temp;
+
+                 }
              }
          }
       }
