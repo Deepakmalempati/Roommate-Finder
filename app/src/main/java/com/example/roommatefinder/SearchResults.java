@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -26,15 +27,14 @@ import java.util.List;
 
 public class SearchResults extends AppCompatActivity {
 
-    String names[] = {"Looking for Roommate","Room for sharing","College Dorms","Friendly Roommate"};
-    String emails[] = {"Maryville","New york","Omaha","Kansas City"};
-    String cost[] = {"$250","$500","$300","$150"};
-    int images[] = {R.drawable.bedroom2_2,R.drawable.bedroom2_2,R.drawable.bedroom2_2,R.drawable.bedroom2_2,};
+    String names[]={"Looking for Roommate","Room for sharing","my space","College Dorms","Friendly Roommate"};
+
+    String emails[] = {"Maryville","Maryville","New york","Omaha","Kansas City"};
+    String cost[] = {"$250","$500","$249","$300","$150"};
+    int images[] = {R.drawable.bedroom2_2,R.drawable.bedroom2_2,R.drawable.bedroom2_2,R.drawable.bedroom2_2,R.drawable.bedroom2_2};
     List<DetailedSearchModel> itemsModelList = new ArrayList<>();
     ListView listView;
-    Intent intent = getIntent();
-    Bundle args = intent.getBundleExtra("BUNDLE");
-    ArrayList<String> filter = (ArrayList<String>) args.getSerializable("ARRAYLIST");
+
 
     CustomAdapter customAdapter;
 
@@ -46,42 +46,27 @@ public class SearchResults extends AppCompatActivity {
 
         listView = findViewById(R.id.listview);
 
-      for(String g : filter)
-      {
-         if(filter.contains("lowtohigh"))
-         {
-             for(int i =0 ;i<cost.length;i++)
-             {
-                 String a = cost[i];
-                 int a1 = Integer.parseInt(a);
-                 String b = cost[i+1];
-                 int b1 = Integer.parseInt(b);
-                 if(a1>b1)
-                 {
-                     int temp = a1;
-                     a1 = b1;
-                     b1 = temp;
 
-                 }
-             }
-         }
-      }
+       // names.add(NewPostingActivity.gettitle());
         for(int i = 0;i<names.length;i++){
 //            names[names.length-1]=NewPostingActivity.gettitle();
 //            emails[emails.length-1]=NewPostingActivity.getplace();
 //            cost[cost.length-1]=NewPostingActivity.getprice();
+
             DetailedSearchModel itemsModel = new DetailedSearchModel(names[i],emails[i],cost[i],images[i]);
-          //  DetailedSearchModel dsm = new DetailedSearchModel(NewPostingActivity.gettitle(),NewPostingActivity.getplace(),NewPostingActivity.getprice(),R.drawable.bedroom2_2);
+
           itemsModelList.add(itemsModel);
-          //  itemsModelList.add(dsm);
+
 
         }
-
+       // DetailedSearchModel dsm = new DetailedSearchModel(NewPostingActivity.gettitle(),NewPostingActivity.getplace(),NewPostingActivity.getprice(),R.drawable.bedroom2_2);
+       // itemsModelList.add(dsm);
 
         customAdapter = new CustomAdapter(itemsModelList,this);
 
         listView.setAdapter(customAdapter);
     }
+
 
 
 
@@ -166,6 +151,7 @@ public class SearchResults extends AppCompatActivity {
             View view = getLayoutInflater().inflate(R.layout.detailedsearchview,null);
 
 
+
             TextView titleTV = view.findViewById(R.id.titleTV);
             TextView locationTV = view.findViewById(R.id.locationTV);
             TextView costTV = view.findViewById(R.id.costTV);
@@ -202,7 +188,15 @@ public class SearchResults extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     Log.e("main activity","item clicked");
-                    startActivity(new Intent(SearchResults.this,detailedinfo.class).putExtra("items",itemsModelListFiltered.get(position)));
+                    Intent intent = new Intent(SearchResults.this,detailedinfo.class);
+                    String titlestr = itemsModelListFiltered.get(position).getName();
+                    String pricestr = itemsModelListFiltered.get(position).getcost();
+
+                    intent.putExtra("data",titlestr);
+                    intent.putExtra("data1",pricestr);
+
+                    startActivity(intent);
+
 
                 }
             });

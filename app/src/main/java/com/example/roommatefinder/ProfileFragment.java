@@ -30,6 +30,7 @@ public class ProfileFragment extends Fragment {
 
 
 
+
     public static ProfileFragment newInstance() {
         return new ProfileFragment();
     }

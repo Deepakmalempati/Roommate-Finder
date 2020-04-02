@@ -3,10 +3,11 @@
     android:layout_width="match_parent"
     android:layout_height="200dp" >
 
-    <ImageView style="?android:textAppearanceMedium"
-        android:padding="16dp"
-        android:lineSpacingMultiplier="1.2"
+    <ImageView
+        style="?android:textAppearanceMedium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/bedroom2_2" />
+        android:background="@drawable/hall"
+        android:lineSpacingMultiplier="1.2"
+        android:padding="16dp" />
 </ScrollView>

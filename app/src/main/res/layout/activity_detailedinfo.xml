@@ -6,30 +6,31 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/titleTV"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginBottom="7dp"
+        android:background="#EF251F"
         android:gravity="center"
         android:text="Room in Marryville,mo"
-        android:background="#EF251F"
         android:textColor="#ffffff"
+        android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/imageView2"
+        app:layout_constraintBottom_toTopOf="@+id/image"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/image"
         android:layout_width="399dp"
         android:layout_height="164dp"
         android:layout_marginBottom="11dp"
         app:layout_constraintBottom_toTopOf="@+id/one"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        app:layout_constraintTop_toBottomOf="@+id/titleTV"
         app:srcCompat="@drawable/bedroom2_2"
         tools:ignore="MissingConstraints" />
 
@@ -47,7 +48,7 @@
         app:layout_constraintBottom_toTopOf="@+id/two"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:layout_constraintTop_toBottomOf="@+id/image"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -95,13 +96,13 @@
         android:text="Amenities included : water,trash,washing machine"
         android:textColor="#000000"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/five"
+        app:layout_constraintBottom_toTopOf="@+id/priceTV"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/three" />
 
     <TextView
-        android:id="@+id/five"
+        android:id="@+id/priceTV"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="14dp"
@@ -135,7 +136,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/five"
+        app:layout_constraintTop_toBottomOf="@+id/priceTV"
         tools:ignore="MissingConstraints" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
