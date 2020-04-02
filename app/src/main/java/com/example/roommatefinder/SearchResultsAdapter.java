@@ -1,6 +1,9 @@
 package com.example.roommatefinder;
 
+import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -24,6 +27,8 @@ public class SearchResultsAdapter extends RecyclerView.Adapter<SearchResultsAdap
     public SearchResultsAdapter(){
         super();
         choicemodel = SearchResultsModel.getSingleton();
+        choicemodel.reset();
+
     }
 
     @Override

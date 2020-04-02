@@ -34,8 +34,12 @@ public class SearchResults extends AppCompatActivity {
                     SearchResultsModel model = SearchResultsModel.getSingleton();
 
 
-                    model.choiceList.remove(position);
-                    choiceadapter.notifyItemRemoved(position);
+                            startActivity(new Intent(SearchResults.this, detailedinfo.class));
+
+
+//                    model.choiceList.remove(position);
+//                    choiceadapter.notifyItemRemoved(position);
+
                     return true;
                 }
             }
@@ -44,10 +48,16 @@ public class SearchResults extends AppCompatActivity {
         }
     }
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_results);
+        Intent ini =getIntent();
+        String title = ini.getStringExtra("title");
+        String place = ini.getStringExtra("place");
+        String price = ini.getStringExtra("price");
+
 
         choiceadapter= new SearchResultsAdapter();
         choiceRV = findViewById(R.id.searchRV);

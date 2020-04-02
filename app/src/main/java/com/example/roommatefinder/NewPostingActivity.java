@@ -12,30 +12,37 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 
 public class NewPostingActivity extends AppCompatActivity {
 
     private static final int Image_Capture_Code = 1;
     private ImageView imgCapture;
 
-    private static String title;
-    private static String place;
-    private static String price;
-    public static String gettitle() {
-        return title;
-    }
-    public static String getplace() {
-        return place;
-    }
-    public static String getprice() {
-        return price;
-    }
+    private  String title;
+    private  String place;
+    private  String price;
+//    public static String gettitle() {
+//        return title;
+//    }
+//    public static String getplace() {
+//        return place;
+//    }
+//    public static String getprice() {
+//        return price;
+//    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_posting);
     }
+
+    public static ArrayList<String> listdatatitle =new  ArrayList<>();
+    public static ArrayList<String> listdataplace =new  ArrayList<>();
+    public static ArrayList<String> listdataprice =new  ArrayList<>();
 
 
     public void postBTNclick(View v){
@@ -65,9 +72,18 @@ public class NewPostingActivity extends AppCompatActivity {
 
             price = priceET.getText().toString();
             Intent ini = new Intent(this, HomepageActivity.class);
+            ini.putExtra("title",title);
+            ini.putExtra("place",place);
+            ini.putExtra("price",price);
+            SearchResultsModel model = SearchResultsModel.getSingleton();
+
+            listdatatitle.add(title);
+            listdataplace.add(place);
+            listdataprice.add(price);
             startActivity(ini);
             Toast toast = Toast.makeText(getApplicationContext(), "Posted Successfully", Toast.LENGTH_LONG);
             toast.show();
+
 
         }
     }

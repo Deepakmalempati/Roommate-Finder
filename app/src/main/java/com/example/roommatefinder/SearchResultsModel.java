@@ -1,8 +1,18 @@
 package com.example.roommatefinder;
 
+import android.content.Intent;
+
 import java.util.ArrayList;
 
+import static com.example.roommatefinder.NewPostingActivity.listdatatitle;
+import static com.example.roommatefinder.NewPostingActivity.listdataplace;
+import static com.example.roommatefinder.NewPostingActivity.listdataprice;
+import static com.example.roommatefinder.NewPostingActivity.listdatatitle;
+
 public class SearchResultsModel {
+
+
+
  public static class ChoiceInfo{
         public String title;
         public String location;
@@ -21,6 +31,7 @@ public class SearchResultsModel {
 
     private SearchResultsModel(){
         choiceList=new ArrayList<ChoiceInfo>();
+
         loadModel();
     }
 
@@ -33,19 +44,24 @@ public class SearchResultsModel {
 
     public void loadModel(){
 
-//        choiceList.add(new ChoiceInfo("Looking for roommate", "Maryville","$290"));
-//
-//        choiceList.add(new ChoiceInfo("Friendly roommate", "Kansas city","$290"));
-//
-//
-        choiceList.add(new ChoiceInfo("Female roommate", "Maryville","$290"));
-        choiceList.add(new ChoiceInfo("Male roommate", "Maryville","$290"));
-        choiceList.add(new ChoiceInfo("Male roommate111", "Maryville","$290"));
+        for(int i=0;i<listdatatitle.size();i++) {
+            choiceList.add(new ChoiceInfo(listdatatitle.get(i),listdataplace.get(i),listdataprice.get(i)));
+        }
+
+        if(HomepageActivity.placename.equalsIgnoreCase("Maryville")) {
+            choiceList.add(new ChoiceInfo("Looking for Roommate", "Maryville", "$290"));
+            choiceList.add(new ChoiceInfo("Room available", "Maryville", "$500"));
+            choiceList.add(new ChoiceInfo("Looking for friendly student", "Maryville", "$450"));
 
 
-
-
+        }
+        if(HomepageActivity.placename.equalsIgnoreCase("Kansas city")){
+            choiceList.add(new ChoiceInfo("Looking for Roommate", "Kansas city","$290"));
+            choiceList.add(new ChoiceInfo("Room available", "Kansas city","$500"));
+            choiceList.add(new ChoiceInfo("Looking for friendly student", "Kansas city","$450"));
+        }
     }
+
 
     public void reset(){
         choiceList.clear();

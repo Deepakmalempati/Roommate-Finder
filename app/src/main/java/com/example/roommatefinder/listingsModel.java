@@ -2,6 +2,10 @@ package com.example.roommatefinder;
 
 import java.util.ArrayList;
 
+import static com.example.roommatefinder.NewPostingActivity.listdataplace;
+import static com.example.roommatefinder.NewPostingActivity.listdataprice;
+import static com.example.roommatefinder.NewPostingActivity.listdatatitle;
+
 public class listingsModel {
     public static class ChoiceInfo{
         public String title;
@@ -41,9 +45,11 @@ public class listingsModel {
         choiceList.add(new ChoiceInfo("Female roommate", "Maryville","$290"));
         choiceList.add(new ChoiceInfo("Male roommate", "Maryville","$290"));
         choiceList.add(new ChoiceInfo("Male roommate111", "Maryville","$290"));
-        choiceList.add(new ChoiceInfo(NewPostingActivity.gettitle(),NewPostingActivity.getplace(),NewPostingActivity.getprice()));
+       // choiceList.add(new ChoiceInfo(NewPostingActivity.gettitle(),NewPostingActivity.getplace(),NewPostingActivity.getprice()));
 
-
+        for(int i=0;i<listdatatitle.size();i++) {
+            choiceList.add(new listingsModel.ChoiceInfo(listdatatitle.get(i),listdataplace.get(i),listdataprice.get(i)));
+        }
 
     }
 
