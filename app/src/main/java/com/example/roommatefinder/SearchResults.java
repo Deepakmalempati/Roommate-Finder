@@ -32,8 +32,9 @@ public class SearchResults extends AppCompatActivity {
     int images[] = {R.drawable.bedroom2_2,R.drawable.bedroom2_2,R.drawable.bedroom2_2,R.drawable.bedroom2_2,};
     List<DetailedSearchModel> itemsModelList = new ArrayList<>();
     ListView listView;
-    ArrayList<? extends String> filter = this.getIntent().getExtras().getParcelableArrayList("BUNDLE");
-
+    Intent intent = getIntent();
+    Bundle args = intent.getBundleExtra("BUNDLE");
+    ArrayList<String> filter = (ArrayList<String>) args.getSerializable("ARRAYLIST");
 
     CustomAdapter customAdapter;
 
@@ -45,7 +46,10 @@ public class SearchResults extends AppCompatActivity {
 
         listView = findViewById(R.id.listview);
 
+      for(String g : filter)
+      {
 
+      }
         for(int i = 0;i<names.length;i++){
 //            names[names.length-1]=NewPostingActivity.gettitle();
 //            emails[emails.length-1]=NewPostingActivity.getplace();
@@ -56,6 +60,7 @@ public class SearchResults extends AppCompatActivity {
           //  itemsModelList.add(dsm);
 
         }
+
 
         customAdapter = new CustomAdapter(itemsModelList,this);
 
