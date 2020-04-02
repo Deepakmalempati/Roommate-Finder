@@ -1,252 +1,71 @@
 package com.example.roommatefinder;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GestureDetectorCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Context;
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.BaseAdapter;
 import android.widget.Button;
-import android.widget.Filter;
-import android.widget.Filterable;
-import android.widget.ImageView;
-import android.widget.ListView;
-import android.widget.SearchView;
-import android.widget.TextView;
-import android.widget.Toast;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class SearchResults extends AppCompatActivity {
 
-    String names[]={"Looking for Roommate","Room for sharing","my space","College Dorms","Friendly Roommate"};
-
-    String emails[] = {"Maryville","Maryville","New york","Omaha","Kansas City"};
-    String cost[] = {"$250","$500","$249","$300","$150"};
-    int images[] = {R.drawable.bedroom2_2,R.drawable.bedroom2_2,R.drawable.bedroom2_2,R.drawable.bedroom2_2,R.drawable.bedroom2_2};
-    List<DetailedSearchModel> itemsModelList = new ArrayList<>();
-    ListView listView;
 
 
-    CustomAdapter customAdapter;
+    private SearchResultsAdapter choiceadapter = null;
+    private RecyclerView choiceRV= null;
+    private GestureDetectorCompat detector = null;
+    // We need a gesture listener
+
+    private class RecyclerViewOnGestureListener extends GestureDetector.SimpleOnGestureListener {
+        @Override
+        public boolean onSingleTapConfirmed(MotionEvent e) {
+            View view = choiceRV.findChildViewUnder(e.getX(), e.getY());
+            if (view != null) {
+                RecyclerView.ViewHolder holder = choiceRV.getChildViewHolder(view);
+                if (holder instanceof SearchResultsAdapter.ChoiceViewHolder) {
+                    int position = holder.getAdapterPosition();
+                    Log.d("click", "clicked on item "+ position);
+                    SearchResultsModel model = SearchResultsModel.getSingleton();
+
+
+                    model.choiceList.remove(position);
+                    choiceadapter.notifyItemRemoved(position);
+                    return true;
+                }
+            }
+
+            return false;
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_results);
 
-
-        listView = findViewById(R.id.listview);
-
-
-       // names.add(NewPostingActivity.gettitle());
-        for(int i = 0;i<names.length;i++){
-//            names[names.length-1]=NewPostingActivity.gettitle();
-//            emails[emails.length-1]=NewPostingActivity.getplace();
-//            cost[cost.length-1]=NewPostingActivity.getprice();
-
-            DetailedSearchModel itemsModel = new DetailedSearchModel(names[i],emails[i],cost[i],images[i]);
-
-          itemsModelList.add(itemsModel);
-
-
-        }
-       // DetailedSearchModel dsm = new DetailedSearchModel(NewPostingActivity.gettitle(),NewPostingActivity.getplace(),NewPostingActivity.getprice(),R.drawable.bedroom2_2);
-       // itemsModelList.add(dsm);
-
-        customAdapter = new CustomAdapter(itemsModelList,this);
-
-        listView.setAdapter(customAdapter);
+        choiceadapter= new SearchResultsAdapter();
+        choiceRV = findViewById(R.id.searchRV);
+        choiceRV.setAdapter(choiceadapter);
+        RecyclerView.LayoutManager mymanager = new LinearLayoutManager(this);
+        choiceRV.setLayoutManager(mymanager);
+        // Make a Listener for taps
+        detector = new GestureDetectorCompat(this,
+                new SearchResults.RecyclerViewOnGestureListener());
+// add the listener to the recycler
+        choiceRV.addOnItemTouchListener(new
+                                                RecyclerView.SimpleOnItemTouchListener(){
+                                                    @Override
+                                                    public boolean onInterceptTouchEvent(RecyclerView rv, MotionEvent e) {
+                                                        return detector.onTouchEvent(e);
+                                                    }
+                                                });
     }
-
-
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-
-        getMenuInflater().inflate(R.menu.search_menu,menu);
-
-        MenuItem menuItem = menu.findItem(R.id.searchView);
-
-        SearchView searchView = (SearchView) menuItem.getActionView();
-
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-                return false;
-            }
-
-            @Override
-            public boolean onQueryTextChange(String newText) {
-
-                Log.e("Main"," data search"+newText);
-
-                customAdapter.getFilter().filter(newText);
-
-
-
-                return true;
-            }
-        });
-
-
-        return true;
-
-    }
-
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-
-        int id = item.getItemId();
-
-
-        if(id == R.id.searchView){
-
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
-
-
-    public class CustomAdapter extends BaseAdapter implements Filterable {
-
-        private List<DetailedSearchModel> itemsModelsl;
-        private List<DetailedSearchModel> itemsModelListFiltered;
-        private Context context;
-
-        public CustomAdapter(List<DetailedSearchModel> itemsModelsl, Context context) {
-            this.itemsModelsl = itemsModelsl;
-            this.itemsModelListFiltered = itemsModelsl;
-            this.context = context;
-        }
-
-        @Override
-        public int getCount() {
-            return itemsModelListFiltered.size();
-        }
-
-        @Override
-        public Object getItem(int position) {
-
-            return itemsModelListFiltered.get(position);
-        }
-
-        @Override
-        public long getItemId(int position) {
-            return position;
-        }
-
-        @Override
-        public View getView(final int position, View convertView, ViewGroup parent) {
-            View view = getLayoutInflater().inflate(R.layout.detailedsearchview,null);
-
-
-
-            TextView titleTV = view.findViewById(R.id.titleTV);
-            TextView locationTV = view.findViewById(R.id.locationTV);
-            TextView costTV = view.findViewById(R.id.costTV);
-            ImageView imageView = view.findViewById(R.id.imageView);
-
-
-                if(itemsModelListFiltered.get(position).getEmail().equalsIgnoreCase(HomepageActivity.placename)){
-                    titleTV.setText(itemsModelListFiltered.get(position).getName());
-                    locationTV.setText(itemsModelListFiltered.get(position).getEmail());
-                    costTV.setText(itemsModelListFiltered.get(position).getcost());
-                    imageView.setImageResource(images[position]);
-
-            }
-                else if(!(itemsModelListFiltered.get(position).getEmail().equalsIgnoreCase(HomepageActivity.placename))){
-                   // Toast toast = Toast.makeText(getApplicationContext(), "No listings avaiable in this location", Toast.LENGTH_SHORT);
-
-                  //  toast.show();
-                    titleTV.setText("");
-                    locationTV.setText("");
-                    costTV.setText("");
-                    imageView.setImageResource(R.color.white);
-                }
-
-                else {
-                    titleTV.setText("Looking for Female Roommate");
-                    locationTV.setText(HomepageActivity.placename);
-                    costTV.setText("$300");
-                    imageView.setImageResource(R.drawable.bedroom2_2);
-
-                }
-
-
-            view.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Log.e("main activity","item clicked");
-                    Intent intent = new Intent(SearchResults.this,detailedinfo.class);
-                    String titlestr = itemsModelListFiltered.get(position).getName();
-                    String pricestr = itemsModelListFiltered.get(position).getcost();
-
-                    intent.putExtra("data",titlestr);
-                    intent.putExtra("data1",pricestr);
-
-                    startActivity(intent);
-
-
-                }
-            });
-
-            return view;
-        }
-
-
-
-        @Override
-        public Filter getFilter() {
-            Filter filter = new Filter() {
-                @Override
-                protected FilterResults performFiltering(CharSequence constraint) {
-
-                    FilterResults filterResults = new FilterResults();
-                    if(constraint == null || constraint.length() == 0){
-                        filterResults.count = itemsModelsl.size();
-                        filterResults.values = itemsModelsl;
-
-                    }else{
-                        List<DetailedSearchModel> resultsModel = new ArrayList<>();
-                        String searchStr = constraint.toString().toLowerCase();
-
-                        for(DetailedSearchModel itemsModel:itemsModelsl){
-                            if(itemsModel.getName().contains(searchStr)){
-                                resultsModel.add(itemsModel);
-                                filterResults.count = resultsModel.size();
-                                filterResults.values = resultsModel;
-                            }
-                        }
-
-
-                    }
-
-                    return filterResults;
-                }
-                @Override
-                protected void publishResults(CharSequence constraint, FilterResults results) {
-
-                    itemsModelListFiltered = (List<DetailedSearchModel>) results.values;
-                    notifyDataSetChanged();
-
-                }
-            };
-            return filter;
-        }
-    }
-
-
 
     public void flitersclick(View view){
         Button filtersBTN = findViewById(R.id.filters);
