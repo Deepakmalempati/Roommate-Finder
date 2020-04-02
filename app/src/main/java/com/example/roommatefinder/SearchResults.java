@@ -50,7 +50,13 @@ public class SearchResults extends AppCompatActivity {
       {
          if(filter.contains("lowtohigh"))
          {
-
+             for(int i =0 ;i<cost.length;i++)
+             {
+                 String a = cost[i];
+                 int a1 = Integer.parseInt(a);
+                 String b = cost[i+1];
+                 int b1 = Integer.parseInt(b);
+             }
          }
       }
         for(int i = 0;i<names.length;i++){
