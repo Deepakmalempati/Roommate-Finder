@@ -60,6 +60,8 @@ public class SearchResults extends AppCompatActivity {
         listView.setAdapter(customAdapter);
     }
 
+
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 
@@ -155,9 +157,9 @@ public class SearchResults extends AppCompatActivity {
 
             }
                 else if(!(itemsModelListFiltered.get(position).getEmail().equalsIgnoreCase(HomepageActivity.placename))){
-                    Toast toast = Toast.makeText(getApplicationContext(), "No listings avaiable in this location", Toast.LENGTH_LONG);
+                   // Toast toast = Toast.makeText(getApplicationContext(), "No listings avaiable in this location", Toast.LENGTH_SHORT);
 
-                    toast.show();
+                  //  toast.show();
                     titleTV.setText("");
                     locationTV.setText("");
                     costTV.setText("");

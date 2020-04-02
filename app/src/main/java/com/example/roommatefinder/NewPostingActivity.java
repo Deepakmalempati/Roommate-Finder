@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+
 public class NewPostingActivity extends AppCompatActivity {
 
     private static final int Image_Capture_Code = 1;
@@ -67,6 +68,7 @@ public class NewPostingActivity extends AppCompatActivity {
             startActivity(ini);
             Toast toast = Toast.makeText(getApplicationContext(), "Posted Successfully", Toast.LENGTH_LONG);
             toast.show();
+
         }
     }
     public void homeBTNclick(View view){

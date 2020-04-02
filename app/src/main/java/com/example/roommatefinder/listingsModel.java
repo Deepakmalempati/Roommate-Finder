@@ -31,15 +31,16 @@ public class listingsModel {
         return theModel;
     }
 
-    private void loadModel(){
+    public void loadModel(){
 
-        choiceList.add(new ChoiceInfo("Looking for roommate", "Maryville","$290"));
-
-        choiceList.add(new ChoiceInfo("Friendly roommate", "Kansas city","$290"));
-
-
+//        choiceList.add(new ChoiceInfo("Looking for roommate", "Maryville","$290"));
+//
+//        choiceList.add(new ChoiceInfo("Friendly roommate", "Kansas city","$290"));
+//
+//
         choiceList.add(new ChoiceInfo("Female roommate", "Maryville","$290"));
         choiceList.add(new ChoiceInfo("Male roommate", "Maryville","$290"));
+        choiceList.add(new ChoiceInfo("Male roommate111", "Maryville","$290"));
         choiceList.add(new ChoiceInfo(NewPostingActivity.gettitle(),NewPostingActivity.getplace(),NewPostingActivity.getprice()));
 
 
