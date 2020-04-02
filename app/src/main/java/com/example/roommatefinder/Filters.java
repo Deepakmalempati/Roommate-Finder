@@ -51,6 +51,10 @@ public class Filters extends AppCompatActivity {
     public void applyfiltersclick(View view){
 
         Intent intent = new Intent(this, SearchResults.class);
+
+        Bundle args = new Bundle();
+        args.putSerializable("ARRAYLIST",selection);
+        intent.putExtra("BUNDLE",args);
         startActivity(intent);
         Toast bread=Toast.makeText(getApplicationContext(),"Filters Applied Successfully!", Toast.LENGTH_LONG);
         bread.show();
