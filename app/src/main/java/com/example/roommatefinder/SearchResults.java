@@ -48,7 +48,10 @@ public class SearchResults extends AppCompatActivity {
 
       for(String g : filter)
       {
+         if(filter.contains("lowtohigh"))
+         {
 
+         }
       }
         for(int i = 0;i<names.length;i++){
 //            names[names.length-1]=NewPostingActivity.gettitle();
