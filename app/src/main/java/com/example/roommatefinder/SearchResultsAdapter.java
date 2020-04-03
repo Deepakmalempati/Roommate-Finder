@@ -34,13 +34,19 @@ public class SearchResultsAdapter extends RecyclerView.Adapter<SearchResultsAdap
     @Override
     public void onBindViewHolder(@NonNull ChoiceViewHolder holder, int position) {
 
-        TextView choicetv = holder.LLviewreference.findViewById(R.id.titleTV);
-        choicetv.setText(choicemodel.choiceList.get(position).title);
 
-        TextView durationTV =holder.LLviewreference.findViewById(R.id.costTV);
-        durationTV.setText(choicemodel.choiceList.get(position).cost);
-        TextView costTV =holder.LLviewreference.findViewById(R.id.locationTV);
-        costTV.setText(choicemodel.choiceList.get(position).location);
+
+                TextView choicetv = holder.LLviewreference.findViewById(R.id.titleTV);
+                choicetv.setText(choicemodel.choiceList.get(position).title);
+
+                TextView durationTV =holder.LLviewreference.findViewById(R.id.costTV);
+                durationTV.setText(choicemodel.choiceList.get(position).cost);
+                TextView costTV =holder.LLviewreference.findViewById(R.id.locationTV);
+                costTV.setText(choicemodel.choiceList.get(position).location);
+
+
+
+
 
 
 

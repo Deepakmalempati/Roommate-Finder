@@ -1,6 +1,7 @@
 package com.example.roommatefinder;
 
 import android.content.Intent;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -59,6 +60,8 @@ public class SearchResultsModel {
 
         for(int i=0;i<listdatatitle.size();i++) {
             choiceList.add(new ChoiceInfo(listdatatitle.get(i),listdataplace.get(i),listdataprice.get(i),listdatahousetype.get(i),listdatagender.get(i),listdataotherinfo.get(i),listdataamenities.get(i)));
+
+
         }
 
         if(HomepageActivity.placename.equalsIgnoreCase("Maryville")) {
@@ -73,6 +76,7 @@ public class SearchResultsModel {
             choiceList.add(new ChoiceInfo("Room available", "Kansas city","$500","2 Bedroom","Male","No partis after 8 pm","Electricity, laundry"));
             choiceList.add(new ChoiceInfo("Looking for friendly student", "Kansas city","$450","2 Bedroom","Male","No partis after 8 pm","Electricity, laundry"));
         }
+
     }
 
 
