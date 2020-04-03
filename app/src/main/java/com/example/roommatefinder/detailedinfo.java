@@ -43,13 +43,13 @@ public class detailedinfo extends AppCompatActivity {
     }
   // intents for the activity
     public void profilenameclick(View v){
-       // Intent intent = new Intent(this,RoommateInfoActivity.class);
-        //startActivity(intent);
+        Intent intent = new Intent(this,RoommateInfoActivity.class);
+        startActivity(intent);
     }
 
     public void Homeclick(View v){
-       // Intent intent = new Intent(this,HomepageActivity.class);
-        //startActivity(intent);
+        Intent intent = new Intent(this,HomepageActivity.class);
+        startActivity(intent);
     }
 
     public void contactHost(View v){
