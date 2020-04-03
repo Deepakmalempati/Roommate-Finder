@@ -80,13 +80,13 @@ public class NewPostingActivity extends AppCompatActivity {
             Intent ini = new Intent(this, HomepageActivity.class);
 
 
-            listdatatitle.add(title);
+         /*   listdatatitle.add(title);
             listdataplace.add(place);
             listdataprice.add(price);
             listdataamenities.add(amenitiesET.getText().toString());
             listdatahousetype.add(housetypeET.getText().toString());
             listdatagender.add(genderCB.getText().toString());
-            listdataotherinfo.add(otherinfoET.getText().toString());
+            listdataotherinfo.add(otherinfoET.getText().toString()); */
 
 
 
