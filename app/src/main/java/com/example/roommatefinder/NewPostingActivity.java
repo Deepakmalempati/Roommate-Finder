@@ -102,10 +102,10 @@ public class NewPostingActivity extends AppCompatActivity {
         Intent intent = new Intent(this,HomepageActivity.class);
         startActivity(intent);
     }
-//    public void profileclick(View view){
-//        Intent intent = new Intent(this,ProfileActivity.class);
-//        startActivity(intent);
-//    }
+    public void profileclick(View view){
+        Intent intent = new Intent(this,ProfileActivity.class);
+        startActivity(intent);
+    }
 
    public void uploadimage(View view){
        Intent cInt = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
