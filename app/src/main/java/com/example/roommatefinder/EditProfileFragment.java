@@ -19,7 +19,7 @@ import android.widget.Button;
  * A simple {@link Fragment} subclass.
  */
 public class EditProfileFragment extends Fragment {
-   // ProfileViewModel.Profile instance=new ProfileViewModel.Profile();
+
 
 
 private ProfileFragment profilefragment;
@@ -33,14 +33,13 @@ private ProfileFragment profilefragment;
         public void swapfragment();
     }
 
-    Callback listener;
+
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
         myActivity = (Callback) context;
 
-       Activity myact= (Activity)context;
-        listener=(Callback)myact;
+
     }
 
 
