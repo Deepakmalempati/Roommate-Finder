@@ -20,7 +20,7 @@ public class SignupActivity extends AppCompatActivity {
 
         EditText nameET = findViewById(R.id.nameETF);
         EditText emailET = findViewById(R.id.emailET);
-        EditText phnoET = findViewById(R.id.phnoET);
+        EditText phnumET = findViewById(R.id.phnoET);
         EditText passwordET = findViewById(R.id.passwordET);
         EditText repasswordET = findViewById(R.id.repasswordET);
 
@@ -31,8 +31,8 @@ public class SignupActivity extends AppCompatActivity {
         else if(emailET.getText().toString().isEmpty()){
             emailET.setError("Email is required");
         }
-        else if(phnoET.getText().toString().isEmpty()){
-            phnoET.setError("Phone number is required");
+        else if(phnumET.getText().toString().isEmpty()){
+            phnumET.setError("Phone number is required");
         }
         else if(passwordET.getText().toString().isEmpty()){
             passwordET.setError("enter a password");
@@ -48,8 +48,8 @@ public class SignupActivity extends AppCompatActivity {
         else if(!(emailET.getText().toString().contains("@"))){
             emailET.setError("Enter a valid email");
         }
-        else if(phnoET.getText().toString().length()<10){
-            phnoET.setError("Enter a valid phone number");
+        else if(phnumET.getText().toString().length()<10){
+            phnumET.setError("Enter a valid phone number");
         }
         else if(passwordET.getText().toString().length()<8){
             passwordET.setError("Password must be 8 characters");
