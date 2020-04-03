@@ -78,17 +78,4 @@
             app:layout_row="0" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <Button
-        android:id="@+id/editBTN"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:background="@drawable/edit_icon"
-        android:onClick="edit"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.669"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.082" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

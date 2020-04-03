@@ -1,7 +1,9 @@
 package com.example.roommatefinder;
 
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -15,20 +17,34 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 import static android.app.Activity.RESULT_OK;
+import static com.example.roommatefinder.ProfileViewModel.profileobj;
 
 public class ProfileFragment extends Fragment {
 
     ImageView imageView;
+    private ProfileViewModel profileViewModel;
     Button button;
     private static final int PICK_IMAGE = 100;
     Uri imageUri;
     private ProfileViewModel mViewModel;
+    ProfileCallbackInterface myinterface;
 
+public interface ProfileCallbackInterface{
+    public void swaptoprofilefragment();
+}
 
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        myinterface = (ProfileFragment.ProfileCallbackInterface) context;
+    }
 
 
     public static ProfileFragment newInstance() {
@@ -40,6 +56,43 @@ public class ProfileFragment extends Fragment {
                              @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.profile_fragment, container, false);
 
+        profileobj.getValueString().observe(this, new Observer<String>() {
+            @Override
+            public void onChanged(String s) {
+
+                TextView nameTV = v.findViewById(R.id.nameenterTV);
+
+                nameTV.setText(s);
+            }
+        });
+        profileobj.getdobString().observe(this, new Observer<String>() {
+            @Override
+            public void onChanged(String s) {
+
+                TextView dobTV1 = v.findViewById(R.id.dateenterTV);
+
+                dobTV1.setText(s);
+            }
+        });
+        profileobj.getplaceString().observe(this, new Observer<String>() {
+            @Override
+            public void onChanged(String s) {
+
+                TextView cityTV = v.findViewById(R.id.cityenterTV);
+
+                cityTV.setText(s);
+            }
+        });
+        profileobj.getphnoString().observe(this, new Observer<String>() {
+            @Override
+            public void onChanged(String s) {
+
+                TextView phnoTV = v.findViewById(R.id.phoneenterTV);
+
+                phnoTV.setText(s);
+            }
+        });
+
         TextView updateTV = v.findViewById(R.id.updateTV);
 
         updateTV.setOnClickListener(new View.OnClickListener() {
@@ -49,16 +102,22 @@ public class ProfileFragment extends Fragment {
                startActivityForResult(gallery, PICK_IMAGE);
             }
         });
+
+       // Button editBTN = v.findViewById(R.id.editBTN);
+
+
+        Button editBTN = v.findViewById(R.id.editBTN);
+        editBTN.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                myinterface.swaptoprofilefragment();
+            }
+        });
         return v;
 
     }
 
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        mViewModel = ViewModelProviders.of(this).get(ProfileViewModel.class);
-        // TODO: Use the ViewModel
-    }
+
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data){

@@ -18,7 +18,7 @@ public class SignupActivity extends AppCompatActivity {
 
     public void signupclick(View view){
 
-        EditText nameET = findViewById(R.id.nameET);
+        EditText nameET = findViewById(R.id.nameETF);
         EditText emailET = findViewById(R.id.emailET);
         EditText phnoET = findViewById(R.id.phnoET);
         EditText passwordET = findViewById(R.id.passwordET);

@@ -45,7 +45,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/nameET"
+        android:id="@+id/nameETF"
         android:layout_width="300dp"
         android:layout_height="40dp"
         android:layout_marginStart="104dp"
