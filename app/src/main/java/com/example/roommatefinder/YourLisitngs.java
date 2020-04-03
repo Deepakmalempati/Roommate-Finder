@@ -19,28 +19,28 @@ public class YourLisitngs extends AppCompatActivity {
     private GestureDetectorCompat detector = null;
     // We need a gesture listener
 
-//    private class RecyclerViewOnGestureListener extends GestureDetector.SimpleOnGestureListener {
-//        @Override
-//        public boolean onSingleTapConfirmed(MotionEvent e) {
-//            View view = choiceRV.findChildViewUnder(e.getX(), e.getY());
-//            if (view != null) {
-//                RecyclerView.ViewHolder holder = choiceRV.getChildViewHolder(view);
-//                if (holder instanceof listingsAdapter.ChoiceViewHolder) {
-//                    int position = holder.getAdapterPosition();
-//                    Log.d("click", "clicked on item "+ position);
-//                    listingsModel model = listingsModel.getSingleton();
-//
-//
-//                    model.choiceList.remove(position);
-//
-//                    choiceadapter.notifyItemRemoved(position);
-//                    return true;
-//                }
-//            }
-//
-//            return false;
-//        }
-//    }
+    private class RecyclerViewOnGestureListener extends GestureDetector.SimpleOnGestureListener {
+        @Override
+        public boolean onSingleTapConfirmed(MotionEvent e) {
+            View view = choiceRV.findChildViewUnder(e.getX(), e.getY());
+            if (view != null) {
+                RecyclerView.ViewHolder holder = choiceRV.getChildViewHolder(view);
+                if (holder instanceof listingsAdapter.ChoiceViewHolder) {
+                    int position = holder.getAdapterPosition();
+                    Log.d("click", "clicked on item "+ position);
+                    listingsModel model = listingsModel.getSingleton();
+
+
+                    model.choiceList.remove(position);
+
+                    choiceadapter.notifyItemRemoved(position);
+                    return true;
+                }
+            }
+
+            return false;
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
