@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModel;
 
 public class ProfileViewModel extends ViewModel {
 
+<<<<<<< HEAD
     static ProfileViewModel.Profile profileobj = new ProfileViewModel.Profile("Jyotsna", "Female", "23-Dec-1995", "Maryville", "8019992123");
 public static  class Profile{
     private String name;
@@ -105,4 +106,6 @@ public static  class Profile{
 }
 
 
+=======
+>>>>>>> 3c72b28de1ca01d76f646d20481ecf18313bccd5
 }

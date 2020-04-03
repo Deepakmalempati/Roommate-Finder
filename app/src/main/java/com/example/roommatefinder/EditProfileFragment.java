@@ -1,6 +1,7 @@
 package com.example.roommatefinder;
 
 
+import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 
@@ -24,8 +25,14 @@ import static com.example.roommatefinder.ProfileViewModel.profileobj;
 public class EditProfileFragment extends Fragment {
 
 
+<<<<<<< HEAD
     private EditCallback myActivity;
     private ProfileViewModel mainViewModel ;
+=======
+
+private ProfileFragment profilefragment;
+    private Callback myActivity;
+>>>>>>> 3c72b28de1ca01d76f646d20481ecf18313bccd5
 
     public EditProfileFragment() {
         // Required empty public constructor
@@ -39,11 +46,17 @@ public class EditProfileFragment extends Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
+<<<<<<< HEAD
         myActivity = (EditCallback) context;
         ProfileActivity mainActivity = (ProfileActivity) context;
         ViewModelProvider.Factory vmf = new ViewModelProvider.NewInstanceFactory();
         ViewModelProvider vmp = new ViewModelProvider(mainActivity, vmf);
         mainViewModel = vmp.get(ProfileViewModel.class);
+=======
+        myActivity = (Callback) context;
+
+
+>>>>>>> 3c72b28de1ca01d76f646d20481ecf18313bccd5
     }
 
 

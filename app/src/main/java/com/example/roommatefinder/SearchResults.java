@@ -44,8 +44,7 @@ public class SearchResults extends AppCompatActivity {
                             startActivity(intent);
 
 
-//                    model.choiceList.remove(position);
-//                    choiceadapter.notifyItemRemoved(position);
+
 
                     return true;
                 }

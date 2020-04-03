@@ -56,6 +56,5 @@ public class detailedinfo extends AppCompatActivity {
         String e="90909090";
         Uri uri = Uri.parse("tel:"+e);
         Intent intent = new Intent(Intent.ACTION_DIAL,uri);
-        startActivity(intent);
-    }
+        startActivity(intent);  }
 }

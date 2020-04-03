@@ -29,10 +29,7 @@ public class YourLisitngs extends AppCompatActivity {
                     int position = holder.getAdapterPosition();
                     Log.d("click", "clicked on item "+ position);
                     listingsModel model = listingsModel.getSingleton();
-
-
                     model.choiceList.remove(position);
-
                     choiceadapter.notifyItemRemoved(position);
                     return true;
                 }
@@ -56,13 +53,12 @@ public class YourLisitngs extends AppCompatActivity {
             detector = new GestureDetectorCompat(this,
                     new RecyclerViewOnGestureListener());
 // add the listener to the recycler
-            choiceRV.addOnItemTouchListener(new
-                                                    RecyclerView.SimpleOnItemTouchListener(){
-                                                        @Override
-                                                        public boolean onInterceptTouchEvent(RecyclerView rv, MotionEvent e) {
-                                                            return detector.onTouchEvent(e);
-                                                        }
-                                                    });
+        choiceRV.addOnItemTouchListener(new RecyclerView.SimpleOnItemTouchListener(){
+          @Override
+         public boolean onInterceptTouchEvent(RecyclerView rv, MotionEvent e) {
+         return detector.onTouchEvent(e);
+                 }
+             });
     }
 
     public void HomeBTNclick(View view){
