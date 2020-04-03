@@ -12,8 +12,9 @@ To use google places in the app, please follow below steps
 </resources>
 ```
 3. replace YOUR-API-KEY with your google places API key in the above code snippet.
+4. Now app is ready to use.
 
-
+----------------------------------------------------------------------------------------------------------------------------------
 This is an android app named Roommate finder.
 
 Our App helps in finding a roommate in your area. It also helps in setting multiple preferences while searching for roommate. It gives an option to post your house if you already have a space to live or search for roommate who has living space to share with
