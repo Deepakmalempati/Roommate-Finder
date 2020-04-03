@@ -59,8 +59,8 @@ public class ProfileActivity extends AppCompatActivity implements EditProfileFra
         transaction.addToBackStack(null);
         transaction.commit();
 
-        Toast toast = Toast.makeText(getApplicationContext(), "Profile Updated", Toast.LENGTH_SHORT);
-        toast.show();
+//        Toast toast = Toast.makeText(getApplicationContext(), "Profile Updated", Toast.LENGTH_SHORT);
+//        toast.show();
 
         EditText nameETF = findViewById(R.id.nameETF);
         EditText dobET = findViewById(R.id.dobET);
