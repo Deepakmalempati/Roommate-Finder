@@ -124,9 +124,9 @@ public class HomepageActivity extends FragmentActivity {
       listView.setAdapter(customAdapter);
 
         // Instantiate a ViewPager2 and a PagerAdapter.
-        // viewPager = findViewById(R.id.pager);
-        // pagerAdapter = new ScreenSlidePagerAdapter(this);
-        // viewPager.setAdapter(pagerAdapter);
+        viewPager = findViewById(R.id.pager);
+        pagerAdapter = new ScreenSlidePagerAdapter(this);
+        viewPager.setAdapter(pagerAdapter);
 
 
     }
