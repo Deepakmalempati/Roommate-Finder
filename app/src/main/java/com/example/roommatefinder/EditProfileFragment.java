@@ -33,14 +33,14 @@ private ProfileFragment profilefragment;
         public void swapfragment();
     }
 
-    //Callback listener;
+    Callback listener;
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
         myActivity = (Callback) context;
 
-      //  Activity myact= (Activity)context;
-        //listener=(Callback)myact;
+       Activity myact= (Activity)context;
+        listener=(Callback)myact;
     }
 
 
