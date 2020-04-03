@@ -66,11 +66,18 @@ private ProfileFragment profilefragment;
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v =  inflater.inflate(R.layout.fragment_edit_profile, container, false);
+        EditText valueTV = v.findViewById(R.id.nameETF);
+        EditText dobTV = v.findViewById(R.id.dobET);
+        EditText placeETF = v.findViewById(R.id.cityETF);
+        EditText phnoET = v.findViewById(R.id.phnoETF);
+
+
+
 
         profileobj.getValueString().observe(this, new Observer<String>() {
                     @Override
                     public void onChanged(String s) {
-                        EditText valueTV = v.findViewById(R.id.nameETF);
+
 
                         valueTV.setText(s);
 
@@ -81,7 +88,7 @@ private ProfileFragment profilefragment;
             @Override
             public void onChanged(String s) {
 
-                EditText dobTV = v.findViewById(R.id.dobET);
+
 
                 dobTV.setText(s);
             }
@@ -91,7 +98,7 @@ private ProfileFragment profilefragment;
             @Override
             public void onChanged(String s) {
 
-                EditText placeETF = v.findViewById(R.id.cityETF);
+
 
                 placeETF.setText(s);
             }
@@ -100,7 +107,7 @@ private ProfileFragment profilefragment;
             @Override
             public void onChanged(String s) {
 
-                EditText phnoET = v.findViewById(R.id.phnoETF);
+
 
                 phnoET.setText(s);
             }
@@ -110,7 +117,14 @@ private ProfileFragment profilefragment;
         updateBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                EditText valueTV = v.findViewById(R.id.nameETF);
+                EditText dobTV = v.findViewById(R.id.dobET);
+                EditText placeETF = v.findViewById(R.id.cityETF);
+                EditText phnoET = v.findViewById(R.id.phnoETF);
+
+
                     myActivity.SwapToEditProfileFragment();
+
             }
         });
 
