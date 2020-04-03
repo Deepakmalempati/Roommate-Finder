@@ -260,16 +260,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Male"
-        tools:layout_editor_absoluteX="182dp"
-        tools:layout_editor_absoluteY="218dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.543"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.311" />
 
     <CheckBox
         android:id="@+id/genderCB1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Female"
-        tools:layout_editor_absoluteX="277dp"
-        tools:layout_editor_absoluteY="218dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.831"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.311" />
 
     <TextView
         android:id="@+id/textView5"
@@ -286,11 +294,12 @@
         app:layout_constraintVertical_bias="0.647" />
 
     <EditText
-        android:id="@+id/editText4"
+        android:id="@+id/otherinfoET"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:gravity="start|top"
+        android:hint="silence hours after 8 PM"
         android:inputType="textMultiLine"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

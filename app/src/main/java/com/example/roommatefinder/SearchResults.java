@@ -36,7 +36,11 @@ public class SearchResults extends AppCompatActivity {
                             Intent intent = new Intent(SearchResults.this, detailedinfo.class);
                             intent.putExtra("data",model.choiceList.get(position).title);
                     intent.putExtra("data1",model.choiceList.get(position).cost);
-                  //  intent.putExtra("amenitiesdata",NewPostingActivity.listdataamenities.get(position));
+                    intent.putExtra("housetypedata",model.choiceList.get(position).Housetype);
+                    intent.putExtra("genderdata",model.choiceList.get(position).gender);
+                    intent.putExtra("otherinfodata",model.choiceList.get(position).otherinfo);
+                    intent.putExtra("amenitiesdata",model.choiceList.get(position).amenities);
+
                             startActivity(intent);
 
 

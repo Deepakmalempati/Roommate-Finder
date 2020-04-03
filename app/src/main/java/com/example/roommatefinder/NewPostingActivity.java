@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -54,6 +55,8 @@ public class NewPostingActivity extends AppCompatActivity {
         EditText amenitiesET = findViewById(R.id.amenitiesET);
         EditText priceET = findViewById(R.id.priceET);
         EditText phnoET = findViewById(R.id.phnoET);
+        EditText otherinfoET = findViewById(R.id.otherinfoET);
+        CheckBox genderCB = findViewById(R.id.genderCB);
 
         if(housetypeET.getText().toString().isEmpty()){
             housetypeET.setError("Enter a title");
@@ -81,6 +84,9 @@ public class NewPostingActivity extends AppCompatActivity {
             listdataplace.add(place);
             listdataprice.add(price);
             listdataamenities.add(amenitiesET.getText().toString());
+            listdatahousetype.add(housetypeET.getText().toString());
+            listdatagender.add(genderCB.getText().toString());
+            listdataotherinfo.add(otherinfoET.getText().toString());
 
 
 

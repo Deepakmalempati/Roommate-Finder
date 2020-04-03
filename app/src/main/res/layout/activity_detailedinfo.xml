@@ -27,7 +27,7 @@
         android:layout_width="399dp"
         android:layout_height="164dp"
         android:layout_marginBottom="11dp"
-        app:layout_constraintBottom_toTopOf="@+id/one"
+        app:layout_constraintBottom_toTopOf="@+id/housetypeTV"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/titleTV"
@@ -35,7 +35,7 @@
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/one"
+        android:id="@+id/housetypeTV"
         android:layout_width="381dp"
         android:layout_height="57dp"
         android:layout_marginStart="14dp"
@@ -45,14 +45,14 @@
         android:text="House type :Two bedroom"
         android:textColor="#000000"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/two"
+        app:layout_constraintBottom_toTopOf="@+id/genderTV"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/image"
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/two"
+        android:id="@+id/genderTV"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="14dp"
@@ -62,14 +62,14 @@
         android:text="Prefered : Female"
         android:textColor="#000000"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/three"
+        app:layout_constraintBottom_toTopOf="@+id/otherinfoTV"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/one"
+        app:layout_constraintTop_toBottomOf="@+id/housetypeTV"
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/three"
+        android:id="@+id/otherinfoTV"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="14dp"
@@ -79,14 +79,14 @@
         android:text="Other info : no pets allowed"
         android:textColor="#000000"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/four"
+        app:layout_constraintBottom_toTopOf="@+id/amenitiesTV"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/two"
+        app:layout_constraintTop_toBottomOf="@+id/genderTV"
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/four"
+        android:id="@+id/amenitiesTV"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="14dp"
@@ -99,7 +99,7 @@
         app:layout_constraintBottom_toTopOf="@+id/priceTV"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/three" />
+        app:layout_constraintTop_toBottomOf="@+id/otherinfoTV" />
 
     <TextView
         android:id="@+id/priceTV"
@@ -115,7 +115,7 @@
         app:layout_constraintBottom_toTopOf="@+id/six"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/four"
+        app:layout_constraintTop_toBottomOf="@+id/amenitiesTV"
         tools:ignore="MissingConstraints" />
 
     <TextView
