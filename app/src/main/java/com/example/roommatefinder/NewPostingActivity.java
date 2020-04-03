@@ -62,10 +62,10 @@ public class NewPostingActivity extends AppCompatActivity {
             housetypeET.setError("Enter a title");
         }
         else if(amenitiesET.getText().toString().isEmpty()){
-            amenitiesET.setError("enter amenities");
+            amenitiesET.setError("Enter amenities");
         }
         else if(priceET.getText().toString().isEmpty()){
-            priceET.setError("enter rent");
+            priceET.setError("Enter rent");
         }
         else if(phnoET.getText().toString().isEmpty() || phnoET.getText().toString().length()<10){
             phnoET.setError("Phone number incorrect");
@@ -90,7 +90,7 @@ public class NewPostingActivity extends AppCompatActivity {
 
 
 
-           
+
             startActivity(ini);
             Toast toast = Toast.makeText(getApplicationContext(), "Posted Successfully", Toast.LENGTH_LONG);
             toast.show();
