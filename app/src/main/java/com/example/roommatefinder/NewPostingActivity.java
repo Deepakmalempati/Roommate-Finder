@@ -80,13 +80,13 @@ public class NewPostingActivity extends AppCompatActivity {
             Intent ini = new Intent(this, HomepageActivity.class);
 
 
-//            listdatatitle.add(title);
-//            listdataplace.add(place);
-//            listdataprice.add(price);
-//            listdataamenities.add(amenitiesET.getText().toString());
-//            listdatahousetype.add(housetypeET.getText().toString());
-//            listdatagender.add(genderCB.getText().toString());
-//            listdataotherinfo.add(otherinfoET.getText().toString());
+            listdatatitle.add(title);
+            listdataplace.add(place);
+            listdataprice.add(price);
+            listdataamenities.add(amenitiesET.getText().toString());
+            listdatahousetype.add(housetypeET.getText().toString());
+            listdatagender.add(genderCB.getText().toString());
+            listdataotherinfo.add(otherinfoET.getText().toString());
 
 
 
@@ -102,10 +102,10 @@ public class NewPostingActivity extends AppCompatActivity {
         Intent intent = new Intent(this,HomepageActivity.class);
         startActivity(intent);
     }
-    public void profileclick(View view){
-        Intent intent = new Intent(this,ProfileActivity.class);
-        startActivity(intent);
-    }
+//    public void profileclick(View view){
+//        Intent intent = new Intent(this,ProfileActivity.class);
+//        startActivity(intent);
+//    }
 
    public void uploadimage(View view){
        Intent cInt = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
