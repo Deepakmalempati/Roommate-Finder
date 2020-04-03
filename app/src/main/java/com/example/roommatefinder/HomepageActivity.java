@@ -52,11 +52,11 @@ public class HomepageActivity extends FragmentActivity {
     String names[] = {"Looking for Roommate","Room for sharing","College Dorms","Friendly Roommate"};
     String emails[] = {"Maryville","Kansas city","Omaha","Kansas City"};
     String cost[] = {"$250","$500","$300","$150"};
-<<<<<<< HEAD
+
     int images[] = {R.drawable.bedroom2_2,R.drawable.dormroom,R.drawable.room_sharing,R.drawable.bedroom2_2,R.drawable.dormroom};
-=======
-    int images[] = {R.drawable.dormroom,R.drawable.two_bed,R.drawable.room_sharing,R.drawable.dormroom,R.drawable.dormroom};
->>>>>>> 3c72b28de1ca01d76f646d20481ecf18313bccd5
+
+
+
     List<HomervModel> itemsModelList = new ArrayList<>();
     ListView listView;
 
