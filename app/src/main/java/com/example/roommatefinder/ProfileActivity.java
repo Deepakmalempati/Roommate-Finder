@@ -67,6 +67,7 @@ public class ProfileActivity extends AppCompatActivity implements EditProfileFra
     }
 
     public void profileclick(View view){
+       // (EditProfileFragment.Callback)getActivity().
         Intent intent = new Intent(this,ProfileActivity.class);
         startActivity(intent);
     }
