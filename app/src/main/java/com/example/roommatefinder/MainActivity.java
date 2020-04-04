@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
             emailET.setError("enter email");
             passwordET.setError("Enter password");
         }
-        else if(emailET.getText().toString().equals("q") && passwordET.getText().toString().equals("q")){
+        else if(emailET.getText().toString().equals("android@nw.com") && passwordET.getText().toString().equals("android")){
             Intent intent = new Intent(this,HomepageActivity.class);
             startActivity(intent);
         }
