@@ -52,7 +52,8 @@ public class MainActivity extends AppCompatActivity {
             emailET.setError("enter email");
             passwordET.setError("Enter password");
         }
-        else if(!(email.equals("")&&password.equals(""))){
+
+        else if(!(email.equals("")&&password.equals(""))) {
 
 
             mAuth.signInWithEmailAndPassword(email, password)
@@ -75,6 +76,12 @@ public class MainActivity extends AppCompatActivity {
                             // ...
                         }
                     });
+
+//        else if(emailET.getText().toString().equals("android@nw.com") && passwordET.getText().toString().equals("android")){
+//            Intent intent = new Intent(this,HomepageActivity.class);
+//            startActivity(intent);
+//
+//        }
         }
         else {
             Toast toast=Toast.makeText(getApplicationContext(),"invalid email and password", Toast.LENGTH_LONG);

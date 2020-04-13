@@ -74,7 +74,7 @@ private ProfileFragment profilefragment;
 
 
 
-        profileobj.getValueString().observe(this, new Observer<String>() {
+        profileobj.getValueString().observe(getViewLifecycleOwner(), new Observer<String>() {
                     @Override
                     public void onChanged(String s) {
 
@@ -84,7 +84,7 @@ private ProfileFragment profilefragment;
                     }
                 });
 
-        profileobj.getdobString().observe(this, new Observer<String>() {
+        profileobj.getdobString().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(String s) {
 
@@ -94,7 +94,7 @@ private ProfileFragment profilefragment;
             }
         });
 
-        profileobj.getplaceString().observe(this, new Observer<String>() {
+        profileobj.getplaceString().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(String s) {
 
@@ -103,7 +103,7 @@ private ProfileFragment profilefragment;
                 placeETF.setText(s);
             }
         });
-        profileobj.getphnoString().observe(this, new Observer<String>() {
+        profileobj.getphnoString().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(String s) {
 

@@ -33,15 +33,15 @@ public class SearchResults extends AppCompatActivity {
                     Log.d("click", "clicked on item "+ position);
                     SearchResultsModel model = SearchResultsModel.getSingleton();
 
-                            Intent intent = new Intent(SearchResults.this, detailedinfo.class);
-                            intent.putExtra("data",model.choiceList.get(position).title);
-                    intent.putExtra("data1",model.choiceList.get(position).cost);
-                    intent.putExtra("housetypedata",model.choiceList.get(position).Housetype);
-                    intent.putExtra("genderdata",model.choiceList.get(position).gender);
-                    intent.putExtra("otherinfodata",model.choiceList.get(position).otherinfo);
-                    intent.putExtra("amenitiesdata",model.choiceList.get(position).amenities);
+                  //  Intent intent = new Intent(SearchResults.this, detailedinfo.class);
+                    //intent.putExtra("data",model.choiceList.get(position).title);
+                    //intent.putExtra("data1",model.choiceList.get(position).cost);
+                    //intent.putExtra("housetypedata",model.choiceList.get(position).Housetype);
+                    //intent.putExtra("genderdata",model.choiceList.get(position).gender);
+                    //intent.putExtra("otherinfodata",model.choiceList.get(position).otherinfo);
+                    //intent.putExtra("amenitiesdata",model.choiceList.get(position).amenities);
 
-                            startActivity(intent);
+                   // startActivity(intent);
 
 
 
