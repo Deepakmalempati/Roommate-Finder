@@ -25,16 +25,19 @@ public class detailedinfo extends AppCompatActivity {
         String gender = intent.getStringExtra("genderdata");
         String otherinfo = intent.getStringExtra("otherinfodata");
         String amenities = intent.getStringExtra("amenitiesdata");
+
         TextView priceTV = findViewById(R.id.priceTV);
         TextView housetypeTV = findViewById(R.id.housetypeTV);
         TextView genderTV = findViewById(R.id.genderTV);
         TextView otherinfoTV = findViewById(R.id.otherinfoTV);
         TextView amenitiesTV = findViewById(R.id.amenitiesTV);
+
         priceTV.setText("Cost per month: "+price);
         housetypeTV.setText("House Type: "+housetype);
         genderTV.setText("Preffered: "+gender);
         otherinfoTV.setText("Other Info: "+otherinfo);
         amenitiesTV.setText("Amenities included: "+amenities);
+
       //  TextView amenitiesTV = findViewById(R.id.amenitiesTV);
       //  amenitiesTV.setText(intent.getStringExtra("amenitiesdata"));
 

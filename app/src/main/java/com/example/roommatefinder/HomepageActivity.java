@@ -15,6 +15,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.Toolbar;
@@ -99,6 +100,7 @@ public class HomepageActivity extends FragmentActivity {
                 placename = place.getName();
 
                 Intent intent = new Intent(HomepageActivity.this,SearchResults.class);
+
                 startActivity(intent);
 
                 Log.i(TAG, "Place: " + place.getName() + ", " + place.getId());
@@ -118,6 +120,7 @@ public class HomepageActivity extends FragmentActivity {
         for (int i = 0; i < names.length; i++) {
 
             HomervModel itemsModel = new HomervModel(names[i], emails[i], cost[i], images[i]);
+
 
             itemsModelList.add(itemsModel);
 
@@ -237,8 +240,10 @@ public void newlistingclick(View view){
                 @Override
                 public void onClick(View v) {
                     Log.e("main activity", "item clicked");
-                    startActivity(new Intent(HomepageActivity.this, detailedinfo.class).putExtra("items", itemsModelListFiltered.get(position)));
+                   // Intent ini = new Intent(HomepageActivity.this, detailedinfo.class).putExtra("items", itemsModelListFiltered.get(position));
 
+                    Toast toast = Toast.makeText(getApplicationContext(),"please enter location to search",Toast.LENGTH_LONG);
+                    toast.show();
                 }
             });
 
