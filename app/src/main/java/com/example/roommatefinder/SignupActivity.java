@@ -1,19 +1,30 @@
 package com.example.roommatefinder;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 public class SignupActivity extends AppCompatActivity {
 
+    private FirebaseAuth mAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
+        // Initialize Firebase Auth
+        mAuth = FirebaseAuth.getInstance();
     }
 
     public void signupclick(View view){
@@ -23,6 +34,8 @@ public class SignupActivity extends AppCompatActivity {
         EditText phnoET = findViewById(R.id.phnoET);
         EditText passwordET = findViewById(R.id.passwordET);
         EditText repasswordET = findViewById(R.id.repasswordET);
+        String email = emailET.getText().toString();
+        String password = passwordET.getText().toString();
 
         if(nameET.getText().toString().isEmpty()){
             nameET.setError("Name is requried");
@@ -55,17 +68,42 @@ public class SignupActivity extends AppCompatActivity {
             passwordET.setError("Password must be 8 characters");
         }
 
+        else{
+            mAuth.createUserWithEmailAndPassword(email, password)
+                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()) {
+                                // Sign in success, update UI with the signed-in user's information
+                                Log.d("signup log", "createUserWithEmail:success");
+                                Intent intent = new Intent(SignupActivity.this, MainActivity.class);
+                                startActivity(intent);
+                                Toast.makeText(getApplicationContext(), "Signup Successful! Login back",
+                                        Toast.LENGTH_SHORT).show();
+                            } else {
+                                // If sign in fails, display a message to the user.
+                                Log.w("signup log", "createUserWithEmail:failure", task.getException());
+                                Toast.makeText(getApplicationContext(), "Authentication failed.",
+                                        Toast.LENGTH_SHORT).show();
 
+                            }
 
-        else {
-            Intent intent = new Intent(this, MainActivity.class);
-
-            intent.putExtra("profiledata",nameET.getText().toString());
-            startActivity(intent);
-
-            Toast toast = Toast.makeText(getApplicationContext(), "Signup Successful. please login!", Toast.LENGTH_LONG);
-            toast.show();
+                            // ...
+                        }
+                    });
         }
+
+
+
+//        else {
+//            Intent intent = new Intent(this, MainActivity.class);
+//
+//            intent.putExtra("profiledata",nameET.getText().toString());
+//            startActivity(intent);
+//
+//            Toast toast = Toast.makeText(getApplicationContext(), "Signup Successful. please login!", Toast.LENGTH_LONG);
+//            toast.show();
+//        }
 
     }
 
