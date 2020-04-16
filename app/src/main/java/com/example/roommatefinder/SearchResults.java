@@ -110,7 +110,7 @@ public class SearchResults extends AppCompatActivity {
         // [END post_value_event_listener]
 
         // Keep copy of post listener so we can remove it when app stops
-     //   mPostListener = postListener;
+        //   mPostListener = postListener;
 
         // Listen for comments
         mAdapter = new CommentAdapter(this, mCommentsReference);
@@ -207,6 +207,7 @@ public class SearchResults extends AppCompatActivity {
                     // [START_EXCLUDE]
                     // Update RecyclerView
                     mCommentIds.add(dataSnapshot.getKey());
+
                     mComments.add(comment);
                     notifyItemInserted(mComments.size() - 1);
                     // [END_EXCLUDE]
@@ -294,24 +295,25 @@ public class SearchResults extends AppCompatActivity {
 
         @Override
         public void onBindViewHolder(CommentViewHolder holder, int position) {
-           // final DatabaseReference postRef = getRef(position);
+            // final DatabaseReference postRef = ;
             SearchResultsModel.ChoiceInfo comment = mComments.get(position);
             holder.titleTV.setText(comment.title);
             holder.costTV.setText(comment.cost);
             holder.locationTV.setText(comment.location);
 
 
-         //  final String postKey = postRef.getKey();
-            final String postKey = mCommentsReference.getRef().getKey();
+             // final String postKey = postRef.getKey();
+            final String postKey = mCommentIds.get(position);
+            //final String postKey = mCommentsReference.getRef().getKey();
             Log.d("Key log value","Key log value: "+postKey);
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(SearchResults.this, detailedinfo.class);
-                intent.putExtra(SearchResults.EXTRA_POST_KEY, postKey);
-                startActivity(intent);
-            }
-        });
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(SearchResults.this, detailedinfo.class);
+                    intent.putExtra(SearchResults.EXTRA_POST_KEY, postKey);
+                    startActivity(intent);
+                }
+            });
         }
 
         @Override
