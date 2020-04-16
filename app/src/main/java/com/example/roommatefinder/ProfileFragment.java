@@ -78,7 +78,7 @@ public interface ProfileCallbackInterface{
 
                 TextView nameTV = v.findViewById(R.id.nameenterTV);
 
-                nameTV.setText(name);
+                nameTV.setText(s);
             }
         });
         profileobj.getdobString().observe(this, new Observer<String>() {

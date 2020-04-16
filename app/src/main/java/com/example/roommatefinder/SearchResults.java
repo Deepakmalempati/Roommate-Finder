@@ -69,12 +69,6 @@ public class SearchResults extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_results);
 
-
-// ...
-
-
-
-
         choiceadapter= new SearchResultsAdapter();
         choiceRV = findViewById(R.id.searchRV);
         choiceRV.setAdapter(choiceadapter);
@@ -91,6 +85,9 @@ public class SearchResults extends AppCompatActivity {
                                                         return detector.onTouchEvent(e);
                                                     }
                                                 });
+
+
+
     }
 
 

@@ -27,6 +27,7 @@ public class SearchResultsModel {
 
 
     private DatabaseReference mPostReference;
+    static String x;
 
  public static class ChoiceInfo{
         public String title;
@@ -36,6 +37,8 @@ public class SearchResultsModel {
         public String gender;
         public String otherinfo;
         public String amenities;
+
+
 
         public ChoiceInfo(){
 
@@ -79,32 +82,14 @@ public class SearchResultsModel {
 
         }
 
-        if(HomepageActivity.placename.equalsIgnoreCase("Maryville")) {
+//        if(HomepageActivity.placename.equalsIgnoreCase("Maryville")) {
+//
+//
+//        }
 
-            mPostReference = FirebaseDatabase.getInstance().getReference("NewPost");
 
-            ValueEventListener postListener = new ValueEventListener() {
-                @Override
-                public void onDataChange(DataSnapshot dataSnapshot) {
-                    // Get Post object and use the values to update the UI
-                    SearchResultsModel.ChoiceInfo post = dataSnapshot.getValue(SearchResultsModel.ChoiceInfo.class);
-                    Log.d("cancelled log", "value fetched" + post.title);
-                    choiceList.add(new ChoiceInfo(post.title, post.location, post.cost, post.Housetype, post.gender, post.otherinfo, post.amenities));
-                    // choicemodel.loadModel();
 
-                }
-
-                @Override
-                public void onCancelled(DatabaseError databaseError) {
-                    // Getting Post failed, log a message
-                    Log.w("cancelled log", "loadPost:onCancelled", databaseError.toException());
-                    // ...
-                }
-            };
-            mPostReference.addValueEventListener(postListener);
-        }
-//       if(HomepageActivity.placename.equalsIgnoreCase("Maryville")) {
-            choiceList.add(new ChoiceInfo("Looking for Roommate", "Maryville", "$290","2 Bedroom","Male","No partis after 8 pm","Electricity, laundry"));
+        choiceList.add(new ChoiceInfo("Looking for Roommate", "Maryville", "$290","2 Bedroom","Male","No partis after 8 pm","Electricity, laundry"));
 //            choiceList.add(new ChoiceInfo("Room available", "Maryville", "$500","2 Bedroom","Male","No partis after 8 pm","Electricity, laundry"));
 //            choiceList.add(new ChoiceInfo("Looking for friendly student", "Maryville", "$450","2 Bedroom","Male","No partis after 8 pm","Electricity, laundry"));
 //           // choiceList.add(new ChoiceInfo(SearchResults.value,"Maryville", "$290","2 Bedroom","Male","No partis after 8 pm","Electricity, laundry"));

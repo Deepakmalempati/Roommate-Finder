@@ -24,7 +24,7 @@ public class NewPostingActivity extends AppCompatActivity {
 
 
    FirebaseDatabase database = FirebaseDatabase.getInstance();
-   DatabaseReference mydbRef = database.getReference("NewPost");
+   DatabaseReference mydbRef = database.getReference("NewPost").push();
 //    DatabaseReference myRefplace = database.getReference("/New Post/Location of post");
 //    DatabaseReference myRefprice = database.getReference("/New Post/Cost of post");
 
