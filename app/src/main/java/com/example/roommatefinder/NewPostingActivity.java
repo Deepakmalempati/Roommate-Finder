@@ -113,7 +113,7 @@ public class NewPostingActivity extends AppCompatActivity {
 
             SearchResultsModel.ChoiceInfo ci = new SearchResultsModel.ChoiceInfo(title,place,price,housetype,gender,otherinfo,amenities);
             mydbRef.setValue(ci);
-
+            String key = mydbRef.child("posts").push().getKey();
             startActivity(ini);
             Toast toast = Toast.makeText(getApplicationContext(), "Posted Successfully", Toast.LENGTH_LONG);
             toast.show();

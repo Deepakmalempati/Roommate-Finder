@@ -21,13 +21,13 @@ import static com.example.roommatefinder.NewPostingActivity.listdatatitle;
 import static com.example.roommatefinder.NewPostingActivity.listdataplace;
 import static com.example.roommatefinder.NewPostingActivity.listdataprice;
 import static com.example.roommatefinder.NewPostingActivity.listdatatitle;
-import static com.example.roommatefinder.SearchResults.value;
+//import static com.example.roommatefinder.SearchResults.value;
 
 public class SearchResultsModel {
 
 
-    private DatabaseReference mPostReference;
-    static String x;
+//    private DatabaseReference mPostReference;
+//    static String x;
 
  public static class ChoiceInfo{
         public String title;
@@ -55,60 +55,60 @@ public class SearchResultsModel {
         }
     }
 
-    public ArrayList<ChoiceInfo> choiceList;
-    private static SearchResultsModel theModel=null;
-
-    private SearchResultsModel(){
-        choiceList=new ArrayList<ChoiceInfo>();
-
-        loadModel();
-    }
-
-
-    public static SearchResultsModel getSingleton(){
-        if(theModel==null)
-            theModel=new SearchResultsModel();
-        return theModel;
-    }
-
-    public void loadModel(){
-
-        for(int i=0;i<listdatatitle.size();i++) {
-            ChoiceInfo ci = new ChoiceInfo(listdatatitle.get(i),listdataplace.get(i),listdataprice.get(i),listdatahousetype.get(i),listdatagender.get(i),listdataotherinfo.get(i),listdataamenities.get(i));
-            choiceList.add(ci);
-
-
-
-
-        }
-
-//        if(HomepageActivity.placename.equalsIgnoreCase("Maryville")) {
+//    public ArrayList<ChoiceInfo> choiceList;
+//    private static SearchResultsModel theModel=null;
+//
+//    private SearchResultsModel(){
+//        choiceList=new ArrayList<ChoiceInfo>();
+//
+//        loadModel();
+//    }
+//
+//
+//    public static SearchResultsModel getSingleton(){
+//        if(theModel==null)
+//            theModel=new SearchResultsModel();
+//        return theModel;
+//    }
+//
+//    public void loadModel(){
+//
+//        for(int i=0;i<listdatatitle.size();i++) {
+//            ChoiceInfo ci = new ChoiceInfo(listdatatitle.get(i),listdataplace.get(i),listdataprice.get(i),listdatahousetype.get(i),listdatagender.get(i),listdataotherinfo.get(i),listdataamenities.get(i));
+//            choiceList.add(ci);
+//
+//
 //
 //
 //        }
-
-
-
-        choiceList.add(new ChoiceInfo("Looking for Roommate", "Maryville", "$290","2 Bedroom","Male","No partis after 8 pm","Electricity, laundry"));
-//            choiceList.add(new ChoiceInfo("Room available", "Maryville", "$500","2 Bedroom","Male","No partis after 8 pm","Electricity, laundry"));
-//            choiceList.add(new ChoiceInfo("Looking for friendly student", "Maryville", "$450","2 Bedroom","Male","No partis after 8 pm","Electricity, laundry"));
-//           // choiceList.add(new ChoiceInfo(SearchResults.value,"Maryville", "$290","2 Bedroom","Male","No partis after 8 pm","Electricity, laundry"));
+//
+////        if(HomepageActivity.placename.equalsIgnoreCase("Maryville")) {
+////
+////
+////        }
 //
 //
-//       }
-//       if(HomepageActivity.placename.equalsIgnoreCase("Kansas city")){
-//            choiceList.add(new ChoiceInfo("Looking for Roommate", "Kansas city","$290","2 Bedroom","Male","No partis after 8 pm","Electricity, laundry"));
-//            choiceList.add(new ChoiceInfo("Room available", "Kansas city","$500","2 Bedroom","Male","No partis after 8 pm","Electricity, laundry"));
-//            choiceList.add(new ChoiceInfo("Looking for friendly student", "Kansas city","$450","2 Bedroom","Male","No partis after 8 pm","Electricity, laundry"));
-//       }
-
-
-
-    }
-
-
-    public void reset(){
-        choiceList.clear();
-        loadModel();
-    }
+//
+//        choiceList.add(new ChoiceInfo("Looking for Roommate", "Maryville", "$290","2 Bedroom","Male","No partis after 8 pm","Electricity, laundry"));
+////            choiceList.add(new ChoiceInfo("Room available", "Maryville", "$500","2 Bedroom","Male","No partis after 8 pm","Electricity, laundry"));
+////            choiceList.add(new ChoiceInfo("Looking for friendly student", "Maryville", "$450","2 Bedroom","Male","No partis after 8 pm","Electricity, laundry"));
+////           // choiceList.add(new ChoiceInfo(SearchResults.value,"Maryville", "$290","2 Bedroom","Male","No partis after 8 pm","Electricity, laundry"));
+////
+////
+////       }
+////       if(HomepageActivity.placename.equalsIgnoreCase("Kansas city")){
+////            choiceList.add(new ChoiceInfo("Looking for Roommate", "Kansas city","$290","2 Bedroom","Male","No partis after 8 pm","Electricity, laundry"));
+////            choiceList.add(new ChoiceInfo("Room available", "Kansas city","$500","2 Bedroom","Male","No partis after 8 pm","Electricity, laundry"));
+////            choiceList.add(new ChoiceInfo("Looking for friendly student", "Kansas city","$450","2 Bedroom","Male","No partis after 8 pm","Electricity, laundry"));
+////       }
+//
+//
+//
+//    }
+//
+//
+//    public void reset(){
+//        choiceList.clear();
+//        loadModel();
+//    }
 }
