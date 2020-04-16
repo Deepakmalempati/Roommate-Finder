@@ -1,6 +1,8 @@
 package com.example.roommatefinder;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,9 +12,16 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import afu.org.checkerframework.checker.nullness.qual.NonNull;
 
 public class SearchResultsAdapter extends RecyclerView.Adapter<SearchResultsAdapter.ChoiceViewHolder> {
+    private DatabaseReference mPostReference;
     public static class ChoiceViewHolder extends RecyclerView.ViewHolder {
         private LinearLayout LLviewreference;
         public ChoiceViewHolder(LinearLayout t){
@@ -25,6 +34,7 @@ public class SearchResultsAdapter extends RecyclerView.Adapter<SearchResultsAdap
         super();
         choicemodel = SearchResultsModel.getSingleton();
         choicemodel.reset();
+
     }
 
     @Override
@@ -35,6 +45,8 @@ public class SearchResultsAdapter extends RecyclerView.Adapter<SearchResultsAdap
                 durationTV.setText(choicemodel.choiceList.get(position).cost);
                 TextView costTV =holder.LLviewreference.findViewById(R.id.locationTV);
                 costTV.setText(choicemodel.choiceList.get(position).location);
+               // choicetv.setText(SearchResults.title);
+
     }
 
 
@@ -50,6 +62,7 @@ public class SearchResultsAdapter extends RecyclerView.Adapter<SearchResultsAdap
         LinearLayout v = (LinearLayout) LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.detailedsearchview, parent, false);
         ChoiceViewHolder vh = new ChoiceViewHolder(v);
+
         return vh;
     }
 }

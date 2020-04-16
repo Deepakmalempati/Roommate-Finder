@@ -3,6 +3,7 @@ package com.example.roommatefinder;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -13,10 +14,20 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.util.ArrayList;
 
 
 public class NewPostingActivity extends AppCompatActivity {
+
+
+   FirebaseDatabase database = FirebaseDatabase.getInstance();
+   DatabaseReference mydbRef = database.getReference("NewPost");
+//    DatabaseReference myRefplace = database.getReference("/New Post/Location of post");
+//    DatabaseReference myRefprice = database.getReference("/New Post/Cost of post");
+
 
     private static final int Image_Capture_Code = 1;
     private ImageView imgCapture;
@@ -24,6 +35,11 @@ public class NewPostingActivity extends AppCompatActivity {
     private  String title;
     private  String place;
     private  String price;
+    private String amenities;
+    private String housetype;
+    private String otherinfo;
+    private String gender;
+
 //    public static String gettitle() {
 //        return title;
 //    }
@@ -73,23 +89,30 @@ public class NewPostingActivity extends AppCompatActivity {
         else {
             EditText titleET = findViewById(R.id.housetypeET);
             title = titleET.getText().toString();
+          //  myReftitle.setValue(title);
             EditText placeET = findViewById(R.id.cityET);
             place = placeET.getText().toString();
-
+          //  myRefplace.setValue(place);
             price = priceET.getText().toString();
+            amenities = amenitiesET.getText().toString();
+            housetype = housetypeET.getText().toString();
+            otherinfo = otherinfoET.getText().toString();
+            gender = genderCB.getText().toString();
+
+         //   myRefprice.setValue(price);
             Intent ini = new Intent(this, HomepageActivity.class);
 
 
             listdatatitle.add(title);
             listdataplace.add(place);
             listdataprice.add(price);
-            listdataamenities.add(amenitiesET.getText().toString());
-            listdatahousetype.add(housetypeET.getText().toString());
-            listdatagender.add(genderCB.getText().toString());
-            listdataotherinfo.add(otherinfoET.getText().toString());
+            listdataamenities.add(amenities);
+            listdatahousetype.add(housetype);
+            listdatagender.add(gender);
+            listdataotherinfo.add(otherinfo);
 
-
-
+            SearchResultsModel.ChoiceInfo ci = new SearchResultsModel.ChoiceInfo(title,place,price,housetype,gender,otherinfo,amenities);
+            mydbRef.setValue(ci);
 
             startActivity(ini);
             Toast toast = Toast.makeText(getApplicationContext(), "Posted Successfully", Toast.LENGTH_LONG);

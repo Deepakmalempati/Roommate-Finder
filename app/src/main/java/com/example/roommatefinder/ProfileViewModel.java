@@ -1,14 +1,18 @@
 package com.example.roommatefinder;
 
+import android.widget.TextView;
+
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.Transformations;
 import androidx.lifecycle.ViewModel;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class ProfileViewModel extends ViewModel {
 
 
-    static ProfileViewModel.Profile profileobj = new ProfileViewModel.Profile("Jyothsna", "Female", "27-March-1997", "Maryville", "8019992123");
+    static ProfileViewModel.Profile profileobj = new ProfileViewModel.Profile("", "Select", "DD-MM-YYYY", "your place", "8019992123");
 public static  class Profile{
     private String name;
     private String gender;

@@ -37,19 +37,18 @@
         tools:layout_conversion_absoluteHeight="24dp"
         tools:layout_conversion_absoluteWidth="56dp" />
 
-    <EditText
+    <TextView
         android:id="@+id/nameenterTV"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:background="@android:color/transparent"
         android:ems="4"
         android:inputType="text"
-        android:text="Jyothsna"
         android:textColor="#000000"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.641"
+        app:layout_constraintHorizontal_bias="0.788"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.533"
@@ -72,9 +71,9 @@
         tools:layout_conversion_absoluteHeight="24dp"
         tools:layout_conversion_absoluteWidth="66dp" />
 
-    <EditText
+    <TextView
         android:id="@+id/genderenterTV"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:background="@android:color/transparent"
         android:ems="4"
@@ -84,10 +83,10 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.641"
+        app:layout_constraintHorizontal_bias="0.788"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.601"
+        app:layout_constraintVertical_bias="0.6"
         tools:layout_conversion_absoluteHeight="24dp"
         tools:layout_conversion_absoluteWidth="85dp" />
 
@@ -107,9 +106,9 @@
         tools:layout_conversion_absoluteHeight="24dp"
         tools:layout_conversion_absoluteWidth="112dp" />
 
-    <EditText
+    <TextView
         android:id="@+id/dateenterTV"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:background="@android:color/transparent"
         android:ems="4"
@@ -119,10 +118,10 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.641"
+        app:layout_constraintHorizontal_bias="0.788"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.685"
+        app:layout_constraintVertical_bias="0.684"
         tools:layout_conversion_absoluteHeight="24dp"
         tools:layout_conversion_absoluteWidth="85dp" />
 
@@ -142,9 +141,9 @@
         tools:layout_conversion_absoluteHeight="24dp"
         tools:layout_conversion_absoluteWidth="39dp" />
 
-    <EditText
+    <TextView
         android:id="@+id/cityenterTV"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:background="@android:color/transparent"
         android:ems="4"
@@ -154,10 +153,10 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.641"
+        app:layout_constraintHorizontal_bias="0.788"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.758"
+        app:layout_constraintVertical_bias="0.756"
         tools:layout_conversion_absoluteHeight="24dp"
         tools:layout_conversion_absoluteWidth="85dp" />
 
@@ -177,9 +176,9 @@
         tools:layout_conversion_absoluteHeight="24dp"
         tools:layout_conversion_absoluteWidth="59dp" />
 
-    <EditText
+    <TextView
         android:id="@+id/phoneenterTV"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:background="@android:color/transparent"
         android:ems="4"
@@ -189,10 +188,10 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.641"
+        app:layout_constraintHorizontal_bias="0.788"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.83"
+        app:layout_constraintVertical_bias="0.829"
         tools:layout_conversion_absoluteHeight="23dp"
         tools:layout_conversion_absoluteWidth="124dp" />
 

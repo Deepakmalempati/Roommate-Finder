@@ -21,6 +21,9 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 import org.w3c.dom.Text;
 
 import static android.app.Activity.RESULT_OK;
@@ -44,17 +47,30 @@ public interface ProfileCallbackInterface{
     public void onAttach(Context context) {
         super.onAttach(context);
         myinterface = (ProfileFragment.ProfileCallbackInterface) context;
+
     }
 
 
     public static ProfileFragment newInstance() {
         return new ProfileFragment();
     }
+    private FirebaseAuth mAuth;
+     String name;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.profile_fragment, container, false);
+        mAuth = FirebaseAuth.getInstance();
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user != null) {
+            // Name, email address, and profile photo Url
+             name = user.getDisplayName();
+            String email = user.getEmail();
+            TextView nameTV = v.findViewById(R.id.nameenterTV);
+            nameTV.setText(email);
+
+        }
 
         profileobj.getValueString().observe(this, new Observer<String>() {
             @Override
@@ -62,7 +78,7 @@ public interface ProfileCallbackInterface{
 
                 TextView nameTV = v.findViewById(R.id.nameenterTV);
 
-                nameTV.setText(s);
+                nameTV.setText(name);
             }
         });
         profileobj.getdobString().observe(this, new Observer<String>() {
