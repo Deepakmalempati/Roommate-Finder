@@ -78,6 +78,16 @@ public class YourLisitngs extends AppCompatActivity {
 
     }
 
+    public void HomeBTNclick(View view){
+        Intent intent = new Intent(YourLisitngs.this,HomepageActivity.class);
+        startActivity(intent);
+    }
+
+    public void profileclick(View view){
+        Intent intent = new Intent(YourLisitngs.this,ProfileActivity.class);
+        startActivity(intent);
+    }
+
 //    private class RecyclerViewOnGestureListener extends GestureDetector.SimpleOnGestureListener {
 //        @Override
 //        public boolean onSingleTapConfirmed(MotionEvent e) {
