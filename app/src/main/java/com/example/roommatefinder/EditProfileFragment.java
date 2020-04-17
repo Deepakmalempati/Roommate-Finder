@@ -131,7 +131,7 @@ private ProfileFragment profilefragment;
 //                String dob = dobETF.getText().toString();
 //                String place = placeETF.getText().toString();
 //                String phno = phnoETF.getText().toString();
-                
+
                  myActivity.SwapToEditProfileFragment();
 
             }
