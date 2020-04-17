@@ -137,7 +137,7 @@ public class ProfileActivity extends AppCompatActivity {
 //        Users.addValueEventListener(postListener);
   //  }
 
-<<<<<<< HEAD
+
 
 
     @Override
@@ -147,11 +147,11 @@ public class ProfileActivity extends AppCompatActivity {
 
         mdbReference = FirebaseDatabase.getInstance().getReference()
                 .child("Users-Data").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
-=======
+
         DatabaseReference Users = FirebaseDatabase.getInstance().getReference()
                 .child("Users");
 
->>>>>>> 636b88f08a85f37783b0cd68be1eed080b393de0
+
         ValueEventListener postListener = new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -164,17 +164,14 @@ public class ProfileActivity extends AppCompatActivity {
                 TextView cityTV = findViewById(R.id.cityenterTV);
                 TextView phoneTV = findViewById(R.id.phoneenterTV);
 
-<<<<<<< HEAD
+
                 nameTV.setText(userobj.getName());
                 emailTV.setText(userobj.getEmail());
                 genderTV.setText("Male");
                 dobTV.setText(userobj.getDob());
                 cityTV.setText(userobj.getPlace());
-=======
-                nameTV.setText(userinfoobj.getName());
-                phoneTV.setText(userinfoobj.getPhno());
 
->>>>>>> 636b88f08a85f37783b0cd68be1eed080b393de0
+
                 // [END_EXCLUDE]
             }
 
@@ -188,7 +185,7 @@ public class ProfileActivity extends AppCompatActivity {
                 // [END_EXCLUDE]
             }
         };
-<<<<<<< HEAD
+
         mdbReference.addValueEventListener(postListener);
 
 //        userdbref = FirebaseDatabase.getInstance().getReference().child("Users").push();
@@ -217,41 +214,8 @@ public class ProfileActivity extends AppCompatActivity {
 //
 //
 //
-=======
-        Users.addValueEventListener(postListener);
     }
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_profile);
-
-        userdbref = FirebaseDatabase.getInstance().getReference().child("Users").push();
-
-        ViewModelProvider.Factory vmf = new ViewModelProvider.NewInstanceFactory();
-        ViewModelProvider vmp = new ViewModelProvider(this, vmf);
-     //   model = vmp.get(ProfileViewModel.class);
-        Log.d("Model", "mainViewModel is ");
-
-        if (savedInstanceState != null) {
-            FragmentManager fm = getSupportFragmentManager();
-            profilefragment = (ProfileFragment) fm.findFragmentByTag("profileFR");
-            editprofilefragment = (EditProfileFragment) fm.findFragmentByTag("editprofileFR");
-            return;
-        }
-      //  profileobj.reset();
-
-        profilefragment = new ProfileFragment();
-        editprofilefragment = new EditProfileFragment();
-
-        profilefragment = new ProfileFragment();
-        editprofilefragment = new EditProfileFragment();
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.add(R.id.containerFL, profilefragment, "profileFR");
-        transaction.commit();
-
->>>>>>> 636b88f08a85f37783b0cd68be1eed080b393de0
-    }
 
     public void profileclick(View view){
        // (EditProfileFragment.Callback)getActivity().
