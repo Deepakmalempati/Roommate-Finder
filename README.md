@@ -32,11 +32,6 @@ We have a total of 9 activities:
 9.	Your listings activity: 
 10. Search Results Activity
 
-#### Team members: 
-1.	Sai Jyothsna Mathi
-2.	Omkar Abhiteja Badda
-3.	Deepak Malempati
-4.	Jeevan Reddy Mure
 ### Application Information:
 
   #### Test credentials:
@@ -57,3 +52,9 @@ We have a total of 9 activities:
 
 ![image](flowchart.jpeg)
 
+
+#### Team members: 
+1.	Sai Jyothsna Mathi
+2.	Omkar Abhiteja Badda
+3.	Deepak Malempati
+4.	Jeevan Reddy Mure
