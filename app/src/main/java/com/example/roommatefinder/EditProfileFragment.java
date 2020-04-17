@@ -50,17 +50,17 @@ private ProfileFragment profilefragment;
     }
 
 
-//    @Override
-//    public void onAttach(Context context) {
-//        super.onAttach(context);
-//
-//        myActivity = (EditCallback) context;
-//        ProfileActivity mainActivity = (ProfileActivity) context;
-//        ViewModelProvider.Factory vmf = new ViewModelProvider.NewInstanceFactory();
-//        ViewModelProvider vmp = new ViewModelProvider(mainActivity, vmf);
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+
+        myActivity = (EditCallback) context;
+        ProfileActivity mainActivity = (ProfileActivity) context;
+        ViewModelProvider.Factory vmf = new ViewModelProvider.NewInstanceFactory();
+        ViewModelProvider vmp = new ViewModelProvider(mainActivity, vmf);
        // mainViewModel = vmp.get(ProfileViewModel.class);
 
-       // myActivity = (EditCallback) context;
+        myActivity = (EditCallback) context;
 
 
 
