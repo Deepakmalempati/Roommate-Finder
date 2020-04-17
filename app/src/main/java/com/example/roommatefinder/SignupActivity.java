@@ -148,6 +148,7 @@ public class SignupActivity extends AppCompatActivity {
         UserInfo user = new UserInfo(email,name,"DD-MM-YY","Place",phno);
 
         mDatabase.child("Users").child(userId).setValue(user);
+        mDatabase.child("Users-Data").child(userId).setValue(user);
     }
 
 }
