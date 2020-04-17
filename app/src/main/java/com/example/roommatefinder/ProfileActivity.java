@@ -157,12 +157,12 @@ public class ProfileActivity extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 // Get Post object and use the values to update the UI
                 UserInfo userobj = dataSnapshot.getValue(UserInfo.class);
-                TextView nameTV = findViewById(R.id.nameenterTV);
-                TextView emailTV = findViewById(R.id.emailenterTV);
-                TextView genderTV = findViewById(R.id.genderenterTV);
-                TextView dobTV = findViewById(R.id.dateenterTV);
-                TextView cityTV = findViewById(R.id.cityenterTV);
-                TextView phoneTV = findViewById(R.id.phoneenterTV);
+                EditText nameTV = findViewById(R.id.nameenterTV);
+                EditText emailTV = findViewById(R.id.emailenterTV);
+                EditText genderTV = findViewById(R.id.genderenterTV);
+                EditText dobTV = findViewById(R.id.dateenterTV);
+                EditText cityTV = findViewById(R.id.cityenterTV);
+                EditText phoneTV = findViewById(R.id.phoneenterTV);
 
 
                 nameTV.setText(userobj.getName());
