@@ -77,31 +77,29 @@ public class ProfileActivity extends AppCompatActivity implements EditProfileFra
     @Override
     public void SwapToEditProfileFragment(){
 
-//        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-//        transaction.replace(R.id.containerFL, profilefragment, "profileFR");
-//        transaction.addToBackStack(null);
-//        transaction.commit();
-//
-//        Toast toast = Toast.makeText(getApplicationContext(), "Profile Updated", Toast.LENGTH_SHORT);
-//        toast.show();
-//
-//        EditText emailETF = findViewById(R.id.emailETF);
-//                EditText nameETF = findViewById(R.id.nameET);
-//                EditText dobETF = findViewById(R.id.dobET);
-//                EditText placeETF = findViewById(R.id.cityETF);
-//                EditText phnoETF = findViewById(R.id.phnoETF);
-//                String email = emailETF.getText().toString();
-//                String name=nameETF.getText().toString();
-//                String dob = dobETF.getText().toString();
-//                String place = placeETF.getText().toString();
-//                String phno = phnoETF.getText().toString();
-//        UserInfo userobj = new UserInfo(email,name,dob,place,phno);
-//        userdbref.setValue(userobj);
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.containerFL, profilefragment, "profileFR");
+        transaction.addToBackStack(null);
+        transaction.commit();
 
+        Toast toast = Toast.makeText(getApplicationContext(), "Profile Updated", Toast.LENGTH_SHORT);
+        toast.show();
+
+        EditText emailETF = findViewById(R.id.emailETF);
+                EditText nameETF = findViewById(R.id.nameET);
+                EditText dobETF = findViewById(R.id.dobET);
+                EditText placeETF = findViewById(R.id.cityETF);
+                EditText phnoETF = findViewById(R.id.phnoETF);
+                String email = emailETF.getText().toString();
+                String name=nameETF.getText().toString();
+                String dob = dobETF.getText().toString();
+                String place = placeETF.getText().toString();
+                String phno = phnoETF.getText().toString();
+        UserInfo userobj = new UserInfo(email,name,dob,place,phno);
+        userdbref.setValue(userobj);
 
         DatabaseReference Users = FirebaseDatabase.getInstance().getReference()
                 .child("Users");
-
 
         ValueEventListener postListener = new ValueEventListener() {
             @Override
@@ -113,7 +111,6 @@ public class ProfileActivity extends AppCompatActivity implements EditProfileFra
                 TextView dobTV = findViewById(R.id.dateenterTV);
                 TextView cityTV = findViewById(R.id.cityenterTV);
                 TextView phoneTV = findViewById(R.id.phoneenterTV);
-
 
                 nameTV.setText(userinfoobj.getName());
                 phoneTV.setText(userinfoobj.getPhno());
@@ -133,8 +130,6 @@ public class ProfileActivity extends AppCompatActivity implements EditProfileFra
         };
         Users.addValueEventListener(postListener);
     }
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -165,8 +160,6 @@ public class ProfileActivity extends AppCompatActivity implements EditProfileFra
         transaction.add(R.id.containerFL, profilefragment, "profileFR");
         transaction.commit();
 
-
-
     }
 
     public void profileclick(View view){
@@ -178,7 +171,4 @@ public class ProfileActivity extends AppCompatActivity implements EditProfileFra
         Intent intent = new Intent(this,HomepageActivity.class);
         startActivity(intent);
     }
-
-
-
 }
