@@ -72,15 +72,15 @@ public interface ProfileCallbackInterface{
 
         }
 
-        profileobj.getValueString().observe(this, new Observer<String>() {
-            @Override
-            public void onChanged(String s) {
-
-                TextView nameTV = v.findViewById(R.id.nameenterTV);
-
-                nameTV.setText(s);
-            }
-        });
+//        profileobj.getValueString().observe(this, new Observer<String>() {
+//            @Override
+//            public void onChanged(String s) {
+//
+//                TextView nameTV = v.findViewById(R.id.nameenterTV);
+//
+//                nameTV.setText(s);
+//            }
+//        });
         profileobj.getdobString().observe(this, new Observer<String>() {
             @Override
             public void onChanged(String s) {
