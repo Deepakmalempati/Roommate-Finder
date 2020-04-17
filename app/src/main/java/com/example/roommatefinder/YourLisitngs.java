@@ -18,6 +18,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -36,7 +37,7 @@ public class YourLisitngs extends AppCompatActivity {
 
     private static final String TAG = "YourListingsActivity";
 
-    public static final String EXTRA_POST_KEY = "post_key";
+
 
 
     private DatabaseReference mPostReference;
@@ -44,11 +45,14 @@ public class YourLisitngs extends AppCompatActivity {
     private ValueEventListener mPostListener;
     private String mPostKey;
     private CommentAdapter mAdapter;
+    private CommentAdapter mAdapter1;
 
 
     private RecyclerView mCommentsRecycler;
 
-
+    public String getUid() {
+        return FirebaseAuth.getInstance().getCurrentUser().getUid();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,9 +69,9 @@ public class YourLisitngs extends AppCompatActivity {
 
         // Initialize Database
         mPostReference = FirebaseDatabase.getInstance().getReference()
-                .child("NewPost");
+                .child("New-Posts");
         mCommentsReference = FirebaseDatabase.getInstance().getReference()
-                .child("NewPost");
+                .child("User-Post").child(getUid());
 
         // Initialize Views
 
@@ -88,116 +92,22 @@ public class YourLisitngs extends AppCompatActivity {
         startActivity(intent);
     }
 
-//    private class RecyclerViewOnGestureListener extends GestureDetector.SimpleOnGestureListener {
-//        @Override
-//        public boolean onSingleTapConfirmed(MotionEvent e) {
-//            View view = mCommentsRecycler.findChildViewUnder(e.getX(), e.getY());
-//            if (view != null) {
-//                RecyclerView.ViewHolder holder = mCommentsRecycler.getChildViewHolder(view);
-//                if (holder instanceof CommentViewHolder) {
-//                    int position = holder.getAdapterPosition();
-//// handle single tap
-//                    Log.d("click", "clicked on item "+ position);
-//                    //PizzaModel model = PizzaModel.getSingleton();
-//
-//
-//                   .remove(position);
-//                    // pizzaadapter.notifyItemRemoved(position);
-//                    return true; // Use up the tap gesture
-//                }
-//            }
-//// we didn't handle the gesture so pass it on
-//            return false;
-//        }
-//    }
+
 
     @Override
     public void onStart() {
         super.onStart();
 
-        // Add value event listener to the post
-        // [START post_value_event_listener]
-//        ValueEventListener postListener = new ValueEventListener() {
-//            @Override
-//            public void onDataChange(DataSnapshot dataSnapshot) {
-//                // Get Post object and use the values to update the UI
-//                Post post = dataSnapshot.getValue(Post.class);
-//                // [START_EXCLUDE]
-//                mAuthorView.setText(post.author);
-//                mTitleView.setText(post.title);
-//                mBodyView.setText(post.body);
-//                // [END_EXCLUDE]
-//            }
-//
-//            @Override
-//            public void onCancelled(DatabaseError databaseError) {
-//                // Getting Post failed, log a message
-//                Log.w(TAG, "loadPost:onCancelled", databaseError.toException());
-//                // [START_EXCLUDE]
-//                Toast.makeText(PostDetailActivity.this, "Failed to load post.",
-//                        Toast.LENGTH_SHORT).show();
-//                // [END_EXCLUDE]
-//            }
-//        };
-//        mPostReference.addValueEventListener(postListener);
-        // [END post_value_event_listener]
 
-        // Keep copy of post listener so we can remove it when app stops
-        //   mPostListener = postListener;
 
         // Listen for comments
-        mAdapter = new CommentAdapter(this, mCommentsReference);
-        mCommentsRecycler.setAdapter(mAdapter);
+
+        mAdapter1 = new CommentAdapter(this, mCommentsReference);
+        mCommentsRecycler.setAdapter(mAdapter1);
+
     }
 
-//    @Override
-//    public void onStop() {
-//        super.onStop();
-//
-//        // Remove post value event listener
-//        if (mPostListener != null) {
-//            mPostReference.removeEventListener(mPostListener);
-//        }
-//
-//        // Clean up comments listener
-//        mAdapter.cleanupListener();
-//    }
 
-//    @Override
-//    public void onClick(View v) {
-//        int i = v.getId();
-//        if (i == R.id.buttonPostComment) {
-//            postComment();
-//        }
-//    }
-
-//    private void postComment() {
-//        final String uid = getUid();
-//        FirebaseDatabase.getInstance().getReference().child("users").child(uid)
-//                .addListenerForSingleValueEvent(new ValueEventListener() {
-//                    @Override
-//                    public void onDataChange(DataSnapshot dataSnapshot) {
-//                        // Get user information
-//                        User user = dataSnapshot.getValue(User.class);
-//                        String authorName = user.username;
-//
-//                        // Create new comment object
-//                        String commentText = mCommentField.getText().toString();
-//                        Comment comment = new Comment(uid, authorName, commentText);
-//
-//                        // Push the comment, it will appear in the list
-//                        mCommentsReference.push().setValue(comment);
-//
-//                        // Clear the field
-//                        mCommentField.setText(null);
-//                    }
-//
-//                    @Override
-//                    public void onCancelled(DatabaseError databaseError) {
-//
-//                    }
-//                });
-//    }
 
     private static class CommentViewHolder extends RecyclerView.ViewHolder {
 
@@ -343,6 +253,7 @@ public class YourLisitngs extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     mCommentsReference.child(postKey).removeValue();
+                    mPostReference.child(postKey).removeValue();
                     notifyDataSetChanged();
                 }
             });

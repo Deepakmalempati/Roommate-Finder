@@ -35,9 +35,9 @@ public class detailedinfo extends AppCompatActivity {
             throw new IllegalArgumentException("Must pass EXTRA_POST_KEY");
         }
         mPostReference = FirebaseDatabase.getInstance().getReference()
-                .child("NewPost").child(mPostKey);
+                .child("New-Posts").child(mPostKey);
         mCommentsReference = FirebaseDatabase.getInstance().getReference()
-                .child("NewPost").child(mPostKey);
+                .child("New-Posts").child(mPostKey);
 
 
 

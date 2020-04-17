@@ -21,6 +21,9 @@ import com.google.firebase.database.FirebaseDatabase;
 public class SignupActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
+    private DatabaseReference mDatabase;
+    private String phno;
+
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference mydbRef = database.getReference("Users").push();
     @Override
@@ -28,8 +31,10 @@ public class SignupActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
         // Initialize Firebase Auth
+        mDatabase = FirebaseDatabase.getInstance().getReference();
         mAuth = FirebaseAuth.getInstance();
     }
+
 
     public void signupclick(View view){
 
@@ -41,7 +46,7 @@ public class SignupActivity extends AppCompatActivity {
         String email = emailET.getText().toString();
         String password = passwordET.getText().toString();
         String name = nameET.getText().toString();
-        String phno = phnoET.getText().toString();
+         phno = phnoET.getText().toString();
 
         if(nameET.getText().toString().isEmpty()){
             nameET.setError("Name is requried");
@@ -81,12 +86,13 @@ public class SignupActivity extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
+                                onAuthSuccess(task.getResult().getUser());
                                 // Sign in success, update UI with the signed-in user's information
                                 Log.d("signup log", "createUserWithEmail:success");
-                                Intent intent = new Intent(SignupActivity.this, MainActivity.class);
-                                startActivity(intent);
-                                Toast.makeText(getApplicationContext(), "Signup Successful! Login back",
-                                        Toast.LENGTH_SHORT).show();
+
+
+
+
                             } else {
                                 // If sign in fails, display a message to the user.
                                 Log.w("signup log", "createUserWithEmail:failure", task.getException());
@@ -116,6 +122,32 @@ public class SignupActivity extends AppCompatActivity {
 //            toast.show();
 //        }
 
+    }
+    private String usernameFromEmail(String email) {
+        if (email.contains("@")) {
+            return email.split("@")[0];
+        } else {
+            return email;
+        }
+    }
+    private void onAuthSuccess(FirebaseUser user) {
+
+        String username = usernameFromEmail(user.getEmail());
+        // Write new user
+        writeNewUser(user.getUid(), username, user.getEmail());
+
+        // Go to MainActivity
+        Intent intent = new Intent(SignupActivity.this, MainActivity.class);
+        startActivity(intent);
+        Toast.makeText(getApplicationContext(), "Signup Successful! Login back",
+                Toast.LENGTH_SHORT).show();
+        finish();
+    }
+
+    private void writeNewUser(String userId, String name, String email) {
+        UserInfo user = new UserInfo(email,name,"DD-MM-YY","Place",phno);
+
+        mDatabase.child("Users").child(userId).setValue(user);
     }
 
 }

@@ -19,7 +19,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import static com.example.roommatefinder.ProfileViewModel.profileobj;
+
 
 public class ProfileActivity extends AppCompatActivity implements EditProfileFragment.EditCallback, ProfileFragment.ProfileCallbackInterface{
 
@@ -27,7 +27,7 @@ public class ProfileActivity extends AppCompatActivity implements EditProfileFra
 
     private ProfileFragment profilefragment;
     private EditProfileFragment editprofilefragment;
-    private ProfileViewModel model;
+  //  private ProfileViewModel model;
     DatabaseReference userdbref;
 
     @Override
@@ -145,8 +145,8 @@ public class ProfileActivity extends AppCompatActivity implements EditProfileFra
 
         ViewModelProvider.Factory vmf = new ViewModelProvider.NewInstanceFactory();
         ViewModelProvider vmp = new ViewModelProvider(this, vmf);
-        model = vmp.get(ProfileViewModel.class);
-        Log.d("Model", "mainViewModel is " + model);
+     //   model = vmp.get(ProfileViewModel.class);
+        Log.d("Model", "mainViewModel is ");
 
         if (savedInstanceState != null) {
             FragmentManager fm = getSupportFragmentManager();
@@ -154,7 +154,7 @@ public class ProfileActivity extends AppCompatActivity implements EditProfileFra
             editprofilefragment = (EditProfileFragment) fm.findFragmentByTag("editprofileFR");
             return;
         }
-        profileobj.reset();
+      //  profileobj.reset();
 
         profilefragment = new ProfileFragment();
         editprofilefragment = new EditProfileFragment();

@@ -7,6 +7,7 @@ import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -14,17 +15,23 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class NewPostingActivity extends AppCompatActivity {
 
 
    FirebaseDatabase database = FirebaseDatabase.getInstance();
-   DatabaseReference mydbRef = database.getReference("NewPost").push();
+   DatabaseReference mydbRef = database.getReference();
 //    DatabaseReference myRefplace = database.getReference("/New Post/Location of post");
 //    DatabaseReference myRefprice = database.getReference("/New Post/Cost of post");
 
@@ -98,9 +105,55 @@ public class NewPostingActivity extends AppCompatActivity {
 
 
 
+            final String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
+            mydbRef.child("Users").child(userId).addListenerForSingleValueEvent(
+                    new ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshot) {
+                            // Get user value
+                            UserInfo user = dataSnapshot.getValue(UserInfo.class);
 
-            SearchResultsModel.ChoiceInfo ci = new SearchResultsModel.ChoiceInfo(title,place,price,housetype,gender,otherinfo,amenities);
-            mydbRef.setValue(ci);
+                            // [START_EXCLUDE]
+                            if (user == null) {
+                                // User is null, error out
+                                Log.d("Error log", "User " + userId + " is unexpectedly null");
+                                Toast.makeText(NewPostingActivity.this,
+                                        "Error: could not fetch user.",
+                                        Toast.LENGTH_SHORT).show();
+                            } else {
+                                // Write new post
+                                Log.d("User ID log", "User ID is = " + userId);
+                               // writeNewPost(userId, user.username, title, body);
+                                String key = mydbRef.child("User-Post").push().getKey();
+                                Log.d("Key","Key value: "+key);
+                                SearchResultsModel.ChoiceInfo ci = new SearchResultsModel.ChoiceInfo(title,place,price,housetype,gender,otherinfo,amenities);
+                                mydbRef.child("New-Posts").push().setValue(ci);
+                                Map<String, Object> postValues = ci.toMap();
+
+                                Map<String, Object> childUpdates = new HashMap<>();
+                                //childUpdates.put("/NewPost/" + key, postValues);
+                               childUpdates.put("/User-Post/" + userId + "/" + key, postValues);
+
+                                mydbRef.updateChildren(childUpdates);
+
+                            }
+
+                            // Finish this Activity, back to the stream
+                           // setEditingEnabled(true);
+                            finish();
+                            // [END_EXCLUDE]
+                        }
+
+                        @Override
+                        public void onCancelled(DatabaseError databaseError) {
+                            Log.w("Cancelled log", "getUser:onCancelled", databaseError.toException());
+                            // [START_EXCLUDE]
+                           // setEditingEnabled(true);
+                            // [END_EXCLUDE]
+                        }
+                    });
+            // [END single_value_read]
+
            // String key = mydbRef.child("posts").push().getKey();
             startActivity(ini);
             Toast toast = Toast.makeText(getApplicationContext(), "Posted Successfully", Toast.LENGTH_LONG);

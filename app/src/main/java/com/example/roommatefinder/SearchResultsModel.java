@@ -54,7 +54,7 @@ public class SearchResultsModel {
      @Exclude
      public Map<String, Object> toMap() {
          HashMap<String, Object> result = new HashMap<>();
-         result.put("ttile", title);
+         result.put("title", title);
          result.put("location", location);
          result.put("cost", cost);
          result.put("Housetype", Housetype);

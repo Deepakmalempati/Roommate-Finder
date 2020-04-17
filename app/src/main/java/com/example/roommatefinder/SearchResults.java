@@ -68,9 +68,9 @@ public class SearchResults extends AppCompatActivity {
 
         // Initialize Database
         mPostReference = FirebaseDatabase.getInstance().getReference()
-                .child("NewPost");
+                .child("New-Posts");
         mCommentsReference = FirebaseDatabase.getInstance().getReference()
-                .child("NewPost");
+                .child("New-Posts");
 
         // Initialize Views
 

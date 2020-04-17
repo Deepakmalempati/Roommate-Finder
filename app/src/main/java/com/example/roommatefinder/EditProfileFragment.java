@@ -23,7 +23,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import static com.example.roommatefinder.ProfileViewModel.profileobj;
+
 
 
 /**
@@ -34,7 +34,7 @@ public class EditProfileFragment extends Fragment {
 
         DatabaseReference userdbref;
     private EditCallback myActivity;
-    private ProfileViewModel mainViewModel ;
+   // private ProfileViewModel mainViewModel ;
 
 
 private ProfileFragment profilefragment;
@@ -58,7 +58,7 @@ private ProfileFragment profilefragment;
         ProfileActivity mainActivity = (ProfileActivity) context;
         ViewModelProvider.Factory vmf = new ViewModelProvider.NewInstanceFactory();
         ViewModelProvider vmp = new ViewModelProvider(mainActivity, vmf);
-        mainViewModel = vmp.get(ProfileViewModel.class);
+       // mainViewModel = vmp.get(ProfileViewModel.class);
 
         myActivity = (EditCallback) context;
 

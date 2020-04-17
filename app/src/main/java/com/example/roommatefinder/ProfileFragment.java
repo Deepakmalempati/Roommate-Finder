@@ -30,11 +30,11 @@ import static android.app.Activity.RESULT_OK;
 public class ProfileFragment extends Fragment {
 
     ImageView imageView;
-    private ProfileViewModel profileViewModel;
+    //private ProfileViewModel profileViewModel;
     Button button;
     private static final int PICK_IMAGE = 100;
     Uri imageUri;
-    private ProfileViewModel mViewModel;
+  //  private ProfileViewModel mViewModel;
     ProfileCallbackInterface myinterface;
 
 public interface ProfileCallbackInterface{
