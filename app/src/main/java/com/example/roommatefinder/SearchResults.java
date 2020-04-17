@@ -18,6 +18,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.roommatefinder.R;
+import com.example.roommatefinder.SearchResultsModel;
+import com.example.roommatefinder.detailedinfo;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -302,7 +305,7 @@ public class SearchResults extends AppCompatActivity {
             holder.locationTV.setText(comment.location);
 
 
-             // final String postKey = postRef.getKey();
+            // final String postKey = postRef.getKey();
             final String postKey = mCommentIds.get(position);
             //final String postKey = mCommentsReference.getRef().getKey();
             Log.d("Key log value","Key log value: "+postKey);
@@ -327,5 +330,10 @@ public class SearchResults extends AppCompatActivity {
             }
         }
 
+    }
+
+    public void flitersclick(View view){
+        Intent intent = new Intent(SearchResults.this,Filters.class);
+        startActivity(intent);
     }
 }

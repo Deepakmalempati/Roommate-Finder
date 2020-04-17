@@ -99,8 +99,8 @@ public class SignupActivity extends AppCompatActivity {
                         }
                     });
 
-            UserInfo user = new UserInfo(name,email,phno);
-            mydbRef.setValue(user);
+//            UserInfo user = new UserInfo(name,email,phno);
+//            mydbRef.setValue(user);
 
         }
 

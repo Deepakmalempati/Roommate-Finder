@@ -8,19 +8,15 @@ import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.Exclude;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
-import static com.example.roommatefinder.NewPostingActivity.listdataamenities;
-import static com.example.roommatefinder.NewPostingActivity.listdatagender;
-import static com.example.roommatefinder.NewPostingActivity.listdatahousetype;
-import static com.example.roommatefinder.NewPostingActivity.listdataotherinfo;
-import static com.example.roommatefinder.NewPostingActivity.listdatatitle;
-import static com.example.roommatefinder.NewPostingActivity.listdataplace;
-import static com.example.roommatefinder.NewPostingActivity.listdataprice;
-import static com.example.roommatefinder.NewPostingActivity.listdatatitle;
+
 //import static com.example.roommatefinder.SearchResults.value;
 
 public class SearchResultsModel {
@@ -53,6 +49,21 @@ public class SearchResultsModel {
             this.otherinfo = otherinfo;
             this.amenities = amenities;
         }
+
+
+     @Exclude
+     public Map<String, Object> toMap() {
+         HashMap<String, Object> result = new HashMap<>();
+         result.put("ttile", title);
+         result.put("location", location);
+         result.put("cost", cost);
+         result.put("Housetype", Housetype);
+         result.put("gender", gender);
+         result.put("otherinfo", otherinfo);
+         result.put("amenities", amenities);
+
+         return result;
+     }
     }
 
 //    public ArrayList<ChoiceInfo> choiceList;

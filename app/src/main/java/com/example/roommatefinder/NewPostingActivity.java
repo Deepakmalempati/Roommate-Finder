@@ -57,13 +57,7 @@ public class NewPostingActivity extends AppCompatActivity {
         setContentView(R.layout.activity_new_posting);
     }
 
-    public static ArrayList<String> listdatatitle =new  ArrayList<>();
-    public static ArrayList<String> listdataplace =new  ArrayList<>();
-    public static ArrayList<String> listdataprice =new  ArrayList<>();
-    public static ArrayList<String> listdataamenities =new  ArrayList<>();
-    public static ArrayList<String> listdatahousetype =new  ArrayList<>();
-    public static ArrayList<String> listdatagender =new  ArrayList<>();
-    public static ArrayList<String> listdataotherinfo =new  ArrayList<>();
+
 
     public void postBTNclick(View v){
 
@@ -103,17 +97,11 @@ public class NewPostingActivity extends AppCompatActivity {
             Intent ini = new Intent(this, HomepageActivity.class);
 
 
-            listdatatitle.add(title);
-            listdataplace.add(place);
-            listdataprice.add(price);
-            listdataamenities.add(amenities);
-            listdatahousetype.add(housetype);
-            listdatagender.add(gender);
-            listdataotherinfo.add(otherinfo);
+
 
             SearchResultsModel.ChoiceInfo ci = new SearchResultsModel.ChoiceInfo(title,place,price,housetype,gender,otherinfo,amenities);
             mydbRef.setValue(ci);
-            String key = mydbRef.child("posts").push().getKey();
+           // String key = mydbRef.child("posts").push().getKey();
             startActivity(ini);
             Toast toast = Toast.makeText(getApplicationContext(), "Posted Successfully", Toast.LENGTH_LONG);
             toast.show();
