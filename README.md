@@ -32,11 +32,29 @@ We have a total of 9 activities:
 9.	Your listings activity: 
 10. Search Results Activity
 
-Team members: 
-1.	Sai Jyostna Mathi
-2.	Omkar Abhiteja Badda
-3.	Deepak Malempati
-4.	Jeevan Reddy Mure
+### Application Information:
+
+  #### Test credentials:
+  
+  #### APK:
+  
+  #### Supported Devices:
+      1. Android 5.0 Lollipop(API 21)-minimum sdk
+      2. Android 6.0 Marshmallow(API 23) 
+      3. Android 7.0 Nougat(API 24)  
+      4. Android 8.0 Oreo(API 26)
+      5. Android 9.0 Pie(API 28)-target sdk  
+      6. Android 10(API 29)- copmile sdk  
+
+  #### Sequence Information:
+     Below Flow chart describes flow of information in sequence for RoomiE application.
+
 
 ![image](flowchart.jpeg)
 
+
+#### Team members: 
+1.	Sai Jyothsna Mathi
+2.	Omkar Abhiteja Badda
+3.	Deepak Malempati
+4.	Jeevan Reddy Mure
