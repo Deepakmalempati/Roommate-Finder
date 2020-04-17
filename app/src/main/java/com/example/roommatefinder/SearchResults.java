@@ -298,7 +298,7 @@ public class SearchResults extends AppCompatActivity {
             // final DatabaseReference postRef = ;
             SearchResultsModel.ChoiceInfo comment = mComments.get(position);
             holder.titleTV.setText(comment.title);
-            holder.costTV.setText(comment.cost);
+            holder.costTV.setText("$"+comment.cost);
             holder.locationTV.setText(comment.location);
 
 
