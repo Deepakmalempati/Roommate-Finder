@@ -38,3 +38,5 @@ Team members:
 3.	Deepak Malempati
 4.	Jeevan Reddy Mure
 
+![image](flowchart.jpeg)
+
