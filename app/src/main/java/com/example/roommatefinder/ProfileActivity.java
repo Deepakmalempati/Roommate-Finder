@@ -77,26 +77,26 @@ public class ProfileActivity extends AppCompatActivity implements EditProfileFra
     @Override
     public void SwapToEditProfileFragment(){
 
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.containerFL, profilefragment, "profileFR");
-        transaction.addToBackStack(null);
-        transaction.commit();
-
-        Toast toast = Toast.makeText(getApplicationContext(), "Profile Updated", Toast.LENGTH_SHORT);
-        toast.show();
-
-        EditText emailETF = findViewById(R.id.emailETF);
-                EditText nameETF = findViewById(R.id.nameET);
-                EditText dobETF = findViewById(R.id.dobET);
-                EditText placeETF = findViewById(R.id.cityETF);
-                EditText phnoETF = findViewById(R.id.phnoETF);
-                String email = emailETF.getText().toString();
-                String name=nameETF.getText().toString();
-                String dob = dobETF.getText().toString();
-                String place = placeETF.getText().toString();
-                String phno = phnoETF.getText().toString();
-        UserInfo userobj = new UserInfo(email,name,dob,place,phno);
-        userdbref.setValue(userobj);
+//        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+//        transaction.replace(R.id.containerFL, profilefragment, "profileFR");
+//        transaction.addToBackStack(null);
+//        transaction.commit();
+//
+//        Toast toast = Toast.makeText(getApplicationContext(), "Profile Updated", Toast.LENGTH_SHORT);
+//        toast.show();
+//
+//        EditText emailETF = findViewById(R.id.emailETF);
+//                EditText nameETF = findViewById(R.id.nameET);
+//                EditText dobETF = findViewById(R.id.dobET);
+//                EditText placeETF = findViewById(R.id.cityETF);
+//                EditText phnoETF = findViewById(R.id.phnoETF);
+//                String email = emailETF.getText().toString();
+//                String name=nameETF.getText().toString();
+//                String dob = dobETF.getText().toString();
+//                String place = placeETF.getText().toString();
+//                String phno = phnoETF.getText().toString();
+//        UserInfo userobj = new UserInfo(email,name,dob,place,phno);
+//        userdbref.setValue(userobj);
 
 
         DatabaseReference Users = FirebaseDatabase.getInstance().getReference()
