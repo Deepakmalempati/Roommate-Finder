@@ -15,10 +15,14 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class SignupActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference mydbRef = database.getReference("Users").push();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +40,8 @@ public class SignupActivity extends AppCompatActivity {
         EditText repasswordET = findViewById(R.id.repasswordET);
         String email = emailET.getText().toString();
         String password = passwordET.getText().toString();
+        String name = nameET.getText().toString();
+        String phno = phnoET.getText().toString();
 
         if(nameET.getText().toString().isEmpty()){
             nameET.setError("Name is requried");
@@ -91,6 +97,10 @@ public class SignupActivity extends AppCompatActivity {
                             // ...
                         }
                     });
+
+            UserInfo user = new UserInfo(name,email,phno);
+            mydbRef.setValue(user);
+
         }
 
 

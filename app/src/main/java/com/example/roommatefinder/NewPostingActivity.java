@@ -24,7 +24,7 @@ public class NewPostingActivity extends AppCompatActivity {
 
 
    FirebaseDatabase database = FirebaseDatabase.getInstance();
-   DatabaseReference mydbRef = database.getReference("NewPost");
+   DatabaseReference mydbRef = database.getReference("NewPost").push();
 //    DatabaseReference myRefplace = database.getReference("/New Post/Location of post");
 //    DatabaseReference myRefprice = database.getReference("/New Post/Cost of post");
 
@@ -113,7 +113,7 @@ public class NewPostingActivity extends AppCompatActivity {
 
             SearchResultsModel.ChoiceInfo ci = new SearchResultsModel.ChoiceInfo(title,place,price,housetype,gender,otherinfo,amenities);
             mydbRef.setValue(ci);
-
+            String key = mydbRef.child("posts").push().getKey();
             startActivity(ini);
             Toast toast = Toast.makeText(getApplicationContext(), "Posted Successfully", Toast.LENGTH_LONG);
             toast.show();
