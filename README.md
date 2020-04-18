@@ -20,9 +20,10 @@ To add the app to a Firebase project, use the applicationId value specified in t
 4. Now app is ready to use.
 
 ##### Recommended to run the application on physical device for better UI view.
+##### Sometimes virtual devices are facing network access issues so we recommend to run on physical devices.
 
 ----------------------------------------------------------------------------------------------------------------------------------
-This is an android app named RoomiE.
+This is an android app named RoomiE-Finds your roommate easily.
 
 Our App helps in finding a roommate in your area. It also helps in setting multiple preferences while searching for roommate. It gives an option to post your house if you already have a space to live or search for roommate who has living space to share with
 
@@ -43,7 +44,10 @@ We have a total of 9 activities:
 
   #### Test credentials: There is no need of test credentials. User can create an account and login to test the app 
   
-  #### APK:
+  #### APK: APK file is available in below path
+   ```
+   C:\Users\S537238\AndroidStudioProjects\RoommateFinder\app\build\outputs\apk\debug
+   ```
   
   #### Supported Devices:
       1. Android 5.0 Lollipop(API 21)-minimum sdk
