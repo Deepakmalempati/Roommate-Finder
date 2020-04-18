@@ -1,6 +1,11 @@
 # Roommate-Finder
+-----------------------------------------------------------------------------------------------------------------------------------
+# Important Steps to be followed before Running the application
 
-To use google places in the app, please follow below steps
+### To integrate App with Google firebase Realtime database:
+To add the app to a Firebase project, use the applicationId value specified in the app/build.gradle file of the app as the Android package name. Download the generated google-services.json file, and copy it to the app/ directory of our app.
+
+### To use google places in the app, please follow below steps
 1. create secrets.xml as a resource file under "RoommateFinder\app\src\main\res\values\secrets.xml"
 2. add below code to secrets.xml
 
@@ -14,8 +19,11 @@ To use google places in the app, please follow below steps
 3. replace YOUR-API-KEY with your google places API key in the above code snippet.
 4. Now app is ready to use.
 
+##### Recommended to run the application on physical device for better UI view.
+##### Sometimes virtual devices are facing network access issues so we recommend to run on physical devices.
+
 ----------------------------------------------------------------------------------------------------------------------------------
-This is an android app named Roommate finder.
+This is an android app named RoomiE-Finds your roommate easily.
 
 Our App helps in finding a roommate in your area. It also helps in setting multiple preferences while searching for roommate. It gives an option to post your house if you already have a space to live or search for roommate who has living space to share with
 
@@ -34,9 +42,11 @@ We have a total of 9 activities:
 
 ### Application Information:
 
-  #### Test credentials:
+  #### Test credentials: User can create an account and login to test the app. below are test credentials if required
+  ###### email: jyo@gmail.com
+  ###### password: 12345678
   
-  #### APK:
+  #### APK: APK file is available in Root Path with name: RoomiE.api
   
   #### Supported Devices:
       1. Android 5.0 Lollipop(API 21)-minimum sdk
