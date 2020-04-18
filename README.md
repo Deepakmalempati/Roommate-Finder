@@ -46,7 +46,7 @@ We have a total of 9 activities:
   
   #### APK: APK file is available in below path
    ```
-   C:\Users\S537238\AndroidStudioProjects\RoommateFinder\app\build\outputs\apk\debug
+   RoommateFinder\app\build\outputs\apk\debug
    ```
   
   #### Supported Devices:
