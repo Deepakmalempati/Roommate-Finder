@@ -42,7 +42,9 @@ We have a total of 9 activities:
 
 ### Application Information:
 
-  #### Test credentials: There is no need of test credentials. User can create an account and login to test the app 
+  #### Test credentials: User can create an account and login to test the app. below are test credentials if required
+  ###### email: jyo@gmail.com
+  ###### password: 12345678
   
   #### APK: APK file is available in below path
    ```
