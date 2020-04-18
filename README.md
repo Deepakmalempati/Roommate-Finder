@@ -19,6 +19,8 @@ To add the app to a Firebase project, use the applicationId value specified in t
 3. replace YOUR-API-KEY with your google places API key in the above code snippet.
 4. Now app is ready to use.
 
+##### Recommended to run the application on physical device for better UI view.
+
 ----------------------------------------------------------------------------------------------------------------------------------
 This is an android app named RoomiE.
 
