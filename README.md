@@ -46,10 +46,7 @@ We have a total of 9 activities:
   ###### email: jyo@gmail.com
   ###### password: 12345678
   
-  #### APK: APK file is available in below path
-   ```
-   RoommateFinder\app\build\outputs\apk\debug
-   ```
+  #### APK: APK file is available in Root Path with name: RoomiE.api
   
   #### Supported Devices:
       1. Android 5.0 Lollipop(API 21)-minimum sdk
