@@ -1,11 +1,11 @@
 # Roommate-Finder
 -----------------------------------------------------------------------------------------------------------------------------------
-#Important Steps to be followed before Running the application
+# Important Steps to be followed before Running the application
 
--To integrate App with Google firebase Realtime database:
+### To integrate App with Google firebase Realtime database:
 To add the app to a Firebase project, use the applicationId value specified in the app/build.gradle file of the app as the Android package name. Download the generated google-services.json file, and copy it to the app/ directory of our app.
 
--To use google places in the app, please follow below steps
+### To use google places in the app, please follow below steps
 1. create secrets.xml as a resource file under "RoommateFinder\app\src\main\res\values\secrets.xml"
 2. add below code to secrets.xml
 
