@@ -112,14 +112,14 @@
         android:text="Rent : $250/month"
         android:textColor="#000000"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/six"
+        app:layout_constraintBottom_toTopOf="@+id/postedbyTV"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/amenitiesTV"
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/six"
+        android:id="@+id/postedbyTV"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="14dp"

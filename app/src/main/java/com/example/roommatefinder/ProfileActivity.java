@@ -170,6 +170,7 @@ public class ProfileActivity extends AppCompatActivity {
                 genderTV.setText("Male");
                 dobTV.setText(userobj.getDob());
                 cityTV.setText(userobj.getPlace());
+                phoneTV.setText(userobj.getPhno());
 
 
                 // [END_EXCLUDE]

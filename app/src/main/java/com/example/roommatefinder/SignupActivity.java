@@ -145,7 +145,7 @@ public class SignupActivity extends AppCompatActivity {
     }
 
     private void writeNewUser(String userId, String name, String email) {
-        UserInfo user = new UserInfo(email,name,"DD-MM-YY","Place",phno);
+        UserInfo user = new UserInfo(userId, email,name,"DD-MM-YY","Place","8019992123");
 
         mDatabase.child("Users").child(userId).setValue(user);
         mDatabase.child("Users-Data").child(userId).setValue(user);

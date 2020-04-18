@@ -1,13 +1,15 @@
 package com.example.roommatefinder;
 
 public class UserInfo {
+    private String userId;
     private String email;
     private String name;
     private String dob;
     private String place;
     private String phno;
 
-    public UserInfo(String email, String name, String dob, String place, String phno) {
+    public UserInfo(String userId, String email, String name, String dob, String place, String phno) {
+        this.userId = userId;
         this.email = email;
         this.name = name;
         this.dob = dob;
