@@ -225,6 +225,7 @@
         android:id="@+id/updateTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="UpdateImageClick"
         android:text="Update your profile picture"
         android:textColor="#EF251F"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -235,18 +236,6 @@
         app:layout_constraintVertical_bias="0.858"
         tools:layout_conversion_absoluteHeight="33dp"
         tools:layout_conversion_absoluteWidth="190dp" />
-
-    <Button
-        android:id="@+id/editBTN"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
-        android:background="@drawable/edit_icon"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.725"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.124" />
 
     <EditText
         android:id="@+id/emailenterTV"
