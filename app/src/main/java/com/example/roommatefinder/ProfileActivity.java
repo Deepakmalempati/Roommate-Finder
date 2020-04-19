@@ -227,4 +227,25 @@ public class ProfileActivity extends AppCompatActivity {
         Intent intent = new Intent(this,HomepageActivity.class);
         startActivity(intent);
     }
+
+    public void updateBTNclick(View view){
+        EditText nameTV = findViewById(R.id.nameenterTV);
+        EditText emailTV = findViewById(R.id.emailenterTV);
+        EditText genderTV = findViewById(R.id.genderenterTV);
+        EditText dobTV = findViewById(R.id.dateenterTV);
+        EditText cityTV = findViewById(R.id.cityenterTV);
+        EditText phoneTV = findViewById(R.id.phoneenterTV);
+        String name = nameTV.getText().toString();
+        String email = emailTV.getText().toString();
+        String gender = genderTV.getText().toString();
+        String dob = dobTV.getText().toString();
+        String city = cityTV.getText().toString();
+        String phno = phoneTV.getText().toString();
+        UserInfo userobj = new UserInfo(name,email,name,dob,city,phno);
+        mdbReference.setValue(userobj);
+        Toast toast = Toast.makeText(getApplicationContext(),"Profile Updated!", Toast.LENGTH_SHORT);
+        toast.show();
+        Intent intent = new Intent(ProfileActivity.this,HomepageActivity.class);
+        startActivity(intent);
+    }
 }
