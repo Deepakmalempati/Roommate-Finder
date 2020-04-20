@@ -17,6 +17,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -36,18 +37,27 @@ public class ProfileActivity extends AppCompatActivity {
     private DatabaseReference mdbReference;
     ImageView imageView;
     Uri imageUri;
+    FirebaseUser user;
     private static final int PICK_IMAGE = 100;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
-        imageView = (ImageView)findViewById(R.id.imageView);
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        imageView = findViewById(R.id.imageView);
+         user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user != null) {
+            Log.d("image","User image"+user.getDisplayName());
 
-        Uri photoUrl = user.getPhotoUrl();
-        imageView.setImageURI(photoUrl);
-        Log.d("image","User image"+user.getEmail());
+            Uri photoUrl = user.getPhotoUrl();
+            Glide.with(this).load(photoUrl).into(imageView);
+            imageView.setBackground(getDrawable(R.color.white));
+            //imageView.setImageURI(photoUrl);
+            Log.d("image","User image"+photoUrl);
+        } else {
+            Log.d("user log","No user signed in");
+        }
+
 
         mdbReference = FirebaseDatabase.getInstance().getReference()
                 .child("Users-Data").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
@@ -141,9 +151,8 @@ public class ProfileActivity extends AppCompatActivity {
 
 
             imageUri = data.getData();
-            updateProfile(imageUri);
             imageView.setImageURI(imageUri);
-
+            updateProfile(imageUri);
             imageView.setBackground(getDrawable(R.color.white));
 
         }
@@ -152,7 +161,7 @@ public class ProfileActivity extends AppCompatActivity {
     public void updateProfile( Uri image) {
         // [START update_profile]
 
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
 
         UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder().setDisplayName("Deepak")
                 .setPhotoUri(image)
@@ -163,7 +172,8 @@ public class ProfileActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()) {
-                            Log.d("user pic", "User profile updated.");
+                            Log.d("user pic", "User profile updated."+image);
+
                         }
                     }
                 });

@@ -1,10 +1,13 @@
 package com.example.roommatefinder;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
@@ -15,23 +18,42 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.Continuation;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.OnProgressListener;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import static android.app.Service.START_REDELIVER_INTENT;
+
 
 public class NewPostingActivity extends AppCompatActivity {
 
+    public static final String ACTION_UPLOAD = "action_upload";
+    public static final String UPLOAD_COMPLETED = "upload_completed";
+    public static final String UPLOAD_ERROR = "upload_error";
+    private static final String TAG = "MyUploadService";
 
+    /** Intent Extras **/
+    public static final String EXTRA_FILE_URI = "extra_file_uri";
+    public static final String EXTRA_DOWNLOAD_URL = "extra_download_url";
    FirebaseDatabase database = FirebaseDatabase.getInstance();
    DatabaseReference mydbRef = database.getReference();
+    private StorageReference mStorageRef;
 //    DatabaseReference myRefplace = database.getReference("/New Post/Location of post");
 //    DatabaseReference myRefprice = database.getReference("/New Post/Cost of post");
 
@@ -62,6 +84,8 @@ public class NewPostingActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_posting);
+
+        mStorageRef = FirebaseStorage.getInstance().getReference();
     }
 
 
@@ -172,20 +196,9 @@ public class NewPostingActivity extends AppCompatActivity {
     }
 
    public void uploadimage(View view){
-       Intent cInt = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-       startActivityForResult(cInt,Image_Capture_Code);
+
    }
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == Image_Capture_Code) {
-            if (resultCode == RESULT_OK) {
-                Bitmap bp = (Bitmap) data.getExtras().get("data");
-                imgCapture.setImageBitmap(bp);
-            } else if (resultCode == RESULT_CANCELED) {
-                Toast.makeText(this, "Cancelled", Toast.LENGTH_LONG).show();
-            }
-        }
-    }
+
+
 }
 
