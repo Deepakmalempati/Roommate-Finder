@@ -99,5 +99,27 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void resetpasswordclick(View view){
+        EditText emailET = findViewById(R.id.emailET);
+        String emailstr = emailET.getText().toString();
+        if(emailstr.equals("")){
+            emailET.setError("enter email");
+
+        }
+        else{
+            FirebaseAuth.getInstance().sendPasswordResetEmail(emailstr)
+                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            if (task.isSuccessful()) {
+                                Log.d("reset email", "reset Email sent.");
+                                Toast toast=Toast.makeText(getApplicationContext(),"Password Reset email sent!", Toast.LENGTH_SHORT);
+                                toast.show();
+                            }
+                        }
+                    });
+        }
+    }
+
 
 }

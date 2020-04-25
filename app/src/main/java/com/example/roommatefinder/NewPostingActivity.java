@@ -43,19 +43,15 @@ import static android.app.Service.START_REDELIVER_INTENT;
 
 public class NewPostingActivity extends AppCompatActivity {
 
-    public static final String ACTION_UPLOAD = "action_upload";
-    public static final String UPLOAD_COMPLETED = "upload_completed";
-    public static final String UPLOAD_ERROR = "upload_error";
-    private static final String TAG = "MyUploadService";
 
-    /** Intent Extras **/
-    public static final String EXTRA_FILE_URI = "extra_file_uri";
-    public static final String EXTRA_DOWNLOAD_URL = "extra_download_url";
+
    FirebaseDatabase database = FirebaseDatabase.getInstance();
    DatabaseReference mydbRef = database.getReference();
     private StorageReference mStorageRef;
-//    DatabaseReference myRefplace = database.getReference("/New Post/Location of post");
-//    DatabaseReference myRefprice = database.getReference("/New Post/Cost of post");
+    private FirebaseStorage storage;
+    Uri filePath;
+    private String key;
+
 
 
     private static final int Image_Capture_Code = 1;
@@ -85,7 +81,8 @@ public class NewPostingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_posting);
 
-        mStorageRef = FirebaseStorage.getInstance().getReference();
+            storage = FirebaseStorage.getInstance();
+         mStorageRef = storage.getReferenceFromUrl("gs://roommatefinder-c4630.appspot.com");
     }
 
 
@@ -148,7 +145,7 @@ public class NewPostingActivity extends AppCompatActivity {
                                 // Write new post
                                 Log.d("User ID log", "User ID is = " + userId);
                                // writeNewPost(userId, user.username, title, body);
-                                String key = mydbRef.child("User-Post").push().getKey();
+                                 key = mydbRef.child("User-Post").push().getKey();
                                 Log.d("Key","Key value: "+key);
                                 SearchResultsModel.ChoiceInfo ci = new SearchResultsModel.ChoiceInfo(title,place,price,housetype,gender,otherinfo,amenities);
                                 mydbRef.child("New-Posts").push().setValue(ci);
@@ -183,6 +180,31 @@ public class NewPostingActivity extends AppCompatActivity {
             Toast toast = Toast.makeText(getApplicationContext(), "Posted Successfully", Toast.LENGTH_LONG);
             toast.show();
 
+            if(filePath != null) {
+
+
+                StorageReference childRef = mStorageRef.child(key+"/image.jpg");
+
+                //uploading the image
+                UploadTask uploadTask = childRef.putFile(filePath);
+
+                uploadTask.addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                    @Override
+                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                        Log.d("Image upload log", "Image upload successful");
+                      //  Toast.makeText(MainActivity.this, "Upload successful", Toast.LENGTH_SHORT).show();
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+
+                       // Toast.makeText(MainActivity.this, "Upload Failed -> " + e, Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }
+//            else {
+//               // Toast.makeText(MainActivity.this, "Select an image", Toast.LENGTH_SHORT).show();
+//            }
 
         }
     }
@@ -196,9 +218,30 @@ public class NewPostingActivity extends AppCompatActivity {
     }
 
    public void uploadimage(View view){
-
+       Intent intent = new Intent();
+       intent.setType("image/*");
+       intent.setAction(Intent.ACTION_PICK);
+       startActivityForResult(Intent.createChooser(intent, "Select Image"), Image_Capture_Code);
    }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == Image_Capture_Code && resultCode == RESULT_OK && data != null && data.getData() != null) {
+            filePath = data.getData();
+
+            try {
+                //getting image from gallery
+                Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), filePath);
+
+                //Setting image to ImageView
+                // imgView.setImageBitmap(bitmap);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
 
 }
 

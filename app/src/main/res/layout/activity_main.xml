@@ -14,10 +14,10 @@
         android:layout_marginTop="100dp"
         android:layout_marginEnd="77dp"
         android:layout_marginBottom="591dp"
-        android:text="Welcome to Roommate Finder"
+        android:text="Welcome to RoomiE.\nliving experience redefined!"
         android:textAlignment="center"
         android:textColor="#000000"
-        android:textSize="24sp"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -99,6 +99,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/passwordresetTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="resetpasswordclick"
+        android:text="Forgot Password?"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.894" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

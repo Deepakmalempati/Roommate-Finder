@@ -15,9 +15,11 @@ import android.view.View;
 import android.view.ViewGroup;
 //import com.google.android.material.button.MaterialButton;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.example.roommatefinder.R;
 import com.example.roommatefinder.SearchResultsModel;
 import com.example.roommatefinder.detailedinfo;
@@ -27,6 +29,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 //import com.google.firebase.quickstart.database.R;
 //import com.google.firebase.quickstart.database.java.models.Comment;
 //import com.google.firebase.quickstart.database.java.models.Post;
@@ -174,6 +178,7 @@ public class SearchResults extends AppCompatActivity {
         public TextView titleTV;
         public TextView costTV;
         public TextView locationTV;
+        public ImageView imageView;
 
         public CommentViewHolder(View itemView) {
             super(itemView);
@@ -181,6 +186,7 @@ public class SearchResults extends AppCompatActivity {
             titleTV = itemView.findViewById(R.id.titleTV);
             costTV = itemView.findViewById(R.id.costTV);
             locationTV = itemView.findViewById(R.id.locationTV);
+            imageView = itemView.findViewById(R.id.imageView);
         }
     }
 
@@ -300,6 +306,8 @@ public class SearchResults extends AppCompatActivity {
         public void onBindViewHolder(CommentViewHolder holder, int position) {
             // final DatabaseReference postRef = ;
             SearchResultsModel.ChoiceInfo comment = mComments.get(position);
+//           StorageReference storageReference = FirebaseStorage.getInstance().getReference();
+//            Glide.with(mCommentsRecycler).load(storageReference).into(holder.imageView);
             holder.titleTV.setText(comment.title);
             holder.costTV.setText("$"+comment.cost);
             holder.locationTV.setText(comment.location);
