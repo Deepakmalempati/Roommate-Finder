@@ -51,7 +51,7 @@ public class ProfileActivity extends AppCompatActivity {
 
             Uri photoUrl = user.getPhotoUrl();
             Glide.with(this).load(photoUrl).into(imageView);
-            imageView.setBackground(getDrawable(R.color.white));
+            //imageView.setBackground(getDrawable(R.color.white));
             //imageView.setImageURI(photoUrl);
             Log.d("image","User image"+photoUrl);
         } else {
