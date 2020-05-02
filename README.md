@@ -28,7 +28,7 @@ This is an android app named RoomiE-Finds your roommate easily.
 Our App helps in finding a roommate in your area. It also helps in setting multiple preferences while searching for roommate. It gives an option to post your house if you already have a space to live or search for roommate who has living space to share with
 
 
-We have a total of 9 activities:
+We have a total of 10 activities:
 1.	Login activity: 
 2.	Sign Up activity: 
 3.	User Profile: 
