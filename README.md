@@ -5,8 +5,8 @@
 ### To integrate App with Google firebase Realtime database:
 To add the app to a Firebase project, use the applicationId value specified in the app/build.gradle file of the app as the Android package name. Download the generated google-services.json file, and copy it to the app/ directory of our app.
 
-### To use google places in the app, please follow below steps
-1. create secrets.xml as a resource file under "RoommateFinder\app\src\main\res\values\secrets.xml"
+### To add google places API in the app, please follow below steps
+1. create secrets.xml as a resource file under "RoommateFinder\app\src\main\res\values\"
 2. add below code to secrets.xml
 
 ```
@@ -17,13 +17,15 @@ To add the app to a Firebase project, use the applicationId value specified in t
 </resources>
 ```
 3. replace YOUR-API-KEY with your google places API key in the above code snippet.
-4. Now app is ready to use.
+4. Steps to generate google places API Key [click here](https://developers.google.com/places/web-service/get-api-key)
+5. Now app is ready to use.
 
-##### Recommended to run the application on physical device for better UI view.
-##### Sometimes virtual devices are facing network access issues so we recommend to run on physical devices.
+##### Without performing above steps, the project will not compile.  
+
+##### Recommended to run the application on physical device for better UI view and sometimes virtual devices are facing network access issues so we recommend to run on physical devices.
 
 ----------------------------------------------------------------------------------------------------------------------------------
-This is an android app named RoomiE-Finds your roommate easily.
+This is an android app named RoomiE.
 
 Our App helps in finding a roommate in your area. It also helps in setting multiple preferences while searching for roommate. It gives an option to post your house if you already have a space to live or search for roommate who has living space to share with
 
